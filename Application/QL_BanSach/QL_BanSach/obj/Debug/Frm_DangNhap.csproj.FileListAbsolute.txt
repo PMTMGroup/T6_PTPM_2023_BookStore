@@ -1,0 +1,9 @@
+E:\PhatTrienUngDungNangCao\DoAn\Frm_DangNhap\Frm_DangNhap\bin\Debug\Frm_DangNhap.exe.config
+E:\PhatTrienUngDungNangCao\DoAn\Frm_DangNhap\Frm_DangNhap\bin\Debug\Frm_DangNhap.exe
+E:\PhatTrienUngDungNangCao\DoAn\Frm_DangNhap\Frm_DangNhap\bin\Debug\Frm_DangNhap.pdb
+E:\PhatTrienUngDungNangCao\DoAn\Frm_DangNhap\Frm_DangNhap\obj\Debug\Frm_DangNhap.csprojResolveAssemblyReference.cache
+E:\PhatTrienUngDungNangCao\DoAn\Frm_DangNhap\Frm_DangNhap\obj\Debug\Frm_DangNhap.Form1.resources
+E:\PhatTrienUngDungNangCao\DoAn\Frm_DangNhap\Frm_DangNhap\obj\Debug\Frm_DangNhap.Properties.Resources.resources
+E:\PhatTrienUngDungNangCao\DoAn\Frm_DangNhap\Frm_DangNhap\obj\Debug\Frm_DangNhap.csproj.GenerateResource.Cache
+E:\PhatTrienUngDungNangCao\DoAn\Frm_DangNhap\Frm_DangNhap\obj\Debug\Frm_DangNhap.exe
+E:\PhatTrienUngDungNangCao\DoAn\Frm_DangNhap\Frm_DangNhap\obj\Debug\Frm_DangNhap.pdb
