@@ -1,6 +1,6 @@
-create database QLBanSach_DoAnPhatTrienUngDungThongMinh
+create database QLCuaHangSach
 go
-use QLBanSach_DoAnPhatTrienUngDungThongMinh
+use QLCuaHangSach
 go
 create table TheLoaiSach
 (
@@ -92,6 +92,7 @@ create table ThanhVien
 MaTV int identity(1,1),
 TenThanhVien nvarchar(100),
 SDT char(20) unique,
+MatKhau char(20),
 TienDaMua int,
 MaLoaiTV char(20) not null,
 constraint PK_ThanhVien primary key(MaTV)
@@ -118,8 +119,6 @@ BiKhoa bit,
 constraint PK_TaiKhoan primary key(MaTaiKhoan)
 )
 
-
-
 create table ChiTietHoaDonBan
 (
 SoHD int,
@@ -134,15 +133,48 @@ create table HoaDonBan
 (
 SoHD int identity(1,1),
 NgayLap date,
---SoLuong int,
 TongTien int,
 TongGiam int,
 ThanhTien int,
---MaSach char(20),
 MaTV int,
 MaGiamGia char(20),
 MaTaiKhoan char(20),
 constraint PK_HoaDon primary key(SoHD)
+)
+
+create table GioHang
+(
+  MaND int,
+  MaSach char(20),
+  SoLuong int,
+  constraint PK_GioHang primary key(MaND, MaSach)
+)
+
+create table DonDatHang
+(
+SoHD int identity(1,1),
+NgayLap date,
+HinhThucThanhToan nvarchar(200),
+MaTV int,
+MaGiamGia char(20),
+PhiShip int,
+TongTien int,
+TongGiam int,
+ThanhTien int,
+HoTenNguoiNhan nvarchar(200),
+SDTNguoiNhan char(11),
+DiaChiNhanHang nvarchar(500),
+GhiChu nvarchar(500),
+constraint PK_DonDatHang primary key(SoHD)
+)
+
+create table ChiTietDonDatHang
+(
+SoHD int,
+MaSach char(20),
+SoLuong int,
+TongTien int,
+constraint PK_ChiTietDonDatHang primary key(SoHD, MaSach)
 )
 
 alter table Sach
@@ -162,6 +194,24 @@ add constraint FK_HoaDonBan_PhieuGiamGia foreign key(MaGiamGia) references Phieu
 
 alter table HoaDonBan
 add constraint FK_HoaDonBan_ThanhVien foreign key(MaTV) references ThanhVien(MaTV)
+
+alter table GioHang
+add constraint FK_GioHang_ThanhVien foreign key(MaND) references ThanhVien(MaTV)
+
+alter table GioHang
+add constraint FK_GioHang_Sach foreign key(MaSach) references Sach(MaSach)
+
+alter table DonDatHang
+add constraint FK_DonDatHang_ThanhVien foreign key(MaTV) references ThanhVien(MaTV)
+
+alter table DonDatHang
+add constraint FK_DonDatHang_PhieuGiamGia foreign key(MaGiamGia) references PhieuGiamGia(MaGiamGia)
+
+alter table ChiTietDonDatHang
+add constraint FK_ChiTietDonDatHang_DonDatHang foreign key(SoHD) references DonDatHang(SoHD)
+
+alter table ChiTietDonDatHang
+add constraint FK_ChiTietDonDatHang_Sach foreign key(MaSach) references Sach(MaSach)
 
 alter table HoaDonBan
 add constraint FK_HoaDonBan_TaiKhoan foreign key(MaTaiKhoan) references TaiKhoan(MaTaiKhoan)
@@ -238,10 +288,10 @@ values
 
 insert into ThanhVien
 values
-(N'None','None',0,'None'),
-(N'Phạm Thành Trung','0343434343',0,'Bronze'),
-(N'Phạm Minh Châu','0424937434',1250000,'Silver'),
-(N'Vương Chí Hải','0479432325',10000000,'Diamon')
+(N'None','None','None',0,'None'),
+(N'Phạm Thành Trung','0343434343','123123',0,'Bronze'),
+(N'Phạm Minh Châu','0424937434','123123',1250000,'Silver'),
+(N'Vương Chí Hải','0479432325','123123',10000000,'Diamon')
 
 
 
@@ -306,7 +356,7 @@ values
 (5,10000,'18/6/2023',N'Không có','S01','TK01','HDNhapKho'),
 (7,20000,'18/6/2023',N'Không có','S03','TK01','HDXuatKho')
 --trigger cập nhật loại thành viên dựa vào số tiền đã mua
-use QLBanSach_DoAnPhatTrienUngDungThongMinh
+use QLCuaHangSach
 go
 CREATE TRIGGER CapNhatLTV ON ThanhVien
 AFTER INSERT, UPDATE

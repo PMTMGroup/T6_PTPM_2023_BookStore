@@ -7,14 +7,14 @@
             <div class="ship">
                 <label for="">Hình Thức Giao Hàng <span style="color:red">*</span></label>
                 <div class="group-ship">
-                    <div class="item-ship">
-                        <input type="radio" name="ship" style="transform: scale(1.5)">
+                    <div class="item-ship" style="opacity: .5;">
+                        <input type="radio" name="ship" style="transform: scale(1.5);pointer-events: none;">
                         <img src="{{asset("images/system/fire.png")}}" alt="">
                         <p class="name">Giao hàng hỏa tốc</p>
                         <p class="price">50K</p>
                     </div>
-                    <div class="item-ship">
-                        <input type="radio" name="ship" style="transform: scale(1.5)">
+                    <div class="item-ship" style="opacity: .5;">
+                        <input type="radio" name="ship" style="transform: scale(1.5);pointer-events: none;">
                         <img src="{{asset("images/system/ghn.jpeg")}}" alt="">
                         <p class="name">Giao hàng nhanh</p>
                         <p class="price">30K</p>

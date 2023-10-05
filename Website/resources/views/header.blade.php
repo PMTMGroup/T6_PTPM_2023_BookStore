@@ -1,4 +1,4 @@
-<div class="container-default" style="background: linear-gradient(270deg, #000 0%, rgba(0, 0, 0, 0.00) 100%, #000 100%),url({{asset('images/system/background-index.jpg')}}); background-size: cover;">
+<div class="container-default" style="background: linear-gradient(270deg, #000 0%, rgba(0, 0, 0, 0.00) 100%, #000 100%),url({{asset('images/system/background-index.svg')}}); background-size: cover;">
     <div class="header">
         <a href="{{route('home.index')}}"><img src="{{asset('images/system/logo.png')}}" style="width:89px; height: 55px;"></a>
         <div class="menu-bar">
