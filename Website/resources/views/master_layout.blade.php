@@ -20,7 +20,7 @@
         <div class="header-chat">
             <p id="icon-close-chat">X</p>            
         </div>
-        <label for="" style="font-weight: 600; color: #FFC100;">Trợ Lý Ây Ai</label>
+        <label for="" style="font-weight: 600; color: #FFC100;">Trợ Lý AI</label>
         <div class="box-chat">
             <div class="couple-chat" id="content-box">
                 <div class="item-ai">
@@ -80,6 +80,17 @@
             })
             //alert($value);
         })
+    </script>
+    <script>
+        const btnLogin = document.getElementById('btnLogin');
+        const boxLogin = document.getElementById('box-login');
+
+        btnLogin.addEventListener('click', function(){
+            if(boxLogin.style.opacity == 0)
+                boxLogin.style.opacity = 1;
+            else
+                boxLogin.style.opacity = 0;
+        });
     </script>
 </body>
 </html>

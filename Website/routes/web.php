@@ -21,4 +21,6 @@ Route::get('/', [HomeController::class, 'index'])->name('home.index');
 Route::get('/checkout', function(){ return view('checkout');})->name('checkout.index');
 Route::get('/register', [AuthController::class, 'registerGet'])->name('register.index');
 Route::post('/register', [AuthController::class, 'registerSubmit'])->name('register.post.index');
+Route::post('/login', [AuthController::class, 'loginSubmit'])->name('login.post.index');
+Route::post('/logout', [AuthController::class, 'logoutSubmit'])->name('logout.post.index');
 Route::post('/ai-question', [OpenAIController::class, 'OpenAIChatBot'])->name('sender');
