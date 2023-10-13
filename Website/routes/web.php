@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\OpenAIController;
 use Illuminate\Support\Facades\Route;
@@ -16,7 +17,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/cart', function(){ return view('cart');})->name('cart.index');
+Route::get('/cart', [CartController::class, 'index'])->name('cart.index');
+Route::get('/cart/{id}', [CartController::class, 'addToCart'])->name('cart.add');
+Route::get('/cart/delete/{id}', [CartController::class, 'deleteCart'])->name('cart.delete');
+Route::post('/cart/update', [CartController::class, 'updateCart'])->name('cart.update');
 Route::get('/', [HomeController::class, 'index'])->name('home.index');
 Route::get('/checkout', function(){ return view('checkout');})->name('checkout.index');
 Route::get('/register', [AuthController::class, 'registerGet'])->name('register.index');

@@ -1,5 +1,4 @@
 @extends('master_layout')
-@section('quantity_cart') {{ isset($quantity_cart) ? "($quantity_cart)" : ""}} @endsection
 @section('content')
 <div class="container container-product">
 <div class="product-box">
@@ -35,7 +34,7 @@
             <p><i class="fa fa-star" aria-hidden="true"></i>&nbsp;<i class="fa fa-star" aria-hidden="true"></i>&nbsp;<i class="fa fa-star" aria-hidden="true"></i>&nbsp;<i class="fa fa-star" aria-hidden="true"></i>&nbsp;<i class="fa fa-star" aria-hidden="true"></i></p>
             <div class="group-price">
                 <p class="price">{{number_format($value->GiaBan)}} <span style="text-decoration: underline;">đ</span></p>
-                <i class="fa fa-cart-plus" aria-hidden="true"></i>
+                <a href="{{URL::to('cart/'.$value->MaSach)}}"><i class="fa fa-cart-plus" aria-hidden="true"></i></a>
             </div>
             
         </div>

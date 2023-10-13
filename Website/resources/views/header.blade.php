@@ -4,8 +4,11 @@
         <div class="menu-bar">
             <a href="{{route('home.index')}}"><p class="title-home">TRANG CHỦ</p></a>
             <a href="#"><p>TÍNH NĂNG</p></a>
-            <a href="#"><p>VỀ CHÚNG TÔI</p></a>            
-            <a href="{{route('cart.index')}}"><p>GIỎ HÀNG @yield('quantity_cart')</p></a>
+            <a href="#"><p>VỀ CHÚNG TÔI</p></a>
+            <a href="#"><p>LIÊN HỆ</p></a>     
+            @if(isset($tenThanhVien))        
+                <a href="{{route('cart.index')}}"><p>GIỎ HÀNG ({{$quantity_cart}})</p></a>
+            @endif
             <button id="btnLogin">ĐĂNG NHẬP</button>
         </div>
         <svg class="icon-nav-none" id="icon-nav-none" xmlns="http://www.w3.org/2000/svg" width="18" height="14" viewBox="0 0 18 14" fill="none">
