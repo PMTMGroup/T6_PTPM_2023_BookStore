@@ -9,3 +9,16 @@ E:\PhatTrienUngDungNangCao\DoAn\Frm_DangNhap\Frm_DangNhap\bin\Debug\Frm_DangNhap
 E:\PhatTrienUngDungNangCao\DoAn\Frm_DangNhap\Frm_DangNhap\obj\Debug\Frm_DangNhap.Form1.resources
 E:\PhatTrienUngDungNangCao\DoAn\Frm_DangNhap\Frm_DangNhap\obj\Debug\Frm_DangNhap.pdb
 E:\PhatTrienUngDungNangCao\DoAn\Frm_DangNhap\Frm_DangNhap\obj\Debug\Frm_DangNhap.Frm_BanSach.resources
+E:\PhatTrienUngDungNangCao\PMTM_Danh\T6_PTPM_2023_BookStore\Application\QL_BanSach\QL_BanSach\bin\Debug\Frm_DangNhap.exe.config
+E:\PhatTrienUngDungNangCao\PMTM_Danh\T6_PTPM_2023_BookStore\Application\QL_BanSach\QL_BanSach\obj\Debug\Frm_DangNhap.exe
+E:\PhatTrienUngDungNangCao\PMTM_Danh\T6_PTPM_2023_BookStore\Application\QL_BanSach\QL_BanSach\obj\Debug\Frm_DangNhap.pdb
+E:\PhatTrienUngDungNangCao\PMTM_Danh\T6_PTPM_2023_BookStore\Application\QL_BanSach\QL_BanSach\bin\Debug\Frm_DangNhap.exe
+E:\PhatTrienUngDungNangCao\PMTM_Danh\T6_PTPM_2023_BookStore\Application\QL_BanSach\QL_BanSach\bin\Debug\Frm_DangNhap.pdb
+E:\PhatTrienUngDungNangCao\PMTM_Danh\T6_PTPM_2023_BookStore\Application\QL_BanSach\QL_BanSach\obj\Debug\QL_BanSach.csprojResolveAssemblyReference.cache
+E:\PhatTrienUngDungNangCao\PMTM_Danh\T6_PTPM_2023_BookStore\Application\QL_BanSach\QL_BanSach\obj\Debug\Frm_DangNhap.Frm_BanSach.resources
+E:\PhatTrienUngDungNangCao\PMTM_Danh\T6_PTPM_2023_BookStore\Application\QL_BanSach\QL_BanSach\obj\Debug\Frm_DangNhap.Form1.resources
+E:\PhatTrienUngDungNangCao\PMTM_Danh\T6_PTPM_2023_BookStore\Application\QL_BanSach\QL_BanSach\obj\Debug\Frm_DangNhap.Frm_Main.resources
+E:\PhatTrienUngDungNangCao\PMTM_Danh\T6_PTPM_2023_BookStore\Application\QL_BanSach\QL_BanSach\obj\Debug\Frm_DangNhap.Frm_QLHeThongVatTu.resources
+E:\PhatTrienUngDungNangCao\PMTM_Danh\T6_PTPM_2023_BookStore\Application\QL_BanSach\QL_BanSach\obj\Debug\Frm_DangNhap.Properties.Resources.resources
+E:\PhatTrienUngDungNangCao\PMTM_Danh\T6_PTPM_2023_BookStore\Application\QL_BanSach\QL_BanSach\obj\Debug\QL_BanSach.csproj.GenerateResource.Cache
+E:\PhatTrienUngDungNangCao\PMTM_Danh\T6_PTPM_2023_BookStore\Application\QL_BanSach\QL_BanSach\obj\Debug\Frm_DangNhap.Frm_QLKhoHang.resources
