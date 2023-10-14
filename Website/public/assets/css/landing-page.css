@@ -1041,6 +1041,7 @@ h1, h2, h3, h4, h5, h6{
     display: flex;
     flex-direction: column;
     gap: 30px;
+    height: fit-content;
 }
 
 .container-checkout .box-checkout .box-left .ship{
@@ -1345,7 +1346,7 @@ h1, h2, h3, h4, h5, h6{
     padding: 10px;
     border-radius: 15px;
     background-color: #e8e6e6;
-    font-size: 13px;
+    font-size: 14px;
     max-width: 200px;
 }
 
@@ -1354,7 +1355,7 @@ h1, h2, h3, h4, h5, h6{
     border-radius: 15px;
     background: rgb(0, 182, 240);
     color: #ffffff;
-    font-size: 13px;
+    font-size: 14px;
     max-width: 200px;
 }
 
@@ -1364,6 +1365,63 @@ h1, h2, h3, h4, h5, h6{
     justify-content: flex-end;
     align-items: center;
 }
+
+.box-login{
+    width: 320px;
+    background-color: #ffffff;
+    position: absolute;
+    top: 80px;
+    right: 190px;
+    border-radius: 4px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    opacity: 0;
+}
+
+.box-login h3{
+    color: #0E1D5E;
+    text-align: center;
+    font-weight: bold;
+}
+
+.box-login h4{
+    color: #0E1D5E;
+}
+
+.box-login label{
+    color: #0E1D5E;
+    font-weight: bold;
+}
+
+.box-login input{
+    border:2px solid #0E1D5E;
+    border-radius: 4px;
+    padding: 10px;
+}
+
+.box-login input:focus{
+    outline: none;
+}
+
+.box-login button{
+    color: #0E1D5E;
+    padding: 15px;
+    border-radius: 4px;
+    background-color: #FFC100;
+    font-size: 15px;
+    font-weight: 600;
+}
+.box-login button:hover{
+    cursor: pointer;
+    color: #ffffff;
+}
+
+button:hover{
+    cursor: pointer;
+}
+
 /* Phone */
 @media only screen and (max-width: 600px){
     .header{
