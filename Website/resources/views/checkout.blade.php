@@ -35,34 +35,15 @@
                     <th></th>
                     <th></th>
                     <th></th>
+                    @foreach($cart as $value)
                     <tr>
-                        <td style="width: 150px"><img style="width: 120px; height: 100px;" src="{{asset("images/products/dac-nhan-tam.jpg")}}" alt=""></td>
-                        <td style="width: 250px"><p class="name">Đây là tên sản lphaamr có thể 2 hàng có thể 2 hàng hàng có thể 2 hàng</p></td>
-                        <td style="width: 150px; text-align: center;"><p class="price">200.000 <span style="text-decoration: underline;">đ</span></p></td>
-                        <td style="width: 150px; text-align: center;">x2</td>
-                        <td style="width: 150px; text-align: center; font-weight: 600;"><p class="price">200.000 <span style="text-decoration: underline;">đ</span></p></td>
+                        <td style="width: 150px"><img style="width: 120px; height: 100px;" src="{{asset("images/products/".$value->HinhAnh)}}" alt=""></td>
+                        <td style="width: 250px"><p class="name">{{$value->TenSach}}</p></td>
+                        <td style="width: 150px; text-align: center;"><p class="price">{{number_format($value->GiaBan)}} <span style="text-decoration: underline;">đ</span></p></td>
+                        <td style="width: 150px; text-align: center;">{{$value->SoLuong}}</td>
+                        <td style="width: 150px; text-align: center; font-weight: 600;"><p class="price">{{number_format($value->GiaBan * $value->SoLuong)}} <span style="text-decoration: underline;">đ</span></p></td>
                     </tr>
-                    <tr>
-                        <td style="width: 150px"><img style="width: 120px; height: 100px;" src="{{asset("images/products/dac-nhan-tam.jpg")}}" alt=""></td>
-                        <td style="width: 250px"><p class="name">Đây là tên sản lphaamr có thể 2 hàng có thể 2 hàng hàng có thể 2 hàng</p></td>
-                        <td style="width: 150px; text-align: center;"><p class="price">200.000 <span style="text-decoration: underline;">đ</span></p></td>
-                        <td style="width: 150px; text-align: center;">x2</td>
-                        <td style="width: 150px; text-align: center; font-weight: 600;"><p class="price">200.000 <span style="text-decoration: underline;">đ</span></p></td>
-                    </tr>
-                    <tr>
-                        <td style="width: 150px"><img style="width: 120px; height: 100px;" src="{{asset("images/products/dac-nhan-tam.jpg")}}" alt=""></td>
-                        <td style="width: 250px"><p class="name">Đây là tên sản lphaamr có thể 2 hàng có thể 2 hàng hàng có thể 2 hàng</p></td>
-                        <td style="width: 150px; text-align: center;"><p class="price">200.000 <span style="text-decoration: underline;">đ</span></p></td>
-                        <td style="width: 150px; text-align: center;">x2</td>
-                        <td style="width: 150px; text-align: center; font-weight: 600;"><p class="price">200.000 <span style="text-decoration: underline;">đ</span></p></td>
-                    </tr>
-                    <tr>
-                        <td style="width: 150px"><img style="width: 120px; height: 100px;" src="{{asset("images/products/dac-nhan-tam.jpg")}}" alt=""></td>
-                        <td style="width: 250px"><p class="name">Đây là tên sản lphaamr có thể 2 hàng có thể 2 hàng hàng có thể 2 hàng</p></td>
-                        <td style="width: 150px; text-align: center;"><p class="price">200.000 <span style="text-decoration: underline;">đ</span></p></td>
-                        <td style="width: 150px; text-align: center;">x2</td>
-                        <td style="width: 150px; text-align: center; font-weight: 600;"><p class="price">200.000 <span style="text-decoration: underline;">đ</span></p></td>
-                    </tr>
+                    @endforeach
                 </table>
             </div>
             <div class="payment">
@@ -86,28 +67,47 @@
                 </div>
             </div>
         </div>
-        <div class="box-right">
+        <div class="box-right">            
+            <form action="{{route('checkout.voucher')}}" method="post">
+                @csrf
+                <div class="location">
+                    <label for="">Voucher</label>
+                    <div class="group-info-endow">
+                        <input type="text" name="maVoucher" id="" placeholder="Nhập mã voucher (nếu có)...">
+                        <button>Áp Dụng</button>
+                    </div>
+                    @if(isset($flagPGG))
+                        @if(!$flagPGG)
+                            <p style="color:red;">Voucher không hợp lệ!</p>
+                        @else
+                            <p style="color:green;">Voucher "{{$phieuGiamGia->TenGiamGia}}" áp dụng thành công!</p>
+                        @endif
+                    @endif
+                </div>
+            </form>
+            
             <div class="location">
+                
                 <label for="">Thông Tin Giao Hàng <span style="color:red">*</span></label>
+                <form action="{{route('checkout.order')}}" method="post">
+                    @csrf
                 <div class="group-info">
-                    <input type="text" name="" id="" required placeholder="Họ tên...">
-                    <input type="text" name="" id="" required placeholder="Số điện thoại">
-                    <input type="text" name="" id="" required placeholder="Địa chỉ nhận hàng">
-                    <input type="text" name="" id="" required placeholder="Ghi chú...">
-                </div>
-            </div>
-            <div class="location">
-                <label for="">Thành Viên</label>
-                <div class="group-info-endow">
-                    <input type="text" name="" id="" placeholder="Số điện thoại thành viên (nếu có)...">
-                    <button>Kiểm Tra</button>
-                </div>
-            </div>
-            <div class="location">
-                <label for="">Voucher</label>
-                <div class="group-info-endow">
-                    <input type="text" name="" id="" placeholder="Nhập mã voucher (nếu có)...">
-                    <button>Áp Dụng</button>
+                    <input type="text" name="hoTenNN" id="" required placeholder="Họ tên...">
+                    <input type="number" name="sdtNN" id="" required placeholder="Số điện thoại..." maxlength="12">
+                    <input type="email" name="emailNN" id="" required maxlength="50" placeholder="Email nhận thông báo...">
+                    <input type="text" name="diaChiNN" id="" required placeholder="Địa chỉ nhận hàng...">
+                    <input type="text" name="ghiChuNN" id="" required placeholder="Ghi chú...">
+                    @if(isset($flagPGG))
+                        @if(!$flagPGG)
+                            <input type="hidden" name="maGG" value="None">
+                        @else
+                            <input type="hidden" name="maGG" value="{{$phieuGiamGia->MaGiamGia}}">
+                        @endif
+                    @else
+                        <input type="hidden" name="maGG" value="None">
+                    @endif                    
+                    <input type="hidden" name="tongTien" value="{{$totalOrder}}">
+                    
                 </div>
             </div>
             <div class="order">
@@ -118,28 +118,48 @@
                         <th></th>
                         <tr>
                             <td><p>Tạm tính:</p></td>
-                            <td style="text-align: end;"><p>800.000đ</p></td>
+                            <td style="text-align: end;"><p>{{number_format( $totalOrder)}} đ</p></td>
                         </tr>
                         <tr>
                             <td><p>Phí vận chuyển:</p></td>
-                            <td style="text-align: end;"><p>30.000đ</p></td>
+                            <td style="text-align: end;"><p>20.000 đ</p></td>
                         </tr>
                         <tr>
                             <td><p>Giảm giá voucher:</p></td>
-                            <td style="text-align: end; color: green"><p>-10.000đ</p></td>
+                            @if(isset($flagPGG))
+                                @if(!$flagPGG)
+                                    <td style="text-align: end; color: green"><p>-0 đ</p></td>
+                                @else
+                                    <td style="text-align: end; color: green"><p>-{{number_format($totalOrder*$phieuGiamGia->PhanTramGiamGia/100)}} đ</p></td>
+                                @endif
+                            @else
+                                <td style="text-align: end; color: green"><p>-0 đ</p></td>
+                            @endif
+                            
                         </tr>
                         <tr>
                             <td><p>Thành viên:</p></td>
-                            <td style="text-align: end; color: green"><p>-30.000đ</p></td>
+                            <td style="text-align: end; color: green"><p>-{{number_format($totalOrder*$uuDaiThanhVien/100)}} đ</p></td>
                         </tr>
                     </table>
                 </div>
                 <div class="total-all">
                     <p style="font-weight: 600">Tổng tiền:</p>
-                    <p style="font-weight: 600; color:red; font-size:20px">1.200.000đ</p>
+                    @if(isset($flagPGG))
+                        @if(!$flagPGG)
+                            <p style="font-weight: 600; color:red; font-size:20px">{{number_format($totalOrder+20000-($totalOrder*$uuDaiThanhVien/100))}} đ</p>
+                        @else
+                            <p style="font-weight: 600; color:red; font-size:20px">{{
+                            number_format($totalOrder+20000-($totalOrder*$uuDaiThanhVien/100)-($totalOrder*$phieuGiamGia->PhanTramGiamGia/100))
+                            }} đ</p>
+                        @endif
+                    @else                        
+                        <p style="font-weight: 600; color:red; font-size:20px">{{number_format($totalOrder+20000-($totalOrder*$uuDaiThanhVien/100))}} đ</p>
+                    @endif    
                 </div>
             </div> 
-            <button class="btn-order">ĐẶT HÀNG</button>           
+            <button class="btn-order">ĐẶT HÀNG</button>   
+        </form>        
         </div>
     </div>
 </div>

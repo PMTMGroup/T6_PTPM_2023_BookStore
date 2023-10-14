@@ -75,6 +75,7 @@ class AuthController extends Controller
     public function logoutSubmit(Request $request)
     {
         session()->forget('hasLogin');
+        session()->flush();
         return redirect()->route('home.index');
     }
 }

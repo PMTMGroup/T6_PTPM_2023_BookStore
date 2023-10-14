@@ -21,11 +21,14 @@ class HomeController extends Controller
         if(session()->has('hasLogin'))
         {
             $thanhVien = DB::table('ThanhVien')->where('MaTV', session()->get('hasLogin'))->first();
+            if($thanhVien)
+            {
             $tenThanhVien = $thanhVien->TenThanhVien;
 
             $quantity_cart = DB::select("select count(*) as SoLuong from GioHang where MaND = ".session()->get('hasLogin'));
             return view('home')->with('data', $data)->with('theloai', $theloai)
             ->with('tacgia', $tacgia)->with('tenThanhVien', $tenThanhVien)->with('quantity_cart', $quantity_cart[0]->SoLuong);
+            }
         }
         return view('home')->with('data', $data)->with('theloai', $theloai)->with('tacgia', $tacgia);
     }

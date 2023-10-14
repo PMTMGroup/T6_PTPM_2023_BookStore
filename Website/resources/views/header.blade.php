@@ -68,11 +68,11 @@
 <div class="box-login" id="box-login">
     @if(!isset($tenThanhVien))
     <h3>ĐĂNG NHẬP</h3>
-    @if(isset($message_login))
-        <div style="background-color: rgb(252, 224, 224);padding: 15px 10px; border-radius:5px;">
-            <p style="color:red; font-size:15px; margin:0; text-align: center">{{$message_login}}</p>
-        </div>
-    @endif
+        @if(isset($message_login))
+            <div style="background-color: rgb(252, 224, 224);padding: 15px 10px; border-radius:5px;">
+                <p style="color:red; font-size:15px; margin:0; text-align: center">{{$message_login}}</p>
+            </div>
+        @endif
     <label for="">Số điện thoại</label>
     <input type="number" name="phone" id="" required placeholder="Số điện thoại...">
     <label for="">Mật khẩu</label>
