@@ -68,17 +68,65 @@
     <Compile Include="Frm_Main.Designer.cs">
       <DependentUpon>Frm_Main.cs</DependentUpon>
     </Compile>
+    <Compile Include="Frm_QLDonDatHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_QLDonDatHang.Designer.cs">
+      <DependentUpon>Frm_QLDonDatHang.cs</DependentUpon>
+    </Compile>
     <Compile Include="Frm_QLHeThongVatTu.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Frm_QLHeThongVatTu.Designer.cs">
       <DependentUpon>Frm_QLHeThongVatTu.cs</DependentUpon>
     </Compile>
+    <Compile Include="Frm_QLHoaDonBan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_QLHoaDonBan.Designer.cs">
+      <DependentUpon>Frm_QLHoaDonBan.cs</DependentUpon>
+    </Compile>
     <Compile Include="Frm_QLKhoHang.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Frm_QLKhoHang.Designer.cs">
       <DependentUpon>Frm_QLKhoHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_QLPhieuGiamGia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_QLPhieuGiamGia.Designer.cs">
+      <DependentUpon>Frm_QLPhieuGiamGia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_QLSanPham.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_QLSanPham.Designer.cs">
+      <DependentUpon>Frm_QLSanPham.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_QLTaiKhoan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_QLTaiKhoan.Designer.cs">
+      <DependentUpon>Frm_QLTaiKhoan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_QLThanhVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_QLThanhVien.Designer.cs">
+      <DependentUpon>Frm_QLThanhVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_ThongKe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_ThongKe.Designer.cs">
+      <DependentUpon>Frm_ThongKe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_TimKiemSanPham.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_TimKiemSanPham.Designer.cs">
+      <DependentUpon>Frm_TimKiemSanPham.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -91,11 +139,35 @@
     <EmbeddedResource Include="Frm_Main.resx">
       <DependentUpon>Frm_Main.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Frm_QLDonDatHang.resx">
+      <DependentUpon>Frm_QLDonDatHang.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Frm_QLHeThongVatTu.resx">
       <DependentUpon>Frm_QLHeThongVatTu.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Frm_QLHoaDonBan.resx">
+      <DependentUpon>Frm_QLHoaDonBan.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Frm_QLKhoHang.resx">
       <DependentUpon>Frm_QLKhoHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_QLPhieuGiamGia.resx">
+      <DependentUpon>Frm_QLPhieuGiamGia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_QLSanPham.resx">
+      <DependentUpon>Frm_QLSanPham.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_QLTaiKhoan.resx">
+      <DependentUpon>Frm_QLTaiKhoan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_QLThanhVien.resx">
+      <DependentUpon>Frm_QLThanhVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_ThongKe.resx">
+      <DependentUpon>Frm_ThongKe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_TimKiemSanPham.resx">
+      <DependentUpon>Frm_TimKiemSanPham.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

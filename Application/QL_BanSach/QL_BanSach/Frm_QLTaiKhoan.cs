@@ -10,21 +10,11 @@ using System.Windows.Forms;
 
 namespace Frm_DangNhap
 {
-    public partial class Frm_BanSach : Form
+    public partial class Frm_QLTaiKhoan : Form
     {
-        public Frm_BanSach()
+        public Frm_QLTaiKhoan()
         {
             InitializeComponent();
-        }
-
-        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void Frm_BanSach_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

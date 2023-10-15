@@ -68,14 +68,21 @@ constraint PK_Quyen primary key(MaQuyen)
 create table HoaDonKho
 (
 SoHDK int identity(1,1),
-SoLuong int,
 TongTien int,
 NgayLap date,
 GhiChu nvarchar(max),
-MaSach char(20),
 MaTaiKhoan char(20),
 MaLoaiHD char(20),
 constraint PK_HoaDonKho primary key(SoHDK)
+)
+
+create table ChiTietHoaDonKho
+(
+SoHDK int,
+MaSach char(20),
+SoLuong int,
+Gia int,
+constraint PK_CTHoaDonKho primary key(SoHDK,MaSach)
 )
 
 
@@ -230,8 +237,11 @@ add constraint FK_TaiKhoan_Quyen foreign key(MaQuyen) references Quyen(MaQuyen)
 alter table ThanhVien
 add constraint FK_ThanhVien_LoaiThanhVien foreign key(MaLoaiTV) references LoaiThanhVien(MaLoaiTV)
 
-alter table HoaDonKho
-add constraint FK_HoaDonKho_Sach foreign key(MaSach) references Sach(MaSach)
+alter table ChiTietHoaDonKho
+add constraint FK_CTHoaDonKho_Sach foreign key(MaSach) references Sach(MaSach)
+
+alter table ChiTietHoaDonKho
+add constraint FK_CTHoaDonKho_HDKho foreign key(SoHDK) references HoaDonKho(SoHDK)
 
 alter table HoaDonKho
 add constraint FK_HoaDonKho_TaiKhoan foreign key(MaTaiKhoan) references TaiKhoan(MaTaiKhoan)
@@ -352,11 +362,6 @@ values
 ('HDNhapKho',N'Nhập kho'),
 ('HDXuatKho',N'Xuất kho')
 
-
-insert into HoaDonKho
-values
-(5,10000,'18/6/2023',N'Không có','S01','TK01','HDNhapKho'),
-(7,20000,'18/6/2023',N'Không có','S03','TK01','HDXuatKho')
 --trigger cập nhật loại thành viên dựa vào số tiền đã mua
 use QLCuaHangSach
 go
