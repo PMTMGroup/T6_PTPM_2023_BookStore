@@ -39,7 +39,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="DTO_ChiTietDonDatHang.cs" />
+    <Compile Include="DTO_ChiTietHoaDonBan.cs" />
+    <Compile Include="DTO_ChiTietHoaDonKho.cs" />
+    <Compile Include="DTO_DonDatHang.cs" />
+    <Compile Include="DTO_HoaDonBan.cs" />
+    <Compile Include="DTO_HoaDonKho.cs" />
+    <Compile Include="DTO_KeDat.cs" />
+    <Compile Include="DTO_LoaiHoaDon.cs" />
+    <Compile Include="DTO_LoaiThanhVien.cs" />
+    <Compile Include="DTO_NhaXuatBan.cs" />
+    <Compile Include="DTO_PhieuGiamGia.cs" />
+    <Compile Include="DTO_Quyen.cs" />
+    <Compile Include="DTO_Sach.cs" />
+    <Compile Include="DTO_TaiKhoan.cs" />
+    <Compile Include="DTO_Tang.cs" />
+    <Compile Include="DTO_ThanhVien.cs" />
+    <Compile Include="DTO_TheLoaiSach.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
