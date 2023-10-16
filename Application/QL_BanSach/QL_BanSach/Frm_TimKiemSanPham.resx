@@ -118,10 +118,10 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="button9.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btn_lamMoi.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAS
-        dAAAEnQB3mYfeAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAexSURBVFhHpVcJ
+        cwAAEnMBjCK5BwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAexSURBVFhHpVcJ
         UJVVFH6iJrjVTGRAqJVrSYSvUMstJXFjcRlTnCLrqZlURigSuaQJoYXsGiiILLHFvgaSYmQmy8MyR1PJ
         kDGKFEVFEePrnPP4n/PqKWhn5sx/7/3vf87333tWFe6RctNSMGnM8xhiZQHzPmaweLAfnh0xDG7z52Jn
         aAiaLvzVsbNr1CmA5kuX4OQ4DSqVCpktwJrSo3g/Yz9CzlxBdBMQ9SfgX12HpdHpsHfTyD7mHWGhHRLu
@@ -157,10 +157,10 @@
         USfUJQAKNV24gJ1hIdKKc0vOrbl5H1M8Sa26w4QX4fWuR8fOrhLwD/sRIOCC6ydPAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="button12.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btn_timKiem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAS
-        dAAAEnQB3mYfeAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAYUSURBVFhH7Zd5
+        cwAAEnMBjCK5BwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAYUSURBVFhH7Zd5
         TFRXFMYfIwiFWjW2WpfW3aqAiqCyCrIpo8PiAIqAgCIwCOMwDPuiNqYVURtU4pZg3aqggCymjVVrLJsb
         atxRcBxBcakWqVoa9et5C5sFUlvavzzJl3vnvTPn/N69Z+adyyyNkINhmC6Vkroc/5VRfAZ4IgKu0fjY
         DHg4qVWPSY+MOIjObMPGDMijliJKtQwKpbxFy6IiEZ8QK3h1bjzAdQIopbGeAOon8rpHumpI98aSUw/B
