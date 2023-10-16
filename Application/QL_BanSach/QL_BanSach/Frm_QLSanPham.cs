@@ -16,5 +16,14 @@ namespace Frm_DangNhap
         {
             InitializeComponent();
         }
+
+        private void btn_TTDS_lamMoi_Click(object sender, EventArgs e)
+        {
+            txt_TTDS_maSach.Text = "";
+            txt_TTDS_tenSach.Text = "";
+            txt_TTDS_tacGia.Text = "";
+            txt_TTDS_soTrang.Text = "";
+            txt_TTDS_giaBan.Text = "";
+        }
     }
 }

@@ -26,5 +26,19 @@ namespace Frm_DangNhap
         {
 
         }
+
+        private void btn_lamMoi_Click(object sender, EventArgs e)
+        {
+            txt_maSach.Text = "";
+            txt_tenSach.Text = "";
+            txt_tacGia.Text = "";
+            txt_nxb.Text = "";
+            txt_theLoai.Text = "";
+            txt_giaBan.Text = "";
+            txt_UDThanhVien.Text = "";
+            txt_UDPhieuGiamGia.Text = "";
+            lb_thanhVien.Text = "";
+            lb_phieuGiamGia.Text = "";
+        }
     }
 }

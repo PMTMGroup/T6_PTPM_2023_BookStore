@@ -21,5 +21,30 @@ namespace Frm_DangNhap
         {
 
         }
+
+        private void btn_TTT_lamMoi_Click(object sender, EventArgs e)
+        {
+            txt_maTang.Text = "";
+            txt_tenTang.Text = "";
+        }
+
+        private void btn_TTNXB_lamMoi_Click(object sender, EventArgs e)
+        {
+            txt_maNXB.Text = "";
+            txt_tenNXB.Text = "";
+        }
+
+        private void btn_TTTL_lamMoi_Click(object sender, EventArgs e)
+        {
+            txt_maTheLoai.Text = "";
+            txt_tenTheLoai.Text = "";
+
+        }
+
+        private void btn_TTKD_lamMoi_Click(object sender, EventArgs e)
+        {
+            txt_maKe.Text = "";
+            txt_tenKe.Text = "";
+        }
     }
 }

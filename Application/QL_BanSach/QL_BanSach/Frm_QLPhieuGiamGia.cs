@@ -16,5 +16,11 @@ namespace Frm_DangNhap
         {
             InitializeComponent();
         }
+
+        private void btn_lamMoi_Click(object sender, EventArgs e)
+        {
+            txt_maGiamGia.Text = "";
+            txt_tenUuDai.Text = "";
+        }
     }
 }

@@ -16,5 +16,13 @@ namespace Frm_DangNhap
         {
             InitializeComponent();
         }
+
+        private void btn_TTHDK_lamMoi_Click(object sender, EventArgs e)
+        {
+            txt_ngayLap.Text = "";
+            txt_maSach.Text = "";
+            txt_gia.Text = "";
+            txt_ghiChu.Text = "";
+        }
     }
 }
