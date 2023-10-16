@@ -7,14 +7,24 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DTO;
+using BLL;
 
 namespace Frm_DangNhap
 {
     public partial class Frm_QLHeThongVatTu : Form
     {
+        private BLL_Tang tangBLL = new BLL_Tang();
         public Frm_QLHeThongVatTu()
         {
             InitializeComponent();
+            loadDGVTang();
+        }
+
+        public void loadDGVTang()
+        {
+            List<DTO_Tang> tangs = tangBLL.GetAllTangs();
+            dgv_tang.DataSource = tangs;
         }
 
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)

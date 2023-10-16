@@ -14,14 +14,14 @@ namespace DTO
             this.maTang = maTang;
             this.tenTang = tenTang;
         }
-        private string maTang;
+        public string maTang;
 
         public string MaTang
         {
             get { return maTang; }
             set { maTang = value; }
         }
-        private string tenTang;
+        public string tenTang;
 
         public string TenTang
         {
