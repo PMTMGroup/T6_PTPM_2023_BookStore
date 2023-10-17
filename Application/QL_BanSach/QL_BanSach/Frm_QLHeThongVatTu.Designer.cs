@@ -156,6 +156,7 @@
             this.btn_TTT_luu.TabIndex = 10;
             this.btn_TTT_luu.Text = "    Lưu";
             this.btn_TTT_luu.UseVisualStyleBackColor = true;
+            this.btn_TTT_luu.Click += new System.EventHandler(this.btn_TTT_luu_Click);
             // 
             // btn_TTT_lamMoi
             // 
@@ -181,6 +182,7 @@
             this.btn_TTT_xoa.TabIndex = 8;
             this.btn_TTT_xoa.Text = "   Xóa";
             this.btn_TTT_xoa.UseVisualStyleBackColor = true;
+            this.btn_TTT_xoa.Click += new System.EventHandler(this.btn_TTT_xoa_Click);
             // 
             // btn_TTT_them
             // 
@@ -193,6 +195,7 @@
             this.btn_TTT_them.TabIndex = 6;
             this.btn_TTT_them.Text = "    Thêm";
             this.btn_TTT_them.UseVisualStyleBackColor = true;
+            this.btn_TTT_them.Click += new System.EventHandler(this.btn_TTT_them_Click);
             // 
             // dgv_tang
             // 
@@ -204,6 +207,7 @@
             this.dgv_tang.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_tang.Size = new System.Drawing.Size(757, 235);
             this.dgv_tang.TabIndex = 3;
+            this.dgv_tang.SelectionChanged += new System.EventHandler(this.dgv_tang_SelectionChanged);
             // 
             // panel3
             // 

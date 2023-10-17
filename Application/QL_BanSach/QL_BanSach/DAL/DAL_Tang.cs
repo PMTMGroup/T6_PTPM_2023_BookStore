@@ -22,5 +22,88 @@ namespace DAL
                 }).ToList();
             }
         }
+
+        public bool insertTang(DTO_Tang _tang)
+        {
+            try
+            {
+                using (var context = new QLCuaHangSachDataContext(db.connectionString))
+                {
+                    var newTang = new Tang
+                    {
+                        MaTang = _tang.MaTang,
+                        TenTang = _tang.TenTang
+                    };
+
+                    context.Tangs.InsertOnSubmit(newTang);
+                    context.SubmitChanges();
+                }
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public bool deleteTang(string maTang)
+        {
+            try
+            {
+                using (var context = new QLCuaHangSachDataContext(db.connectionString))
+                {
+                    var tangDelete = context.Tangs.SingleOrDefault(s => s.MaTang == maTang);
+
+                    if (tangDelete != null)
+                    {
+                        context.Tangs.DeleteOnSubmit(tangDelete);
+                        context.SubmitChanges();
+                    }
+                }
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public bool updateTang(DTO_Tang _tang)
+        {
+            try
+            {
+                using (var context = new QLCuaHangSachDataContext(db.connectionString))
+                {
+                    var tangUpdate = context.Tangs.SingleOrDefault(s => s.MaTang == _tang.MaTang);
+
+                    if (tangUpdate != null)
+                    {
+                        tangUpdate.TenTang = _tang.TenTang;
+                        context.SubmitChanges();
+                    }
+                }
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public bool checkPrimaryKey(string maTang)
+        {
+            using (var context = new QLCuaHangSachDataContext(db.connectionString))
+            {
+                return context.Tangs.Any(s => s.MaTang == maTang);
+            }
+        }
+
+        public bool checkForeignKey(string maTang)
+        {
+            using (var context = new QLCuaHangSachDataContext(db.connectionString))
+            {
+                return context.Saches.Any(s => s.MaTang == maTang);
+            }
+        }
     }
 }

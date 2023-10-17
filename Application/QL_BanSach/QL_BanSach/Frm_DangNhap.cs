@@ -10,31 +10,11 @@ using System.Windows.Forms;
 
 namespace Frm_DangNhap
 {
-    public partial class Form1 : Form
+    public partial class Frm_DangNhap : Form
     {
-        public Form1()
+        public Frm_DangNhap()
         {
             InitializeComponent();
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox1_Click_1(object sender, EventArgs e)
-        {
-
         }
     }
 }
