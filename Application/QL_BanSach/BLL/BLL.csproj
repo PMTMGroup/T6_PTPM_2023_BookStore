@@ -49,6 +49,7 @@
     <Compile Include="BLL_KeDat.cs" />
     <Compile Include="BLL_NhaXuatBan.cs" />
     <Compile Include="BLL_Sach.cs" />
+    <Compile Include="BLL_TaiKhoan.cs" />
     <Compile Include="BLL_Tang.cs" />
     <Compile Include="BLL_TheLoai.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
