@@ -378,8 +378,10 @@
             this.gv_QLTK.Name = "gv_QLTK";
             this.gv_QLTK.RowHeadersWidth = 62;
             this.gv_QLTK.RowTemplate.Height = 24;
+            this.gv_QLTK.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gv_QLTK.Size = new System.Drawing.Size(1292, 534);
             this.gv_QLTK.TabIndex = 39;
+            this.gv_QLTK.SelectionChanged += new System.EventHandler(this.gv_QLTK_SelectionChanged);
             // 
             // btn_QLTK_luu
             // 
@@ -393,6 +395,7 @@
             this.btn_QLTK_luu.TabIndex = 38;
             this.btn_QLTK_luu.Text = "    Lưu";
             this.btn_QLTK_luu.UseVisualStyleBackColor = true;
+            this.btn_QLTK_luu.Click += new System.EventHandler(this.btn_QLTK_luu_Click);
             // 
             // btn_QLTK_lamMoi
             // 
@@ -420,6 +423,7 @@
             this.btn_QLTK_xoa.TabIndex = 36;
             this.btn_QLTK_xoa.Text = "   Xóa";
             this.btn_QLTK_xoa.UseVisualStyleBackColor = true;
+            this.btn_QLTK_xoa.Click += new System.EventHandler(this.btn_QLTK_xoa_Click);
             // 
             // btn_QLTK_them
             // 
@@ -433,11 +437,15 @@
             this.btn_QLTK_them.TabIndex = 35;
             this.btn_QLTK_them.Text = "    Thêm";
             this.btn_QLTK_them.UseVisualStyleBackColor = true;
+            this.btn_QLTK_them.Click += new System.EventHandler(this.btn_QLTK_them_Click);
             // 
             // cbo_QLTK_trangThai
             // 
             this.cbo_QLTK_trangThai.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbo_QLTK_trangThai.FormattingEnabled = true;
+            this.cbo_QLTK_trangThai.Items.AddRange(new object[] {
+            "Bị khóa",
+            "Hoạt động"});
             this.cbo_QLTK_trangThai.Location = new System.Drawing.Point(236, 440);
             this.cbo_QLTK_trangThai.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cbo_QLTK_trangThai.Name = "cbo_QLTK_trangThai";
@@ -461,6 +469,7 @@
             this.txt_QLTK_matKhau.Location = new System.Drawing.Point(236, 370);
             this.txt_QLTK_matKhau.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_QLTK_matKhau.Name = "txt_QLTK_matKhau";
+            this.txt_QLTK_matKhau.PasswordChar = '*';
             this.txt_QLTK_matKhau.Size = new System.Drawing.Size(420, 31);
             this.txt_QLTK_matKhau.TabIndex = 32;
             // 
@@ -477,6 +486,9 @@
             // 
             this.cbo_QLTK_quyen.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbo_QLTK_quyen.FormattingEnabled = true;
+            this.cbo_QLTK_quyen.Items.AddRange(new object[] {
+            "Quyền User",
+            "Quyền Admin"});
             this.cbo_QLTK_quyen.Location = new System.Drawing.Point(236, 242);
             this.cbo_QLTK_quyen.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cbo_QLTK_quyen.Name = "cbo_QLTK_quyen";

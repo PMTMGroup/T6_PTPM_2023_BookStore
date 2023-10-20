@@ -46,6 +46,7 @@
     <Compile Include="DAL_DonDatHang.cs" />
     <Compile Include="DAL_NhaXuatBan.cs" />
     <Compile Include="DAL_Sach.cs" />
+    <Compile Include="DAL_TaiKhoan.cs" />
     <Compile Include="DBConnection.cs" />
     <Compile Include="DAL_Tang.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

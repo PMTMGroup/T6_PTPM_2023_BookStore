@@ -48,6 +48,7 @@
     <Compile Include="BLL_DonDatHang.cs" />
     <Compile Include="BLL_NhaXuatBan.cs" />
     <Compile Include="BLL_Sach.cs" />
+    <Compile Include="BLL_TaiKhoan.cs" />
     <Compile Include="BLL_Tang.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
