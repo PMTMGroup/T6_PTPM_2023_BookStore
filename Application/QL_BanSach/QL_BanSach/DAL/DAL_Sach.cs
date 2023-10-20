@@ -30,5 +30,41 @@ namespace DAL
                 }).ToList();
             }
         }
+
+        public DTO_NhaXuatBan getNXBfromMaNXB(string maNXB)
+        {
+            using (var context = new QLCuaHangSachDataContext(db.connectionString))
+            {
+                NhaXuatBan _nxb = context.NhaXuatBans.FirstOrDefault(s => s.MaNXB == maNXB);
+                return new DTO_NhaXuatBan(_nxb.MaNXB, _nxb.TenNXB);
+            }
+        }
+
+        public DTO_TheLoaiSach getTheLoaifromMaTheLoai(string maTheLoai)
+        {
+            using (var context = new QLCuaHangSachDataContext(db.connectionString))
+            {
+                TheLoaiSach _tl = context.TheLoaiSaches.FirstOrDefault(s => s.MaTheLoai == maTheLoai);
+                return new DTO_TheLoaiSach(_tl.MaTheLoai, _tl.TenTheLoai);
+            }
+        }
+
+        public DTO_Tang getTangfromMaTang(string maTang)
+        {
+            using (var context = new QLCuaHangSachDataContext(db.connectionString))
+            {
+                Tang _tl = context.Tangs.FirstOrDefault(s => s.MaTang == maTang);
+                return new DTO_Tang(_tl.MaTang, _tl.TenTang);
+            }
+        }
+
+        public DTO_KeDat getKetDatfromMaKe(string maKeDat)
+        {
+            using (var context = new QLCuaHangSachDataContext(db.connectionString))
+            {
+                KeDat _kd = context.KeDats.FirstOrDefault(s => s.MaKe == maKeDat);
+                return new DTO_KeDat(_kd.MaKe, _kd.TenKe);
+            }
+        }
     }
 }

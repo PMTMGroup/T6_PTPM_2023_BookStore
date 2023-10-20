@@ -385,6 +385,7 @@
             this.gv_dsDauSach.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gv_dsDauSach.Size = new System.Drawing.Size(1612, 433);
             this.gv_dsDauSach.TabIndex = 0;
+            this.gv_dsDauSach.SelectionChanged += new System.EventHandler(this.gv_dsDauSach_SelectionChanged);
             // 
             // openFileDialog1
             // 
