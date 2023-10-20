@@ -47,11 +47,8 @@
     <Compile Include="DAL_KeDat.cs" />
     <Compile Include="DAL_NhaXuatBan.cs" />
     <Compile Include="DAL_Sach.cs" />
-<<<<<<< HEAD
     <Compile Include="DAL_TheLoai.cs" />
-=======
     <Compile Include="DAL_TaiKhoan.cs" />
->>>>>>> 9f01a850fad05b6e1b32c98277abc281194ab399
     <Compile Include="DBConnection.cs" />
     <Compile Include="DAL_Tang.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
