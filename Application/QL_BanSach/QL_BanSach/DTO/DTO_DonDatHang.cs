@@ -9,7 +9,7 @@ namespace DTO
     public class DTO_DonDatHang
     {
         public DTO_DonDatHang() { }
-        public DTO_DonDatHang(int soHD,DateTime ngayLap,string hinhThucThanhToan,int maTV,string maGiamGia,
+        public DTO_DonDatHang(int soHD,string ngayLap,string hinhThucThanhToan,int maTV,string maGiamGia,
             int phiShip,int tongTien,int tongGiam,int thanhTien,string hoTenNguoiNhan,string sDTNguoiNhan,
             string email, string diaChiNhanHang, string ghiChu, string trangThaiDonHang)
         {
@@ -36,9 +36,9 @@ namespace DTO
             get { return soHD; }
             set { soHD = value; }
         }
-        private DateTime ngayLap;
+        private string ngayLap;
 
-        public DateTime NgayLap
+        public string NgayLap
         {
             get { return ngayLap; }
             set { ngayLap = value; }
