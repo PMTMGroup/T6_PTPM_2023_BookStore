@@ -46,9 +46,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BLL_DonDatHang.cs" />
+    <Compile Include="BLL_KeDat.cs" />
     <Compile Include="BLL_NhaXuatBan.cs" />
     <Compile Include="BLL_Sach.cs" />
     <Compile Include="BLL_Tang.cs" />
+    <Compile Include="BLL_TheLoai.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

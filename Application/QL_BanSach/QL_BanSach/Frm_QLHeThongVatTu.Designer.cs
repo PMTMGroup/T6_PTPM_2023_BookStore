@@ -303,6 +303,7 @@
             this.dgv_nxb.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_nxb.Size = new System.Drawing.Size(757, 251);
             this.dgv_nxb.TabIndex = 3;
+            this.dgv_nxb.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_nxb_CellContentClick);
             this.dgv_nxb.SelectionChanged += new System.EventHandler(this.dgv_nxb_SelectionChanged);
             // 
             // btn_TTNXB_xoa
@@ -355,6 +356,7 @@
             this.btn_TTTL_luu.TabIndex = 19;
             this.btn_TTTL_luu.Text = "    Lưu";
             this.btn_TTTL_luu.UseVisualStyleBackColor = true;
+            this.btn_TTTL_luu.Click += new System.EventHandler(this.btn_TTTL_luu_Click);
             // 
             // btn_TTTL_lamMoi
             // 
@@ -425,6 +427,7 @@
             this.btn_TTTL_xoa.TabIndex = 17;
             this.btn_TTTL_xoa.Text = "   Xóa";
             this.btn_TTTL_xoa.UseVisualStyleBackColor = true;
+            this.btn_TTTL_xoa.Click += new System.EventHandler(this.btn_TTTL_xoa_Click);
             // 
             // dgv_theloaisach
             // 
@@ -436,6 +439,8 @@
             this.dgv_theloaisach.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_theloaisach.Size = new System.Drawing.Size(779, 251);
             this.dgv_theloaisach.TabIndex = 3;
+            this.dgv_theloaisach.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_theloaisach_CellContentClick);
+            this.dgv_theloaisach.SelectionChanged += new System.EventHandler(this.dgv_theloaisach_SelectionChanged);
             // 
             // btn_TTTL_them
             // 
@@ -448,6 +453,7 @@
             this.btn_TTTL_them.TabIndex = 16;
             this.btn_TTTL_them.Text = "    Thêm";
             this.btn_TTTL_them.UseVisualStyleBackColor = true;
+            this.btn_TTTL_them.Click += new System.EventHandler(this.btn_TTTL_them_Click);
             // 
             // dgv_kedat
             // 
@@ -459,6 +465,7 @@
             this.dgv_kedat.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_kedat.Size = new System.Drawing.Size(779, 235);
             this.dgv_kedat.TabIndex = 3;
+            this.dgv_kedat.SelectionChanged += new System.EventHandler(this.dgv_kedat_SelectionChanged);
             // 
             // panel2
             // 
@@ -484,6 +491,7 @@
             this.btn_TTKD_luu.TabIndex = 23;
             this.btn_TTKD_luu.Text = "    Lưu";
             this.btn_TTKD_luu.UseVisualStyleBackColor = true;
+            this.btn_TTKD_luu.Click += new System.EventHandler(this.btn_TTKD_luu_Click);
             // 
             // groupBox2
             // 
@@ -554,6 +562,7 @@
             this.btn_TTKD_xoa.TabIndex = 21;
             this.btn_TTKD_xoa.Text = "   Xóa";
             this.btn_TTKD_xoa.UseVisualStyleBackColor = true;
+            this.btn_TTKD_xoa.Click += new System.EventHandler(this.btn_TTKD_xoa_Click);
             // 
             // btn_TTKD_them
             // 
@@ -566,6 +575,7 @@
             this.btn_TTKD_them.TabIndex = 20;
             this.btn_TTKD_them.Text = "    Thêm";
             this.btn_TTKD_them.UseVisualStyleBackColor = true;
+            this.btn_TTKD_them.Click += new System.EventHandler(this.btn_TTKD_them_Click);
             // 
             // Frm_QLHeThongVatTu
             // 
