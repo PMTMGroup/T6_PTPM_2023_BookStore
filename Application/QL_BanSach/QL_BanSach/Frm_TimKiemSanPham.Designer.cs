@@ -53,40 +53,40 @@
             this.txt_tangDatSach = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.panel4 = new System.Windows.Forms.Panel();
+            this.pn_1 = new System.Windows.Forms.Panel();
             this.label11 = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.pn_2 = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.pn_3 = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
-            this.pn_tang4 = new System.Windows.Forms.Panel();
+            this.pn_4 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.panel9 = new System.Windows.Forms.Panel();
+            this.pn_e = new System.Windows.Forms.Panel();
             this.label16 = new System.Windows.Forms.Label();
-            this.panel8 = new System.Windows.Forms.Panel();
+            this.pn_d = new System.Windows.Forms.Panel();
             this.label15 = new System.Windows.Forms.Label();
-            this.panel7 = new System.Windows.Forms.Panel();
+            this.pn_c = new System.Windows.Forms.Panel();
             this.label14 = new System.Windows.Forms.Label();
-            this.panel6 = new System.Windows.Forms.Panel();
+            this.pn_b = new System.Windows.Forms.Panel();
             this.label13 = new System.Windows.Forms.Label();
-            this.panel5 = new System.Windows.Forms.Panel();
+            this.pn_a = new System.Windows.Forms.Panel();
             this.label12 = new System.Windows.Forms.Label();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.gv_dsTimKiem = new System.Windows.Forms.DataGridView();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            this.panel4.SuspendLayout();
-            this.panel3.SuspendLayout();
-            this.panel2.SuspendLayout();
-            this.pn_tang4.SuspendLayout();
+            this.pn_1.SuspendLayout();
+            this.pn_2.SuspendLayout();
+            this.pn_3.SuspendLayout();
+            this.pn_4.SuspendLayout();
             this.groupBox4.SuspendLayout();
-            this.panel9.SuspendLayout();
-            this.panel8.SuspendLayout();
-            this.panel7.SuspendLayout();
-            this.panel6.SuspendLayout();
-            this.panel5.SuspendLayout();
+            this.pn_e.SuspendLayout();
+            this.pn_d.SuspendLayout();
+            this.pn_c.SuspendLayout();
+            this.pn_b.SuspendLayout();
+            this.pn_a.SuspendLayout();
             this.groupBox5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gv_dsTimKiem)).BeginInit();
             this.SuspendLayout();
@@ -127,8 +127,8 @@
             this.rdo_theLoai.Name = "rdo_theLoai";
             this.rdo_theLoai.Size = new System.Drawing.Size(21, 20);
             this.rdo_theLoai.TabIndex = 29;
-            this.rdo_theLoai.TabStop = true;
             this.rdo_theLoai.UseVisualStyleBackColor = true;
+            this.rdo_theLoai.CheckedChanged += new System.EventHandler(this.rdo_theLoai_CheckedChanged);
             // 
             // rdo_nxb
             // 
@@ -138,8 +138,8 @@
             this.rdo_nxb.Name = "rdo_nxb";
             this.rdo_nxb.Size = new System.Drawing.Size(21, 20);
             this.rdo_nxb.TabIndex = 28;
-            this.rdo_nxb.TabStop = true;
             this.rdo_nxb.UseVisualStyleBackColor = true;
+            this.rdo_nxb.CheckedChanged += new System.EventHandler(this.rdo_nxb_CheckedChanged);
             // 
             // rdo_tacGia
             // 
@@ -149,8 +149,8 @@
             this.rdo_tacGia.Name = "rdo_tacGia";
             this.rdo_tacGia.Size = new System.Drawing.Size(21, 20);
             this.rdo_tacGia.TabIndex = 27;
-            this.rdo_tacGia.TabStop = true;
             this.rdo_tacGia.UseVisualStyleBackColor = true;
+            this.rdo_tacGia.CheckedChanged += new System.EventHandler(this.rdo_tacGia_CheckedChanged);
             // 
             // rdo_tenSach
             // 
@@ -160,12 +160,13 @@
             this.rdo_tenSach.Name = "rdo_tenSach";
             this.rdo_tenSach.Size = new System.Drawing.Size(21, 20);
             this.rdo_tenSach.TabIndex = 26;
-            this.rdo_tenSach.TabStop = true;
             this.rdo_tenSach.UseVisualStyleBackColor = true;
+            this.rdo_tenSach.CheckedChanged += new System.EventHandler(this.rdo_tenSach_CheckedChanged);
             // 
             // rdo_maSach
             // 
             this.rdo_maSach.AutoSize = true;
+            this.rdo_maSach.Checked = true;
             this.rdo_maSach.Location = new System.Drawing.Point(605, 62);
             this.rdo_maSach.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.rdo_maSach.Name = "rdo_maSach";
@@ -173,9 +174,11 @@
             this.rdo_maSach.TabIndex = 25;
             this.rdo_maSach.TabStop = true;
             this.rdo_maSach.UseVisualStyleBackColor = true;
+            this.rdo_maSach.CheckedChanged += new System.EventHandler(this.rdo_maSach_CheckedChanged);
             // 
             // txt_tacGia
             // 
+            this.txt_tacGia.Enabled = false;
             this.txt_tacGia.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_tacGia.Location = new System.Drawing.Point(192, 184);
             this.txt_tacGia.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -185,6 +188,7 @@
             // 
             // txt_tenSach
             // 
+            this.txt_tenSach.Enabled = false;
             this.txt_tenSach.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_tenSach.Location = new System.Drawing.Point(192, 119);
             this.txt_tenSach.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -203,6 +207,7 @@
             // 
             // cbo_theLoai
             // 
+            this.cbo_theLoai.Enabled = false;
             this.cbo_theLoai.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbo_theLoai.FormattingEnabled = true;
             this.cbo_theLoai.Location = new System.Drawing.Point(192, 314);
@@ -214,6 +219,7 @@
             // 
             // cbo_nxb
             // 
+            this.cbo_nxb.Enabled = false;
             this.cbo_nxb.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbo_nxb.FormattingEnabled = true;
             this.cbo_nxb.Location = new System.Drawing.Point(192, 249);
@@ -249,6 +255,7 @@
             this.btn_timKiem.TabIndex = 16;
             this.btn_timKiem.Text = "    Tìm kiếm";
             this.btn_timKiem.UseVisualStyleBackColor = true;
+            this.btn_timKiem.Click += new System.EventHandler(this.btn_timKiem_Click);
             // 
             // label5
             // 
@@ -359,10 +366,10 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.panel4);
-            this.groupBox3.Controls.Add(this.panel3);
-            this.groupBox3.Controls.Add(this.panel2);
-            this.groupBox3.Controls.Add(this.pn_tang4);
+            this.groupBox3.Controls.Add(this.pn_1);
+            this.groupBox3.Controls.Add(this.pn_2);
+            this.groupBox3.Controls.Add(this.pn_3);
+            this.groupBox3.Controls.Add(this.pn_4);
             this.groupBox3.Location = new System.Drawing.Point(984, 40);
             this.groupBox3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupBox3.Name = "groupBox3";
@@ -372,15 +379,15 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Tầng đặt sách tìm kiếm:";
             // 
-            // panel4
+            // pn_1
             // 
-            this.panel4.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.panel4.Controls.Add(this.label11);
-            this.panel4.Location = new System.Drawing.Point(34, 401);
-            this.panel4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(260, 90);
-            this.panel4.TabIndex = 1;
+            this.pn_1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.pn_1.Controls.Add(this.label11);
+            this.pn_1.Location = new System.Drawing.Point(34, 401);
+            this.pn_1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pn_1.Name = "pn_1";
+            this.pn_1.Size = new System.Drawing.Size(260, 90);
+            this.pn_1.TabIndex = 1;
             // 
             // label11
             // 
@@ -392,15 +399,15 @@
             this.label11.TabIndex = 0;
             this.label11.Text = "TẦNG 1";
             // 
-            // panel3
+            // pn_2
             // 
-            this.panel3.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.panel3.Controls.Add(this.label9);
-            this.panel3.Location = new System.Drawing.Point(34, 289);
-            this.panel3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(260, 90);
-            this.panel3.TabIndex = 1;
+            this.pn_2.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.pn_2.Controls.Add(this.label9);
+            this.pn_2.Location = new System.Drawing.Point(34, 289);
+            this.pn_2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pn_2.Name = "pn_2";
+            this.pn_2.Size = new System.Drawing.Size(260, 90);
+            this.pn_2.TabIndex = 1;
             // 
             // label9
             // 
@@ -412,15 +419,15 @@
             this.label9.TabIndex = 0;
             this.label9.Text = "TẦNG 2";
             // 
-            // panel2
+            // pn_3
             // 
-            this.panel2.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.panel2.Controls.Add(this.label8);
-            this.panel2.Location = new System.Drawing.Point(34, 170);
-            this.panel2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(260, 90);
-            this.panel2.TabIndex = 1;
+            this.pn_3.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.pn_3.Controls.Add(this.label8);
+            this.pn_3.Location = new System.Drawing.Point(34, 170);
+            this.pn_3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pn_3.Name = "pn_3";
+            this.pn_3.Size = new System.Drawing.Size(260, 90);
+            this.pn_3.TabIndex = 1;
             // 
             // label8
             // 
@@ -432,15 +439,15 @@
             this.label8.TabIndex = 0;
             this.label8.Text = "TẦNG 3";
             // 
-            // pn_tang4
+            // pn_4
             // 
-            this.pn_tang4.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.pn_tang4.Controls.Add(this.label7);
-            this.pn_tang4.Location = new System.Drawing.Point(34, 58);
-            this.pn_tang4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.pn_tang4.Name = "pn_tang4";
-            this.pn_tang4.Size = new System.Drawing.Size(260, 90);
-            this.pn_tang4.TabIndex = 0;
+            this.pn_4.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.pn_4.Controls.Add(this.label7);
+            this.pn_4.Location = new System.Drawing.Point(34, 58);
+            this.pn_4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pn_4.Name = "pn_4";
+            this.pn_4.Size = new System.Drawing.Size(260, 90);
+            this.pn_4.TabIndex = 0;
             // 
             // label7
             // 
@@ -454,11 +461,11 @@
             // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.panel9);
-            this.groupBox4.Controls.Add(this.panel8);
-            this.groupBox4.Controls.Add(this.panel7);
-            this.groupBox4.Controls.Add(this.panel6);
-            this.groupBox4.Controls.Add(this.panel5);
+            this.groupBox4.Controls.Add(this.pn_e);
+            this.groupBox4.Controls.Add(this.pn_d);
+            this.groupBox4.Controls.Add(this.pn_c);
+            this.groupBox4.Controls.Add(this.pn_b);
+            this.groupBox4.Controls.Add(this.pn_a);
             this.groupBox4.Location = new System.Drawing.Point(1328, 40);
             this.groupBox4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupBox4.Name = "groupBox4";
@@ -468,15 +475,15 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Kệ đặt sách tìm kiếm:";
             // 
-            // panel9
+            // pn_e
             // 
-            this.panel9.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.panel9.Controls.Add(this.label16);
-            this.panel9.Location = new System.Drawing.Point(454, 58);
-            this.panel9.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(90, 434);
-            this.panel9.TabIndex = 2;
+            this.pn_e.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.pn_e.Controls.Add(this.label16);
+            this.pn_e.Location = new System.Drawing.Point(454, 58);
+            this.pn_e.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pn_e.Name = "pn_e";
+            this.pn_e.Size = new System.Drawing.Size(90, 434);
+            this.pn_e.TabIndex = 2;
             // 
             // label16
             // 
@@ -488,15 +495,15 @@
             this.label16.TabIndex = 0;
             this.label16.Text = "E";
             // 
-            // panel8
+            // pn_d
             // 
-            this.panel8.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.panel8.Controls.Add(this.label15);
-            this.panel8.Location = new System.Drawing.Point(349, 58);
-            this.panel8.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(90, 434);
-            this.panel8.TabIndex = 2;
+            this.pn_d.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.pn_d.Controls.Add(this.label15);
+            this.pn_d.Location = new System.Drawing.Point(349, 58);
+            this.pn_d.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pn_d.Name = "pn_d";
+            this.pn_d.Size = new System.Drawing.Size(90, 434);
+            this.pn_d.TabIndex = 2;
             // 
             // label15
             // 
@@ -508,15 +515,15 @@
             this.label15.TabIndex = 0;
             this.label15.Text = "D";
             // 
-            // panel7
+            // pn_c
             // 
-            this.panel7.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.panel7.Controls.Add(this.label14);
-            this.panel7.Location = new System.Drawing.Point(243, 58);
-            this.panel7.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(90, 434);
-            this.panel7.TabIndex = 2;
+            this.pn_c.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.pn_c.Controls.Add(this.label14);
+            this.pn_c.Location = new System.Drawing.Point(243, 58);
+            this.pn_c.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pn_c.Name = "pn_c";
+            this.pn_c.Size = new System.Drawing.Size(90, 434);
+            this.pn_c.TabIndex = 2;
             // 
             // label14
             // 
@@ -528,15 +535,15 @@
             this.label14.TabIndex = 0;
             this.label14.Text = "C";
             // 
-            // panel6
+            // pn_b
             // 
-            this.panel6.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.panel6.Controls.Add(this.label13);
-            this.panel6.Location = new System.Drawing.Point(137, 58);
-            this.panel6.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(90, 434);
-            this.panel6.TabIndex = 2;
+            this.pn_b.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.pn_b.Controls.Add(this.label13);
+            this.pn_b.Location = new System.Drawing.Point(137, 58);
+            this.pn_b.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pn_b.Name = "pn_b";
+            this.pn_b.Size = new System.Drawing.Size(90, 434);
+            this.pn_b.TabIndex = 2;
             // 
             // label13
             // 
@@ -548,15 +555,15 @@
             this.label13.TabIndex = 0;
             this.label13.Text = "B";
             // 
-            // panel5
+            // pn_a
             // 
-            this.panel5.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.panel5.Controls.Add(this.label12);
-            this.panel5.Location = new System.Drawing.Point(32, 58);
-            this.panel5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(90, 434);
-            this.panel5.TabIndex = 1;
+            this.pn_a.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.pn_a.Controls.Add(this.label12);
+            this.pn_a.Location = new System.Drawing.Point(32, 58);
+            this.pn_a.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pn_a.Name = "pn_a";
+            this.pn_a.Size = new System.Drawing.Size(90, 434);
+            this.pn_a.TabIndex = 1;
             // 
             // label12
             // 
@@ -588,8 +595,10 @@
             this.gv_dsTimKiem.Name = "gv_dsTimKiem";
             this.gv_dsTimKiem.RowHeadersWidth = 62;
             this.gv_dsTimKiem.RowTemplate.Height = 24;
+            this.gv_dsTimKiem.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gv_dsTimKiem.Size = new System.Drawing.Size(1791, 548);
             this.gv_dsTimKiem.TabIndex = 0;
+            this.gv_dsTimKiem.SelectionChanged += new System.EventHandler(this.gv_dsTimKiem_SelectionChanged);
             // 
             // Frm_TimKiemSanPham
             // 
@@ -611,25 +620,25 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            this.pn_tang4.ResumeLayout(false);
-            this.pn_tang4.PerformLayout();
+            this.pn_1.ResumeLayout(false);
+            this.pn_1.PerformLayout();
+            this.pn_2.ResumeLayout(false);
+            this.pn_2.PerformLayout();
+            this.pn_3.ResumeLayout(false);
+            this.pn_3.PerformLayout();
+            this.pn_4.ResumeLayout(false);
+            this.pn_4.PerformLayout();
             this.groupBox4.ResumeLayout(false);
-            this.panel9.ResumeLayout(false);
-            this.panel9.PerformLayout();
-            this.panel8.ResumeLayout(false);
-            this.panel8.PerformLayout();
-            this.panel7.ResumeLayout(false);
-            this.panel7.PerformLayout();
-            this.panel6.ResumeLayout(false);
-            this.panel6.PerformLayout();
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
+            this.pn_e.ResumeLayout(false);
+            this.pn_e.PerformLayout();
+            this.pn_d.ResumeLayout(false);
+            this.pn_d.PerformLayout();
+            this.pn_c.ResumeLayout(false);
+            this.pn_c.PerformLayout();
+            this.pn_b.ResumeLayout(false);
+            this.pn_b.PerformLayout();
+            this.pn_a.ResumeLayout(false);
+            this.pn_a.PerformLayout();
             this.groupBox5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gv_dsTimKiem)).EndInit();
             this.ResumeLayout(false);
@@ -664,23 +673,23 @@
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.GroupBox groupBox5;
-        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Panel pn_1;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel pn_2;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel pn_3;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Panel pn_tang4;
+        private System.Windows.Forms.Panel pn_4;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Panel panel9;
+        private System.Windows.Forms.Panel pn_e;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Panel panel8;
+        private System.Windows.Forms.Panel pn_d;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Panel pn_c;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Panel pn_b;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Panel pn_a;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.DataGridView gv_dsTimKiem;
     }

@@ -53,6 +53,7 @@
     <Compile Include="DAL_ThanhVien.cs" />
     <Compile Include="DAL_TheLoai.cs" />
     <Compile Include="DAL_TaiKhoan.cs" />
+    <Compile Include="DAL_TimKiemSanPham.cs" />
     <Compile Include="DBConnection.cs" />
     <Compile Include="DAL_Tang.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
