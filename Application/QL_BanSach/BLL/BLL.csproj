@@ -45,6 +45,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BLL_BanSach.cs" />
     <Compile Include="BLL_DonDatHang.cs" />
     <Compile Include="BLL_KeDat.cs" />
     <Compile Include="BLL_LoaiThanhVien.cs" />
