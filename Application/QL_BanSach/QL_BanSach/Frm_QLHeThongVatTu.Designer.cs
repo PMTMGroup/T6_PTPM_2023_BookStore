@@ -99,6 +99,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(795, 448);
             this.panel1.TabIndex = 0;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // groupBox1
             // 
@@ -207,6 +208,7 @@
             this.dgv_tang.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_tang.Size = new System.Drawing.Size(757, 235);
             this.dgv_tang.TabIndex = 3;
+            this.dgv_tang.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_tang_CellContentClick);
             this.dgv_tang.SelectionChanged += new System.EventHandler(this.dgv_tang_SelectionChanged);
             // 
             // panel3
@@ -465,6 +467,7 @@
             this.dgv_kedat.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_kedat.Size = new System.Drawing.Size(779, 235);
             this.dgv_kedat.TabIndex = 3;
+            this.dgv_kedat.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_kedat_CellContentClick);
             this.dgv_kedat.SelectionChanged += new System.EventHandler(this.dgv_kedat_SelectionChanged);
             // 
             // panel2

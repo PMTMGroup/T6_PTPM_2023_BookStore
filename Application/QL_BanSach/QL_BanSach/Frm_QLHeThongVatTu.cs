@@ -495,5 +495,20 @@ namespace Frm_DangNhap
                 txt_tenTheLoai.Text = selectedRow.Cells[1].Value.ToString().Trim();
             }
         }
+
+        private void dgv_tang_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void dgv_kedat_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

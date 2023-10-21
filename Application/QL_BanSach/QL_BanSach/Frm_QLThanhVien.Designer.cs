@@ -35,7 +35,6 @@
             this.btn_TTTV_lamMoi = new System.Windows.Forms.Button();
             this.btn_TTTV_xoa = new System.Windows.Forms.Button();
             this.btn_TTTV_them = new System.Windows.Forms.Button();
-            this.cbo_TTTV_loaiThanhVien = new System.Windows.Forms.ComboBox();
             this.label14 = new System.Windows.Forms.Label();
             this.txt_TTTV_matKhau = new System.Windows.Forms.TextBox();
             this.txt_TTTV_soTienDaMua = new System.Windows.Forms.TextBox();
@@ -68,6 +67,7 @@
             this.dgv_loaiTV = new System.Windows.Forms.DataGridView();
             this.txt_QLLTV_maLoaiThanhVien = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.cbo_TTTV_loaiThanhVien = new System.Windows.Forms.ComboBox();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_thanhvien)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -109,8 +109,11 @@
             this.dgv_thanhvien.Name = "dgv_thanhvien";
             this.dgv_thanhvien.RowHeadersWidth = 62;
             this.dgv_thanhvien.RowTemplate.Height = 24;
+            this.dgv_thanhvien.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_thanhvien.Size = new System.Drawing.Size(761, 463);
             this.dgv_thanhvien.TabIndex = 39;
+            this.dgv_thanhvien.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_thanhvien_CellContentClick);
+            this.dgv_thanhvien.SelectionChanged += new System.EventHandler(this.dgv_thanhvien_SelectionChanged);
             // 
             // btn_TTTV_luu
             // 
@@ -160,17 +163,7 @@
             this.btn_TTTV_them.TabIndex = 35;
             this.btn_TTTV_them.Text = "    Thêm";
             this.btn_TTTV_them.UseVisualStyleBackColor = true;
-            // 
-            // cbo_TTTV_loaiThanhVien
-            // 
-            this.cbo_TTTV_loaiThanhVien.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.cbo_TTTV_loaiThanhVien.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbo_TTTV_loaiThanhVien.FormattingEnabled = true;
-            this.cbo_TTTV_loaiThanhVien.Location = new System.Drawing.Point(210, 306);
-            this.cbo_TTTV_loaiThanhVien.Name = "cbo_TTTV_loaiThanhVien";
-            this.cbo_TTTV_loaiThanhVien.Size = new System.Drawing.Size(257, 28);
-            this.cbo_TTTV_loaiThanhVien.TabIndex = 34;
-            this.cbo_TTTV_loaiThanhVien.Text = "--- Chọn ---";
+            this.btn_TTTV_them.Click += new System.EventHandler(this.btn_TTTV_them_Click);
             // 
             // label14
             // 
@@ -376,6 +369,7 @@
             this.groupBox2.TabIndex = 41;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Quản lý loại thành viên:";
+            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
             // btn_QLLTV_luu
             // 
@@ -388,6 +382,7 @@
             this.btn_QLLTV_luu.TabIndex = 43;
             this.btn_QLLTV_luu.Text = "    Lưu";
             this.btn_QLLTV_luu.UseVisualStyleBackColor = true;
+            this.btn_QLLTV_luu.Click += new System.EventHandler(this.btn_QLLTV_luu_Click);
             // 
             // txt_QLLTV_soTienCanDat
             // 
@@ -396,6 +391,8 @@
             this.txt_QLLTV_soTienCanDat.Name = "txt_QLLTV_soTienCanDat";
             this.txt_QLLTV_soTienCanDat.Size = new System.Drawing.Size(532, 27);
             this.txt_QLLTV_soTienCanDat.TabIndex = 43;
+            this.txt_QLLTV_soTienCanDat.TextChanged += new System.EventHandler(this.txt_QLLTV_soTienCanDat_TextChanged);
+            this.txt_QLLTV_soTienCanDat.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_QLLTV_soTienCanDat_KeyPress);
             // 
             // btn_QLLTV_lamMoi
             // 
@@ -431,6 +428,7 @@
             this.btn_QLLTV_xoa.TabIndex = 41;
             this.btn_QLLTV_xoa.Text = "   Xóa";
             this.btn_QLLTV_xoa.UseVisualStyleBackColor = true;
+            this.btn_QLLTV_xoa.Click += new System.EventHandler(this.btn_QLLTV_xoa_Click);
             // 
             // btn_QLLTV_them
             // 
@@ -443,6 +441,7 @@
             this.btn_QLLTV_them.TabIndex = 40;
             this.btn_QLLTV_them.Text = "    Thêm";
             this.btn_QLLTV_them.UseVisualStyleBackColor = true;
+            this.btn_QLLTV_them.Click += new System.EventHandler(this.btn_QLLTV_them_Click);
             // 
             // txt_QLLTV_tenLoaiThanhVien
             // 
@@ -469,6 +468,7 @@
             this.txt_QLLTV_phanTramGiamGia.Name = "txt_QLLTV_phanTramGiamGia";
             this.txt_QLLTV_phanTramGiamGia.Size = new System.Drawing.Size(532, 27);
             this.txt_QLLTV_phanTramGiamGia.TabIndex = 41;
+            this.txt_QLLTV_phanTramGiamGia.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_QLLTV_phanTramGiamGia_KeyPress);
             // 
             // label2
             // 
@@ -487,8 +487,10 @@
             this.dgv_loaiTV.Name = "dgv_loaiTV";
             this.dgv_loaiTV.RowHeadersWidth = 62;
             this.dgv_loaiTV.RowTemplate.Height = 24;
+            this.dgv_loaiTV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_loaiTV.Size = new System.Drawing.Size(729, 220);
             this.dgv_loaiTV.TabIndex = 39;
+            this.dgv_loaiTV.SelectionChanged += new System.EventHandler(this.dgv_loaiTV_SelectionChanged);
             // 
             // txt_QLLTV_maLoaiThanhVien
             // 
@@ -507,6 +509,18 @@
             this.label3.Size = new System.Drawing.Size(149, 20);
             this.label3.TabIndex = 2;
             this.label3.Text = "Mã loại thành viên:";
+            // 
+            // cbo_TTTV_loaiThanhVien
+            // 
+            this.cbo_TTTV_loaiThanhVien.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.cbo_TTTV_loaiThanhVien.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbo_TTTV_loaiThanhVien.FormattingEnabled = true;
+            this.cbo_TTTV_loaiThanhVien.Location = new System.Drawing.Point(210, 306);
+            this.cbo_TTTV_loaiThanhVien.Name = "cbo_TTTV_loaiThanhVien";
+            this.cbo_TTTV_loaiThanhVien.Size = new System.Drawing.Size(257, 28);
+            this.cbo_TTTV_loaiThanhVien.TabIndex = 34;
+            this.cbo_TTTV_loaiThanhVien.Text = "--- Chọn ---";
+            this.cbo_TTTV_loaiThanhVien.SelectedIndexChanged += new System.EventHandler(this.cbo_TTTV_loaiThanhVien_SelectedIndexChanged);
             // 
             // Frm_QLThanhVien
             // 
@@ -541,7 +555,6 @@
         private System.Windows.Forms.Button btn_TTTV_lamMoi;
         private System.Windows.Forms.Button btn_TTTV_xoa;
         private System.Windows.Forms.Button btn_TTTV_them;
-        private System.Windows.Forms.ComboBox cbo_TTTV_loaiThanhVien;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.TextBox txt_TTTV_matKhau;
         private System.Windows.Forms.TextBox txt_TTTV_soTienDaMua;
@@ -574,5 +587,6 @@
         private System.Windows.Forms.Button btn_QLLTV_lamMoi;
         private System.Windows.Forms.Button btn_QLLTV_xoa;
         private System.Windows.Forms.Button btn_QLLTV_them;
+        private System.Windows.Forms.ComboBox cbo_TTTV_loaiThanhVien;
     }
 }
