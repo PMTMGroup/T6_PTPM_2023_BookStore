@@ -49,6 +49,7 @@
     <Compile Include="BLL_DonDatHang.cs" />
     <Compile Include="BLL_HoaDonBan.cs" />
     <Compile Include="BLL_KeDat.cs" />
+    <Compile Include="BLL_KhoHang.cs" />
     <Compile Include="BLL_LoaiThanhVien.cs" />
     <Compile Include="BLL_NhaXuatBan.cs" />
     <Compile Include="BLL_PhieuGiamGia.cs" />
