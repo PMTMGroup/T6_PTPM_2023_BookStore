@@ -274,36 +274,42 @@ namespace Frm_DangNhap
                 MessageBox.Show("Chưa chọn mua bất kì Sách nào!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             else
             {
-                DialogResult dialog = MessageBox.Show("Xác nhận hoàn tất thanh toán: "+lbl_thanhtien.Text+" đ ?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1);
-                if (dialog == DialogResult.Yes)
+                if (!bllBanSach.checkSLTonKho(_dsMua))
+                    MessageBox.Show("Số lượng sách tồn không đủ đáp ứng!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                else
                 {
-                    DateTime today = DateTime.Today;
-                    bool storeHDB = bllBanSach.storeHDBanSach(new DTO_HoaDonBan(
-                            0,
-                            today,
-                            int.Parse(lbl_tongtien.Text), 
-                            int.Parse(lbl_ggTV.Text) + int.Parse(lbl_ggVC.Text),
-                            int.Parse(lbl_thanhtien.Text),
-                            int.Parse(lbl_maTV.Text),
-                            lbl_maGG.Text,
-                            //dynamic value
-                            "TK02"
-                    ));
-
-                    int soHDnewStore = bllBanSach.getSoHDnewStore();
-
-                    foreach (DTO_ChiTietHoaDonBan hd in _dsMua)
-                        hd.SoHD = soHDnewStore;
-
-                    bool storeCTHDB = bllBanSach.storeCTHDBanSach(_dsMua);
-
-                    if (storeCTHDB && storeHDB)
+                    DialogResult dialog = MessageBox.Show("Xác nhận hoàn tất thanh toán: " + lbl_thanhtien.Text + " đ ?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1);
+                    if (dialog == DialogResult.Yes)
                     {
-                        MessageBox.Show("Tạo hóa đơn mua hàng thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        refreshAllData();
+                        DateTime today = DateTime.Today;
+                        bool storeHDB = bllBanSach.storeHDBanSach(new DTO_HoaDonBan(
+                                0,
+                                today,
+                                int.Parse(lbl_tongtien.Text),
+                                int.Parse(lbl_ggTV.Text) + int.Parse(lbl_ggVC.Text),
+                                int.Parse(lbl_thanhtien.Text),
+                                int.Parse(lbl_maTV.Text),
+                                lbl_maGG.Text,
+                            //dynamic value
+                                "TK02"
+                        ));
+
+                        int soHDnewStore = bllBanSach.getSoHDnewStore();
+
+                        foreach (DTO_ChiTietHoaDonBan hd in _dsMua)
+                            hd.SoHD = soHDnewStore;
+
+                        bool storeCTHDB = bllBanSach.storeCTHDBanSach(_dsMua);
+                        bool updateSLT = bllBanSach.updateSoLuongTon(_dsMua);
+
+                        if (storeCTHDB && storeHDB && updateSLT)
+                        {
+                            MessageBox.Show("Tạo hóa đơn mua hàng thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            refreshAllData();
+                        }
+                        else
+                            MessageBox.Show("Lỗi trong quá trình thao tác!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
-                    else
-                        MessageBox.Show("Lỗi trong quá trình thao tác!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
         }

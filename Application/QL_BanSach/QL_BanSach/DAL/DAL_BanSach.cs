@@ -145,5 +145,45 @@ namespace DAL
             }
             return soHD;            
         }
+
+        public bool updateSoLuongTon(List<DTO_ChiTietHoaDonBan> _ds)
+        {
+            try
+            {
+                using (var context = new QLCuaHangSachDataContext(db.connectionString))
+                {                    
+                    foreach (DTO_ChiTietHoaDonBan hd in _ds)
+                    {
+                        var _sach = context.Saches.SingleOrDefault(s => s.MaSach == hd.MaSach);
+                        if (_sach != null)
+                        {
+                            _sach.SoLuongTon -= hd.SoLuong;
+                            context.SubmitChanges();
+                        }
+                    }
+                }
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public bool checkSLTonKho(List<DTO_ChiTietHoaDonBan> _ds)
+        {
+            using (var context = new QLCuaHangSachDataContext(db.connectionString))
+            {
+                foreach (DTO_ChiTietHoaDonBan hd in _ds)
+                {
+                    var _sach = context.Saches.SingleOrDefault(s => s.MaSach == hd.MaSach);
+                    if (_sach.SoLuongTon < hd.SoLuong)
+                    {
+                        return false;
+                    }
+                }
+                return true;
+            }
+        }
     }
 }

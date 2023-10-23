@@ -60,5 +60,15 @@ namespace BLL
         {
             return dalBanSach.getSoHDnewStore();
         }
+
+        public bool updateSoLuongTon(List<DTO_ChiTietHoaDonBan> _ds)
+        {
+            return dalBanSach.updateSoLuongTon(_ds);
+        }
+
+        public bool checkSLTonKho(List<DTO_ChiTietHoaDonBan> _ds)
+        {
+            return dalBanSach.checkSLTonKho(_ds);
+        }
     }
 }
