@@ -72,8 +72,10 @@
             this.gv_dsHoaDonBanHang.Name = "gv_dsHoaDonBanHang";
             this.gv_dsHoaDonBanHang.RowHeadersWidth = 62;
             this.gv_dsHoaDonBanHang.RowTemplate.Height = 24;
+            this.gv_dsHoaDonBanHang.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gv_dsHoaDonBanHang.Size = new System.Drawing.Size(1010, 655);
             this.gv_dsHoaDonBanHang.TabIndex = 0;
+            this.gv_dsHoaDonBanHang.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gv_dsHoaDonBanHang_CellContentClick);
             // 
             // groupBox2
             // 
@@ -121,6 +123,7 @@
             this.btn_timKiem.TabIndex = 35;
             this.btn_timKiem.Text = "    Tìm kiếm";
             this.btn_timKiem.UseVisualStyleBackColor = true;
+            this.btn_timKiem.Click += new System.EventHandler(this.btn_timKiem_Click);
             // 
             // rdo_nguoiLap
             // 
@@ -169,6 +172,7 @@
             this.txt_nguoiLap.Name = "txt_nguoiLap";
             this.txt_nguoiLap.Size = new System.Drawing.Size(255, 27);
             this.txt_nguoiLap.TabIndex = 30;
+            this.txt_nguoiLap.TextChanged += new System.EventHandler(this.txt_nguoiLap_TextChanged);
             // 
             // label4
             // 
@@ -251,6 +255,7 @@
             this.gv_chiTietHoaDonBanHang.Name = "gv_chiTietHoaDonBanHang";
             this.gv_chiTietHoaDonBanHang.RowHeadersWidth = 62;
             this.gv_chiTietHoaDonBanHang.RowTemplate.Height = 24;
+            this.gv_chiTietHoaDonBanHang.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gv_chiTietHoaDonBanHang.Size = new System.Drawing.Size(567, 655);
             this.gv_chiTietHoaDonBanHang.TabIndex = 1;
             // 

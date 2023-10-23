@@ -15,6 +15,7 @@ namespace BLL
         {
             return loaiThanhVienDAL.GetAllLoaiThanhVien();
         }
+        
 
         public bool InsertLoaiThanhVien(string maLoaiTV, string tenLoaiTV, int tienCanDat, int phanTramGiamGia)
         {

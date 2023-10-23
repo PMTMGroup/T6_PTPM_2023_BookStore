@@ -39,7 +39,7 @@ namespace DAL
                 {
                     var newThanhVien = new ThanhVien
                     {
-                        MaTV = thanhVien.MaTV,
+                       
                         TenThanhVien = thanhVien.TenThanhVien,
                         SDT = thanhVien.SDT,
                         MatKhau = thanhVien.MatKhau,
@@ -90,6 +90,7 @@ namespace DAL
 
                     if (thanhVienUpdate != null)
                     {
+                       
                         thanhVienUpdate.TenThanhVien = thanhVien.TenThanhVien;
                         thanhVienUpdate.SDT = thanhVien.SDT;
                         thanhVienUpdate.MatKhau = thanhVien.MatKhau;
@@ -125,5 +126,23 @@ namespace DAL
                 return true;
             }
         }
+        public DTO_ThanhVien GetThanhVienFromSDT(string sDT)
+        {
+            using (var context = new QLCuaHangSachDataContext(db.connectionString)) 
+            {
+                ThanhVien _tv = context.ThanhViens.FirstOrDefault(tv => tv.SDT == sDT);
+                if (_tv != null)
+                {
+                   return new DTO_ThanhVien((int)_tv.MaTV, _tv.TenThanhVien, _tv.SDT, _tv.MatKhau, (int)_tv.TienDaMua, _tv.MaLoaiTV);
+
+                }
+                else
+                {
+                    return null; // Trả về null nếu không tìm thấy Thành viên với SDT tương ứng
+                }
+
+            }
+        }
+
     }
 }

@@ -162,5 +162,10 @@ namespace Frm_DangNhap
                 return false;
             return true;
         }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }

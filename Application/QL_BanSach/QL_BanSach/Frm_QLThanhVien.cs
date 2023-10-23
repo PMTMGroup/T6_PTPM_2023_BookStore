@@ -20,6 +20,7 @@ namespace Frm_DangNhap
             InitializeComponent();
             loadDGVLoaiThanhVien();
             loadDGVThanhVien();
+            loadCombobox();
         }
         public void loadDGVLoaiThanhVien()
         {
@@ -30,9 +31,9 @@ namespace Frm_DangNhap
         {
             List<DTO_ThanhVien> tvs = thanhvienBLL.GetAllThanhVien();
             dgv_thanhvien.DataSource = tvs;
-            
         }
-        public void refreshLoaiThanhVien()
+        
+        public void refreshThanhVien()
         {
             txt_TTTV_maThanhVien.Text = "";
             txt_TTTV_tenThanhVien.Text = "";
@@ -40,12 +41,20 @@ namespace Frm_DangNhap
             txt_TTTV_soTienDaMua.Text = "";
             txt_TTTV_matKhau.Text = "";
         }
-        private void btn_TTTV_lamMoi_Click(object sender, EventArgs e)
+        public void refreshLoaiThanhVien()
         {
             txt_QLLTV_maLoaiThanhVien.Text = "";
             txt_QLLTV_tenLoaiThanhVien.Text = "";
             txt_QLLTV_soTienCanDat.Text = "";
             txt_QLLTV_phanTramGiamGia.Text = "";
+        }
+        private void btn_TTTV_lamMoi_Click(object sender, EventArgs e)
+        {
+            txt_TTTV_maThanhVien.Text = "";
+            txt_TTTV_tenThanhVien.Text = "";
+            txt_TTTV_sdt.Text = "";
+            txt_TTTV_soTienDaMua.Text = "";
+            txt_TTTV_matKhau.Text = "";
         }
 
         private void btn_TCTTTV_lamMoi_Click(object sender, EventArgs e)
@@ -74,7 +83,7 @@ namespace Frm_DangNhap
                 string tenLoaiTV = txt_QLLTV_tenLoaiThanhVien.Text.Trim();
                 int tienCanDat = int.Parse(txt_QLLTV_soTienCanDat.Text.Trim());
 
-                int phanTramGiamGia = int.Parse(txt_QLLTV_phanTramGiamGia.Text.Trim()); 
+                int phanTramGiamGia = int.Parse(txt_QLLTV_phanTramGiamGia.Text.Trim());
 
                 if (tienCanDat < 0)
                 {
@@ -95,10 +104,10 @@ namespace Frm_DangNhap
 
                             loadDGVLoaiThanhVien();
                             refreshLoaiThanhVien();
-                            
+
                         }
                         else
-                            MessageBox.Show("An error occurred, please try again later!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            MessageBox.Show("Có lỗi xảy ra, vui lòng thử lại sau!!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                 }
             }
@@ -107,44 +116,38 @@ namespace Frm_DangNhap
 
         private void btn_TTTV_them_Click(object sender, EventArgs e)
         {
-        //    if (txt_MaTV.Text.Trim() == string.Empty || txt_TenTV.Text.Trim() == string.Empty
-        //|| txt_SDT.Text.Trim() == string.Empty || txt_MatKhau.Text.Trim() == string.Empty
-        //|| cb_MaLoaiTV.SelectedIndex == -1)
-        //    {
-        //        MessageBox.Show("Vui lòng điền đầy đủ thông tin!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-        //    }
-        //    else
-        //    {
-        //        string maTV = txt_MaTV.Text.Trim();
-        //        string tenTV = txt_TenTV.Text.Trim();
-        //        string sdt = txt_SDT.Text.Trim();
-        //        string matKhau = txt_MatKhau.Text.Trim();
-        //        string maLoaiTV = cb_MaLoaiTV.SelectedItem.ToString(); // Lấy mã loại thành viên từ ComboBox
+            if (txt_TTTV_tenThanhVien.Text.Trim() == string.Empty
+        || txt_TTTV_sdt.Text.Trim() == string.Empty || txt_TTTV_matKhau.Text.Trim() == string.Empty
+        || cbo_TTTV_loaiThanhVien.SelectedIndex == -1)
+            {
+                MessageBox.Show("Vui lòng điền đầy đủ thông tin!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
 
-        //        // Kiểm tra xem mã thành viên đã tồn tại chưa (cần viết hàm CheckPrimaryKey)
-        //        if (thanhvienBLL.CheckPrimaryKey(maTV))
-        //        {
-        //            MessageBox.Show("Mã thành viên đã tồn tại!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-        //        }
-        //        else
-        //        {
-        //            DialogResult dialog = MessageBox.Show("Xác nhận thêm thông tin thành viên?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2);
-        //            if (dialog == DialogResult.Yes)
-        //            {
-        //                if (thanhvienBLL.InsertThanhVien(maTV, tenTV, sdt, matKhau, maLoaiTV))
-        //                {
-        //                    MessageBox.Show("Thêm thành viên thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                string tenTV = txt_TTTV_tenThanhVien.Text.Trim();
+                string sdt = txt_TTTV_sdt.Text.Trim();
+                string matKhau = txt_TTTV_matKhau.Text.Trim();
+                // Lấy giá trị mã tương ứng với tên đã chọn
+                string maLoaiTV = ((KeyValuePair<string, string>)cbo_TTTV_loaiThanhVien.SelectedItem).Key;
 
-        //                    loadDGVThanhVien();
-        //                    refreshThanhVien();
-        //                }
-        //                else
-        //                {
-        //                    MessageBox.Show("Đã xảy ra lỗi, vui lòng thử lại sau!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-        //                }
-        //            }
-        //        }
-        //    }
+                int tiendamua = 0;
+                //Mã thành viên phát sinh tự động
+                DialogResult dialog = MessageBox.Show("Xác nhận thêm thông tin thành viên?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2);
+                if (dialog == DialogResult.Yes)
+                {
+                    if (thanhvienBLL.InsertThanhVien(tenTV, sdt, matKhau, tiendamua, maLoaiTV))
+                    {
+                        MessageBox.Show("Thêm thành viên thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        loadDGVThanhVien();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Đã xảy ra lỗi, vui lòng thử lại sau!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                }
+
+            }
         }
 
         private void dgv_loaiTV_SelectionChanged(object sender, EventArgs e)
@@ -238,7 +241,7 @@ namespace Frm_DangNhap
                     string maloaiTV = txt_QLLTV_maLoaiThanhVien.Text.Trim();
                     string tenLoaiTV = txt_QLLTV_tenLoaiThanhVien.Text.Trim();
                     int tienCanDat = int.Parse(txt_QLLTV_soTienCanDat.Text.Trim());
-                    int phanTramGiamGia = int.Parse(txt_QLLTV_phanTramGiamGia.Text.Trim()); 
+                    int phanTramGiamGia = int.Parse(txt_QLLTV_phanTramGiamGia.Text.Trim());
 
                     if (tienCanDat < 0)
                     {
@@ -294,7 +297,24 @@ namespace Frm_DangNhap
         {
 
         }
-        
+        private void loadCombobox()
+        {
+            Dictionary<string, string> loaiThanhVienDictionary = new Dictionary<string, string>();
+
+            List<DTO_LoaiThanhVien> _lstLTV = loaithanhvienBLL.GetAllLoaiThanhVien();
+
+            foreach (DTO_LoaiThanhVien ltv in _lstLTV)
+            {
+                loaiThanhVienDictionary.Add(ltv.MaLoaiTV, ltv.TenLoaiTV);
+            }
+
+            cbo_TTTV_loaiThanhVien.DataSource = new BindingSource(loaiThanhVienDictionary, null);
+            cbo_TTTV_loaiThanhVien.DisplayMember = "Value";
+            cbo_TTTV_loaiThanhVien.ValueMember = "Key";
+        }
+
+
+
 
         private void groupBox2_Enter(object sender, EventArgs e)
         {
@@ -305,5 +325,132 @@ namespace Frm_DangNhap
 
         }
 
+        private void txt_TTTV_maThanhVien_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_TTTV_xoa_Click(object sender, EventArgs e)
+        {
+            if (dgv_thanhvien.SelectedRows.Count > 0)
+            {
+                DataGridViewRow selectedRow = dgv_thanhvien.SelectedRows[0];
+
+                // Lấy mã thành viên từ dòng được chọn
+                int maTV = int.Parse(selectedRow.Cells["MaTV"].Value.ToString());
+
+                if (thanhvienBLL.CheckForeignKey(maTV))
+                {
+                    MessageBox.Show("Thành Viên đang được sử dụng ở nơi khác, không thể xóa!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    DialogResult dialog = MessageBox.Show("Xác nhận xóa thông tin Thành Viên?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2);
+                    if (dialog == DialogResult.Yes)
+                    {
+                        if (thanhvienBLL.DeleteThanhVien(maTV))
+                        {
+                            MessageBox.Show("Xóa Thành Viên thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            loadDGVThanhVien();
+                            // Cập nhật DataGridView hiển thị
+                        }
+                        else
+                        {
+                            MessageBox.Show("Đã xảy ra lỗi, vui lòng thử lại sau!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        }
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng chọn Thành Viên để thao tác!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void btn_TTTV_luu_Click(object sender, EventArgs e)
+        {
+            if (dgv_thanhvien.SelectedRows.Count > 0)
+            {
+                DataGridViewRow selectedRow = dgv_thanhvien.SelectedRows[0];
+
+                // Lấy mã thành viên từ dòng được chọn
+                int maTV = int.Parse(selectedRow.Cells["MaTV"].Value.ToString());
+
+                // Kiểm tra thông tin ThanhVien đã được nhập đầy đủ
+                if (string.IsNullOrEmpty(txt_TTTV_tenThanhVien.Text) || string.IsNullOrEmpty(txt_TTTV_sdt.Text)
+                    || string.IsNullOrEmpty(txt_TTTV_matKhau.Text) || cbo_TTTV_loaiThanhVien.SelectedIndex == -1)
+                {
+                    MessageBox.Show("Vui lòng điền đầy đủ thông tin Thành Viên!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                {
+                  
+                    string tenTV = txt_TTTV_tenThanhVien.Text.Trim();
+                    string sdt = txt_TTTV_sdt.Text.Trim();
+                    string matKhau = txt_TTTV_matKhau.Text.Trim();
+                    string maLoaiTV = ((KeyValuePair<string, string>)cbo_TTTV_loaiThanhVien.SelectedItem).Key;
+                    int tiendamua = 0;
+
+                    // Kiểm tra các thông tin hợp lệ
+                    if (matKhau.Length < 6)
+                    {
+                        MessageBox.Show("Mật khẩu cần có ít nhất 6 ký tự!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                    else
+                    {
+                        DialogResult dialog = MessageBox.Show("Xác nhận lưu thông tin Thành Viên?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2);
+                        if (dialog == DialogResult.Yes)
+                        {
+                            if (thanhvienBLL.UpdateThanhVien(tenTV, sdt, matKhau,tiendamua , maLoaiTV))
+                            {
+                                MessageBox.Show("Lưu Thành Viên thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                loadDGVThanhVien();
+                                refreshThanhVien();
+                            }
+                            else
+                            {
+                                MessageBox.Show("Đã xảy ra lỗi, vui lòng thử lại sau!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            }
+                        }
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng chọn Thành Viên để thao tác!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void txt_TTTV_soTienDaMua_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true; // Ignore non-numeric characters
+            }
+        }
+
+        private void btn_TCTTTV_traCuu_Click(object sender, EventArgs e)
+        {
+            string sDT = txt_TCTTTV_sdt.Text.Trim();
+            if (sDT.Trim() == string.Empty)
+            {
+                MessageBox.Show("Vui lòng điền thông tin SĐT thành viên!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                DTO_ThanhVien thanhVien = thanhvienBLL.GetThanhVienFromSDT(sDT);
+                if (thanhVien == null)
+                {
+                    MessageBox.Show("Không tìm thấy thông tin của Thành Viên từ SĐT!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    gv_TCTTTV_ketQuaTraCuu.DataSource = new List<DTO_ThanhVien> { thanhVien };
+
+                }
+            }
+        }
     }
 }
+
+

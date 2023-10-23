@@ -188,6 +188,7 @@
             this.cbo_TTDS_nxb.Size = new System.Drawing.Size(403, 28);
             this.cbo_TTDS_nxb.TabIndex = 20;
             this.cbo_TTDS_nxb.Text = "--- Chọn ---";
+            this.cbo_TTDS_nxb.SelectedIndexChanged += new System.EventHandler(this.cbo_TTDS_nxb_SelectedIndexChanged);
             // 
             // btn_TTDS_luu
             // 

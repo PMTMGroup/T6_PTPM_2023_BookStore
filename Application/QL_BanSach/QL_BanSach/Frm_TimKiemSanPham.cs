@@ -230,5 +230,10 @@ namespace Frm_DangNhap
                 setColorForKeDat(gv.Cells[9].Value.ToString().Trim());
             }
         }
+
+        private void cbo_nxb_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

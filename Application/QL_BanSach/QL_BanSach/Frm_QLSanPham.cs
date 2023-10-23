@@ -71,5 +71,10 @@ namespace Frm_DangNhap
                 pic_sanPham.Image = Image.FromFile("../Products/" + selectedRow.Cells[10].Value.ToString().Trim());
             }
         }
+
+        private void cbo_TTDS_nxb_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -17,11 +17,11 @@ using DTO;
                 return thanhVienDAL.GetAllThanhVien();
             }
 
-            public bool InsertThanhVien(int maTV, string tenThanhVien, string sDT, string matKhau, int tienDaMua, string maLoaiTV)
+            public bool InsertThanhVien( string tenThanhVien, string sDT, string matKhau, int tienDaMua, string maLoaiTV)
             {
                 var newThanhVien = new DTO_ThanhVien
                 {
-                    MaTV = maTV,
+                   
                     TenThanhVien = tenThanhVien,
                     SDT = sDT,
                     MatKhau = matKhau,
@@ -37,11 +37,10 @@ using DTO;
                 return thanhVienDAL.DeleteThanhVien(maTV);
             }
 
-            public bool UpdateThanhVien(int maTV, string tenThanhVien, string sDT, string matKhau, int tienDaMua, string maLoaiTV)
+            public bool UpdateThanhVien(string tenThanhVien, string sDT, string matKhau, int tienDaMua, string maLoaiTV)
             {
                 var updatedThanhVien = new DTO_ThanhVien
                 {
-                    MaTV = maTV,
                     TenThanhVien = tenThanhVien,
                     SDT = sDT,
                     MatKhau = matKhau,
@@ -61,7 +60,10 @@ using DTO;
             {
                 return thanhVienDAL.CheckForeignKey(maTV);
             }
-
+            public DTO_ThanhVien GetThanhVienFromSDT(string sDT)
+        {
+            return thanhVienDAL.GetThanhVienFromSDT(sDT);
+        }
         }
     }
 

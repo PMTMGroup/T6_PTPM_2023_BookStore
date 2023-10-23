@@ -35,6 +35,7 @@
             this.btn_TTTV_lamMoi = new System.Windows.Forms.Button();
             this.btn_TTTV_xoa = new System.Windows.Forms.Button();
             this.btn_TTTV_them = new System.Windows.Forms.Button();
+            this.cbo_TTTV_loaiThanhVien = new System.Windows.Forms.ComboBox();
             this.label14 = new System.Windows.Forms.Label();
             this.txt_TTTV_matKhau = new System.Windows.Forms.TextBox();
             this.txt_TTTV_soTienDaMua = new System.Windows.Forms.TextBox();
@@ -67,7 +68,6 @@
             this.dgv_loaiTV = new System.Windows.Forms.DataGridView();
             this.txt_QLLTV_maLoaiThanhVien = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.cbo_TTTV_loaiThanhVien = new System.Windows.Forms.ComboBox();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_thanhvien)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -126,6 +126,7 @@
             this.btn_TTTV_luu.TabIndex = 38;
             this.btn_TTTV_luu.Text = "    Lưu";
             this.btn_TTTV_luu.UseVisualStyleBackColor = true;
+            this.btn_TTTV_luu.Click += new System.EventHandler(this.btn_TTTV_luu_Click);
             // 
             // btn_TTTV_lamMoi
             // 
@@ -151,6 +152,7 @@
             this.btn_TTTV_xoa.TabIndex = 36;
             this.btn_TTTV_xoa.Text = "   Xóa";
             this.btn_TTTV_xoa.UseVisualStyleBackColor = true;
+            this.btn_TTTV_xoa.Click += new System.EventHandler(this.btn_TTTV_xoa_Click);
             // 
             // btn_TTTV_them
             // 
@@ -164,6 +166,18 @@
             this.btn_TTTV_them.Text = "    Thêm";
             this.btn_TTTV_them.UseVisualStyleBackColor = true;
             this.btn_TTTV_them.Click += new System.EventHandler(this.btn_TTTV_them_Click);
+            // 
+            // cbo_TTTV_loaiThanhVien
+            // 
+            this.cbo_TTTV_loaiThanhVien.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.cbo_TTTV_loaiThanhVien.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbo_TTTV_loaiThanhVien.FormattingEnabled = true;
+            this.cbo_TTTV_loaiThanhVien.Location = new System.Drawing.Point(210, 306);
+            this.cbo_TTTV_loaiThanhVien.Name = "cbo_TTTV_loaiThanhVien";
+            this.cbo_TTTV_loaiThanhVien.Size = new System.Drawing.Size(257, 28);
+            this.cbo_TTTV_loaiThanhVien.TabIndex = 34;
+            this.cbo_TTTV_loaiThanhVien.Text = "--- Chọn ---";
+            this.cbo_TTTV_loaiThanhVien.SelectedIndexChanged += new System.EventHandler(this.cbo_TTTV_loaiThanhVien_SelectedIndexChanged);
             // 
             // label14
             // 
@@ -193,6 +207,7 @@
             this.txt_TTTV_soTienDaMua.ReadOnly = true;
             this.txt_TTTV_soTienDaMua.Size = new System.Drawing.Size(588, 27);
             this.txt_TTTV_soTienDaMua.TabIndex = 31;
+            this.txt_TTTV_soTienDaMua.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_TTTV_soTienDaMua_KeyPress);
             // 
             // txt_TTTV_sdt
             // 
@@ -219,6 +234,7 @@
             this.txt_TTTV_maThanhVien.ReadOnly = true;
             this.txt_TTTV_maThanhVien.Size = new System.Drawing.Size(588, 27);
             this.txt_TTTV_maThanhVien.TabIndex = 27;
+            this.txt_TTTV_maThanhVien.TextChanged += new System.EventHandler(this.txt_TTTV_maThanhVien_TextChanged);
             // 
             // label20
             // 
@@ -329,6 +345,7 @@
             this.btn_TCTTTV_traCuu.TabIndex = 35;
             this.btn_TCTTTV_traCuu.Text = "    Tra cứu";
             this.btn_TCTTTV_traCuu.UseVisualStyleBackColor = true;
+            this.btn_TCTTTV_traCuu.Click += new System.EventHandler(this.btn_TCTTTV_traCuu_Click);
             // 
             // txt_TCTTTV_sdt
             // 
@@ -509,18 +526,6 @@
             this.label3.Size = new System.Drawing.Size(149, 20);
             this.label3.TabIndex = 2;
             this.label3.Text = "Mã loại thành viên:";
-            // 
-            // cbo_TTTV_loaiThanhVien
-            // 
-            this.cbo_TTTV_loaiThanhVien.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.cbo_TTTV_loaiThanhVien.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbo_TTTV_loaiThanhVien.FormattingEnabled = true;
-            this.cbo_TTTV_loaiThanhVien.Location = new System.Drawing.Point(210, 306);
-            this.cbo_TTTV_loaiThanhVien.Name = "cbo_TTTV_loaiThanhVien";
-            this.cbo_TTTV_loaiThanhVien.Size = new System.Drawing.Size(257, 28);
-            this.cbo_TTTV_loaiThanhVien.TabIndex = 34;
-            this.cbo_TTTV_loaiThanhVien.Text = "--- Chọn ---";
-            this.cbo_TTTV_loaiThanhVien.SelectedIndexChanged += new System.EventHandler(this.cbo_TTTV_loaiThanhVien_SelectedIndexChanged);
             // 
             // Frm_QLThanhVien
             // 
