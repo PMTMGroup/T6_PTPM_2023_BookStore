@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_ThongKe));
             this.panel1 = new System.Windows.Forms.Panel();
             this.lb_tongLoiNhuan = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -64,6 +65,7 @@
             this.panel12 = new System.Windows.Forms.Panel();
             this.lb_tongDonDatHang = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.button6 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -92,11 +94,11 @@
             // 
             this.lb_tongLoiNhuan.AutoSize = true;
             this.lb_tongLoiNhuan.Font = new System.Drawing.Font("Microsoft Sans Serif", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_tongLoiNhuan.Location = new System.Drawing.Point(150, 83);
+            this.lb_tongLoiNhuan.Location = new System.Drawing.Point(122, 83);
             this.lb_tongLoiNhuan.Name = "lb_tongLoiNhuan";
-            this.lb_tongLoiNhuan.Size = new System.Drawing.Size(220, 55);
+            this.lb_tongLoiNhuan.Size = new System.Drawing.Size(248, 55);
             this.lb_tongLoiNhuan.TabIndex = 1;
-            this.lb_tongLoiNhuan.Text = "2000000";
+            this.lb_tongLoiNhuan.Text = "2,000,000";
             // 
             // label1
             // 
@@ -122,11 +124,11 @@
             // 
             this.lb_tongTienBanSach.AutoSize = true;
             this.lb_tongTienBanSach.Font = new System.Drawing.Font("Microsoft Sans Serif", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_tongTienBanSach.Location = new System.Drawing.Point(156, 83);
+            this.lb_tongTienBanSach.Location = new System.Drawing.Point(128, 83);
             this.lb_tongTienBanSach.Name = "lb_tongTienBanSach";
-            this.lb_tongTienBanSach.Size = new System.Drawing.Size(220, 55);
+            this.lb_tongTienBanSach.Size = new System.Drawing.Size(248, 55);
             this.lb_tongTienBanSach.TabIndex = 2;
-            this.lb_tongTienBanSach.Text = "2000000";
+            this.lb_tongTienBanSach.Text = "2,000,000";
             // 
             // label4
             // 
@@ -152,11 +154,11 @@
             // 
             this.lb_tongTienXuatKho.AutoSize = true;
             this.lb_tongTienXuatKho.Font = new System.Drawing.Font("Microsoft Sans Serif", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_tongTienXuatKho.Location = new System.Drawing.Point(180, 83);
+            this.lb_tongTienXuatKho.Location = new System.Drawing.Point(166, 83);
             this.lb_tongTienXuatKho.Name = "lb_tongTienXuatKho";
-            this.lb_tongTienXuatKho.Size = new System.Drawing.Size(192, 55);
+            this.lb_tongTienXuatKho.Size = new System.Drawing.Size(206, 55);
             this.lb_tongTienXuatKho.TabIndex = 4;
-            this.lb_tongTienXuatKho.Text = "200000";
+            this.lb_tongTienXuatKho.Text = "200,000";
             // 
             // label5
             // 
@@ -182,11 +184,11 @@
             // 
             this.lb_tongTienNhapSach.AutoSize = true;
             this.lb_tongTienNhapSach.Font = new System.Drawing.Font("Microsoft Sans Serif", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_tongTienNhapSach.Location = new System.Drawing.Point(178, 83);
+            this.lb_tongTienNhapSach.Location = new System.Drawing.Point(164, 83);
             this.lb_tongTienNhapSach.Name = "lb_tongTienNhapSach";
-            this.lb_tongTienNhapSach.Size = new System.Drawing.Size(192, 55);
+            this.lb_tongTienNhapSach.Size = new System.Drawing.Size(206, 55);
             this.lb_tongTienNhapSach.TabIndex = 5;
-            this.lb_tongTienNhapSach.Text = "200000";
+            this.lb_tongTienNhapSach.Text = "200,000";
             // 
             // label6
             // 
@@ -212,11 +214,11 @@
             // 
             this.lb_soLuongNhanVien.AutoSize = true;
             this.lb_soLuongNhanVien.Font = new System.Drawing.Font("Microsoft Sans Serif", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_soLuongNhanVien.Location = new System.Drawing.Point(290, 80);
+            this.lb_soLuongNhanVien.Location = new System.Drawing.Point(318, 80);
             this.lb_soLuongNhanVien.Name = "lb_soLuongNhanVien";
-            this.lb_soLuongNhanVien.Size = new System.Drawing.Size(80, 55);
+            this.lb_soLuongNhanVien.Size = new System.Drawing.Size(52, 55);
             this.lb_soLuongNhanVien.TabIndex = 11;
-            this.lb_soLuongNhanVien.Text = "20";
+            this.lb_soLuongNhanVien.Text = "2";
             // 
             // label12
             // 
@@ -242,11 +244,11 @@
             // 
             this.lb_soLuongBanSach.AutoSize = true;
             this.lb_soLuongBanSach.Font = new System.Drawing.Font("Microsoft Sans Serif", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_soLuongBanSach.Location = new System.Drawing.Point(264, 80);
+            this.lb_soLuongBanSach.Location = new System.Drawing.Point(292, 80);
             this.lb_soLuongBanSach.Name = "lb_soLuongBanSach";
-            this.lb_soLuongBanSach.Size = new System.Drawing.Size(108, 55);
+            this.lb_soLuongBanSach.Size = new System.Drawing.Size(80, 55);
             this.lb_soLuongBanSach.TabIndex = 8;
-            this.lb_soLuongBanSach.Text = "200";
+            this.lb_soLuongBanSach.Text = "20";
             // 
             // label8
             // 
@@ -332,11 +334,11 @@
             // 
             this.lb_soLuongThanhVien.AutoSize = true;
             this.lb_soLuongThanhVien.Font = new System.Drawing.Font("Microsoft Sans Serif", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_soLuongThanhVien.Location = new System.Drawing.Point(290, 81);
+            this.lb_soLuongThanhVien.Location = new System.Drawing.Point(318, 81);
             this.lb_soLuongThanhVien.Name = "lb_soLuongThanhVien";
-            this.lb_soLuongThanhVien.Size = new System.Drawing.Size(80, 55);
+            this.lb_soLuongThanhVien.Size = new System.Drawing.Size(52, 55);
             this.lb_soLuongThanhVien.TabIndex = 10;
-            this.lb_soLuongThanhVien.Text = "20";
+            this.lb_soLuongThanhVien.Text = "2";
             // 
             // label11
             // 
@@ -362,11 +364,11 @@
             // 
             this.lb_soDonHangThatBai.AutoSize = true;
             this.lb_soDonHangThatBai.Font = new System.Drawing.Font("Microsoft Sans Serif", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_soDonHangThatBai.Location = new System.Drawing.Point(292, 81);
+            this.lb_soDonHangThatBai.Location = new System.Drawing.Point(320, 81);
             this.lb_soDonHangThatBai.Name = "lb_soDonHangThatBai";
-            this.lb_soDonHangThatBai.Size = new System.Drawing.Size(80, 55);
+            this.lb_soDonHangThatBai.Size = new System.Drawing.Size(52, 55);
             this.lb_soDonHangThatBai.TabIndex = 9;
-            this.lb_soDonHangThatBai.Text = "20";
+            this.lb_soDonHangThatBai.Text = "2";
             // 
             // label10
             // 
@@ -392,11 +394,11 @@
             // 
             this.lb_soDonHangThanhCong.AutoSize = true;
             this.lb_soDonHangThanhCong.Font = new System.Drawing.Font("Microsoft Sans Serif", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_soDonHangThanhCong.Location = new System.Drawing.Point(296, 81);
+            this.lb_soDonHangThanhCong.Location = new System.Drawing.Point(324, 81);
             this.lb_soDonHangThanhCong.Name = "lb_soDonHangThanhCong";
-            this.lb_soDonHangThanhCong.Size = new System.Drawing.Size(80, 55);
+            this.lb_soDonHangThanhCong.Size = new System.Drawing.Size(52, 55);
             this.lb_soDonHangThanhCong.TabIndex = 8;
-            this.lb_soDonHangThanhCong.Text = "20";
+            this.lb_soDonHangThanhCong.Text = "2";
             // 
             // label9
             // 
@@ -422,11 +424,11 @@
             // 
             this.lb_tongDonDatHang.AutoSize = true;
             this.lb_tongDonDatHang.Font = new System.Drawing.Font("Microsoft Sans Serif", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_tongDonDatHang.Location = new System.Drawing.Point(290, 81);
+            this.lb_tongDonDatHang.Location = new System.Drawing.Point(318, 81);
             this.lb_tongDonDatHang.Name = "lb_tongDonDatHang";
-            this.lb_tongDonDatHang.Size = new System.Drawing.Size(80, 55);
+            this.lb_tongDonDatHang.Size = new System.Drawing.Size(52, 55);
             this.lb_tongDonDatHang.TabIndex = 7;
-            this.lb_tongDonDatHang.Text = "20";
+            this.lb_tongDonDatHang.Text = "2";
             // 
             // label3
             // 
@@ -438,12 +440,25 @@
             this.label3.TabIndex = 2;
             this.label3.Text = "Tổng đơn đặt hàng:";
             // 
+            // button6
+            // 
+            this.button6.Image = ((System.Drawing.Image)(resources.GetObject("button6.Image")));
+            this.button6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button6.Location = new System.Drawing.Point(1438, 601);
+            this.button6.Name = "button6";
+            this.button6.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
+            this.button6.Size = new System.Drawing.Size(247, 54);
+            this.button6.TabIndex = 12;
+            this.button6.Text = "      Xuất Báo Cáo";
+            this.button6.UseVisualStyleBackColor = true;
+            // 
             // Frm_ThongKe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1721, 885);
+            this.Controls.Add(this.button6);
             this.Controls.Add(this.panel9);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel10);
@@ -525,5 +540,6 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label lb_tongDonDatHang;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button button6;
     }
 }

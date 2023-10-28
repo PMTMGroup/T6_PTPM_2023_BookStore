@@ -24,5 +24,19 @@ namespace BLL
             return hoadonbanDAL.GetHoaDonBanFromNguoiLap(nguoiLap);
         }
 
+        public List<DTO_ChiTietHoaDonBan> GetCTHoaDonBanFromSoHD(int soHDB)
+        {
+            return hoadonbanDAL.GetCTHoaDonBanFromSoHD(soHDB);
+        }
+
+        public List<DTO_HoaDonBan> GetHoaDonBanFromThanhVien(int maTV)
+        {
+            return hoadonbanDAL.GetHoaDonBanFromThanhVien(maTV);
+        }
+
+        public List<DTO_HoaDonBan> GetHoaDonBanFromNgayLap(DateTime dateLap)
+        {
+            return hoadonbanDAL.GetHoaDonBanFromNgayLap(dateLap);
+        }
     }
 }

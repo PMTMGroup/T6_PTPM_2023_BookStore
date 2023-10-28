@@ -51,7 +51,7 @@ namespace DAL
                 }
                 else
                 {
-                    return null; // Trả về null nếu không tìm thấy hóa đơn bán với số hóa đơn (`SoHD`) tương ứng
+                    return null;
                 }
             }
         }
@@ -75,6 +75,60 @@ namespace DAL
             }
         }
 
+        public List<DTO_HoaDonBan> GetHoaDonBanFromThanhVien(int maTV)
+        {
+            using (var context = new QLCuaHangSachDataContext(db.connectionString))
+            {
+                var hoaDonBans = context.HoaDonBans.Where(hdb => hdb.MaTV == maTV).Select(hdb => new DTO_HoaDonBan
+                {
+                    SoHD = hdb.SoHD,
+                    NgayLap = (DateTime)hdb.NgayLap,
+                    TongTien = (int)hdb.TongTien,
+                    TongGiam = (int)hdb.TongGiam,
+                    ThanhTien = (int)hdb.ThanhTien,
+                    MaTV = (int)hdb.MaTV,
+                    MaGiamGia = hdb.MaGiamGia,
+                    MaTaiKhoan = hdb.MaTaiKhoan
+                }).ToList();
 
+                return hoaDonBans;
+            }
+        }
+
+        public List<DTO_HoaDonBan> GetHoaDonBanFromNgayLap(DateTime dateLap)
+        {
+            using (var context = new QLCuaHangSachDataContext(db.connectionString))
+            {
+                var hoaDonBans = context.HoaDonBans.Where(hdb => hdb.NgayLap == dateLap).Select(hdb => new DTO_HoaDonBan
+                {
+                    SoHD = hdb.SoHD,
+                    NgayLap = (DateTime)hdb.NgayLap,
+                    TongTien = (int)hdb.TongTien,
+                    TongGiam = (int)hdb.TongGiam,
+                    ThanhTien = (int)hdb.ThanhTien,
+                    MaTV = (int)hdb.MaTV,
+                    MaGiamGia = hdb.MaGiamGia,
+                    MaTaiKhoan = hdb.MaTaiKhoan
+                }).ToList();
+
+                return hoaDonBans;
+            }
+        }
+
+        public List<DTO_ChiTietHoaDonBan> GetCTHoaDonBanFromSoHD(int soHDB)
+        {
+            using (var context = new QLCuaHangSachDataContext(db.connectionString))
+            {
+                var CThoaDonBans = context.ChiTietHoaDonBans.Where(hdb => hdb.SoHD == soHDB).Select(hdb => new DTO_ChiTietHoaDonBan
+                {
+                    SoHD = hdb.SoHD,
+                    MaSach = hdb.MaSach,
+                    SoLuong = (int)hdb.SoLuong,
+                    TongTien = (int)hdb.TongTien
+                }).ToList();
+
+                return CThoaDonBans;
+            }
+        }
     }
 }

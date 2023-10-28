@@ -42,12 +42,12 @@
             this.label4 = new System.Windows.Forms.Label();
             this.txt_maThanhVien = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.txt_ngayLap = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txt_soHoaDon = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.gv_chiTietHoaDonBanHang = new System.Windows.Forms.DataGridView();
+            this.date_NgayLap = new System.Windows.Forms.DateTimePicker();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gv_dsHoaDonBanHang)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -76,9 +76,11 @@
             this.gv_dsHoaDonBanHang.Size = new System.Drawing.Size(1010, 655);
             this.gv_dsHoaDonBanHang.TabIndex = 0;
             this.gv_dsHoaDonBanHang.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gv_dsHoaDonBanHang_CellContentClick);
+            this.gv_dsHoaDonBanHang.SelectionChanged += new System.EventHandler(this.gv_dsHoaDonBanHang_SelectionChanged);
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.date_NgayLap);
             this.groupBox2.Controls.Add(this.btn_lamMoi);
             this.groupBox2.Controls.Add(this.btn_timKiem);
             this.groupBox2.Controls.Add(this.rdo_nguoiLap);
@@ -89,7 +91,6 @@
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.txt_maThanhVien);
             this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Controls.Add(this.txt_ngayLap);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.txt_soHoaDon);
             this.groupBox2.Controls.Add(this.label1);
@@ -104,22 +105,23 @@
             // 
             this.btn_lamMoi.Image = ((System.Drawing.Image)(resources.GetObject("btn_lamMoi.Image")));
             this.btn_lamMoi.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_lamMoi.Location = new System.Drawing.Point(1281, 138);
+            this.btn_lamMoi.Location = new System.Drawing.Point(1248, 138);
             this.btn_lamMoi.Name = "btn_lamMoi";
             this.btn_lamMoi.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.btn_lamMoi.Size = new System.Drawing.Size(156, 50);
+            this.btn_lamMoi.Size = new System.Drawing.Size(200, 50);
             this.btn_lamMoi.TabIndex = 36;
             this.btn_lamMoi.Text = "    Làm mới";
             this.btn_lamMoi.UseVisualStyleBackColor = true;
+            this.btn_lamMoi.Click += new System.EventHandler(this.btn_lamMoi_Click);
             // 
             // btn_timKiem
             // 
             this.btn_timKiem.Image = ((System.Drawing.Image)(resources.GetObject("btn_timKiem.Image")));
             this.btn_timKiem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_timKiem.Location = new System.Drawing.Point(1443, 138);
+            this.btn_timKiem.Location = new System.Drawing.Point(1454, 138);
             this.btn_timKiem.Name = "btn_timKiem";
             this.btn_timKiem.Padding = new System.Windows.Forms.Padding(50, 0, 0, 0);
-            this.btn_timKiem.Size = new System.Drawing.Size(227, 50);
+            this.btn_timKiem.Size = new System.Drawing.Size(216, 50);
             this.btn_timKiem.TabIndex = 35;
             this.btn_timKiem.Text = "    Tìm kiếm";
             this.btn_timKiem.UseVisualStyleBackColor = true;
@@ -132,8 +134,8 @@
             this.rdo_nguoiLap.Name = "rdo_nguoiLap";
             this.rdo_nguoiLap.Size = new System.Drawing.Size(17, 16);
             this.rdo_nguoiLap.TabIndex = 34;
-            this.rdo_nguoiLap.TabStop = true;
             this.rdo_nguoiLap.UseVisualStyleBackColor = true;
+            this.rdo_nguoiLap.CheckedChanged += new System.EventHandler(this.rdo_nguoiLap_CheckedChanged);
             // 
             // rdo_maTV
             // 
@@ -142,8 +144,8 @@
             this.rdo_maTV.Name = "rdo_maTV";
             this.rdo_maTV.Size = new System.Drawing.Size(17, 16);
             this.rdo_maTV.TabIndex = 33;
-            this.rdo_maTV.TabStop = true;
             this.rdo_maTV.UseVisualStyleBackColor = true;
+            this.rdo_maTV.CheckedChanged += new System.EventHandler(this.rdo_maTV_CheckedChanged);
             // 
             // rdo_ngayLap
             // 
@@ -152,21 +154,24 @@
             this.rdo_ngayLap.Name = "rdo_ngayLap";
             this.rdo_ngayLap.Size = new System.Drawing.Size(17, 16);
             this.rdo_ngayLap.TabIndex = 32;
-            this.rdo_ngayLap.TabStop = true;
             this.rdo_ngayLap.UseVisualStyleBackColor = true;
+            this.rdo_ngayLap.CheckedChanged += new System.EventHandler(this.rdo_ngayLap_CheckedChanged);
             // 
             // rdo_soHD
             // 
             this.rdo_soHD.AutoSize = true;
+            this.rdo_soHD.Checked = true;
             this.rdo_soHD.Location = new System.Drawing.Point(23, 89);
             this.rdo_soHD.Name = "rdo_soHD";
             this.rdo_soHD.Size = new System.Drawing.Size(17, 16);
             this.rdo_soHD.TabIndex = 31;
             this.rdo_soHD.TabStop = true;
             this.rdo_soHD.UseVisualStyleBackColor = true;
+            this.rdo_soHD.CheckedChanged += new System.EventHandler(this.rdo_soHD_CheckedChanged);
             // 
             // txt_nguoiLap
             // 
+            this.txt_nguoiLap.Enabled = false;
             this.txt_nguoiLap.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_nguoiLap.Location = new System.Drawing.Point(1415, 48);
             this.txt_nguoiLap.Name = "txt_nguoiLap";
@@ -186,11 +191,13 @@
             // 
             // txt_maThanhVien
             // 
+            this.txt_maThanhVien.Enabled = false;
             this.txt_maThanhVien.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_maThanhVien.Location = new System.Drawing.Point(979, 48);
             this.txt_maThanhVien.Name = "txt_maThanhVien";
             this.txt_maThanhVien.Size = new System.Drawing.Size(255, 27);
             this.txt_maThanhVien.TabIndex = 28;
+            this.txt_maThanhVien.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_maThanhVien_KeyPress);
             // 
             // label3
             // 
@@ -201,14 +208,6 @@
             this.label3.Size = new System.Drawing.Size(118, 20);
             this.label3.TabIndex = 27;
             this.label3.Text = "Mã thành viên:";
-            // 
-            // txt_ngayLap
-            // 
-            this.txt_ngayLap.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_ngayLap.Location = new System.Drawing.Point(539, 48);
-            this.txt_ngayLap.Name = "txt_ngayLap";
-            this.txt_ngayLap.Size = new System.Drawing.Size(255, 27);
-            this.txt_ngayLap.TabIndex = 26;
             // 
             // label2
             // 
@@ -227,6 +226,7 @@
             this.txt_soHoaDon.Name = "txt_soHoaDon";
             this.txt_soHoaDon.Size = new System.Drawing.Size(241, 27);
             this.txt_soHoaDon.TabIndex = 24;
+            this.txt_soHoaDon.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_soHoaDon_KeyPress);
             // 
             // label1
             // 
@@ -259,6 +259,15 @@
             this.gv_chiTietHoaDonBanHang.Size = new System.Drawing.Size(567, 655);
             this.gv_chiTietHoaDonBanHang.TabIndex = 1;
             // 
+            // date_NgayLap
+            // 
+            this.date_NgayLap.Enabled = false;
+            this.date_NgayLap.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.date_NgayLap.Location = new System.Drawing.Point(542, 48);
+            this.date_NgayLap.Name = "date_NgayLap";
+            this.date_NgayLap.Size = new System.Drawing.Size(246, 27);
+            this.date_NgayLap.TabIndex = 37;
+            // 
             // Frm_QLHoaDonBan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -288,7 +297,6 @@
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.DataGridView gv_dsHoaDonBanHang;
         private System.Windows.Forms.DataGridView gv_chiTietHoaDonBanHang;
-        private System.Windows.Forms.TextBox txt_ngayLap;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txt_soHoaDon;
         private System.Windows.Forms.Label label1;
@@ -302,5 +310,6 @@
         private System.Windows.Forms.RadioButton rdo_soHD;
         private System.Windows.Forms.Button btn_lamMoi;
         private System.Windows.Forms.Button btn_timKiem;
+        private System.Windows.Forms.DateTimePicker date_NgayLap;
     }
 }
