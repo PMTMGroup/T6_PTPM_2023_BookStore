@@ -103,19 +103,9 @@
             // 
             this.num_phanTramGiam.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.num_phanTramGiam.Location = new System.Drawing.Point(210, 144);
-            this.num_phanTramGiam.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
             this.num_phanTramGiam.Name = "num_phanTramGiam";
             this.num_phanTramGiam.Size = new System.Drawing.Size(119, 27);
             this.num_phanTramGiam.TabIndex = 40;
-            this.num_phanTramGiam.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
             // 
             // gv_thongTinUuDai
             // 

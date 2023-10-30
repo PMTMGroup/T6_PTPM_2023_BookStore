@@ -63,17 +63,18 @@
             this.btn_QLLTV_them = new System.Windows.Forms.Button();
             this.txt_QLLTV_tenLoaiThanhVien = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.txt_QLLTV_phanTramGiamGia = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.dgv_loaiTV = new System.Windows.Forms.DataGridView();
             this.txt_QLLTV_maLoaiThanhVien = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.num_phantramgg = new System.Windows.Forms.NumericUpDown();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_thanhvien)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gv_TCTTTV_ketQuaTraCuu)).BeginInit();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_loaiTV)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.num_phantramgg)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox3
@@ -170,6 +171,7 @@
             // cbo_TTTV_loaiThanhVien
             // 
             this.cbo_TTTV_loaiThanhVien.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.cbo_TTTV_loaiThanhVien.Enabled = false;
             this.cbo_TTTV_loaiThanhVien.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbo_TTTV_loaiThanhVien.FormattingEnabled = true;
             this.cbo_TTTV_loaiThanhVien.Location = new System.Drawing.Point(210, 306);
@@ -216,6 +218,7 @@
             this.txt_TTTV_sdt.Name = "txt_TTTV_sdt";
             this.txt_TTTV_sdt.Size = new System.Drawing.Size(588, 27);
             this.txt_TTTV_sdt.TabIndex = 29;
+            this.txt_TTTV_sdt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_TTTV_sdt_KeyPress);
             // 
             // txt_TTTV_tenThanhVien
             // 
@@ -354,6 +357,7 @@
             this.txt_TCTTTV_sdt.Name = "txt_TCTTTV_sdt";
             this.txt_TCTTTV_sdt.Size = new System.Drawing.Size(556, 27);
             this.txt_TCTTTV_sdt.TabIndex = 29;
+            this.txt_TCTTTV_sdt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_TCTTTV_sdt_KeyPress);
             // 
             // label4
             // 
@@ -367,6 +371,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.num_phantramgg);
             this.groupBox2.Controls.Add(this.btn_QLLTV_luu);
             this.groupBox2.Controls.Add(this.txt_QLLTV_soTienCanDat);
             this.groupBox2.Controls.Add(this.btn_QLLTV_lamMoi);
@@ -375,7 +380,6 @@
             this.groupBox2.Controls.Add(this.btn_QLLTV_them);
             this.groupBox2.Controls.Add(this.txt_QLLTV_tenLoaiThanhVien);
             this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Controls.Add(this.txt_QLLTV_phanTramGiamGia);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.dgv_loaiTV);
             this.groupBox2.Controls.Add(this.txt_QLLTV_maLoaiThanhVien);
@@ -478,15 +482,6 @@
             this.label5.TabIndex = 40;
             this.label5.Text = "Tên loại thành viên:";
             // 
-            // txt_QLLTV_phanTramGiamGia
-            // 
-            this.txt_QLLTV_phanTramGiamGia.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_QLLTV_phanTramGiamGia.Location = new System.Drawing.Point(234, 203);
-            this.txt_QLLTV_phanTramGiamGia.Name = "txt_QLLTV_phanTramGiamGia";
-            this.txt_QLLTV_phanTramGiamGia.Size = new System.Drawing.Size(532, 27);
-            this.txt_QLLTV_phanTramGiamGia.TabIndex = 41;
-            this.txt_QLLTV_phanTramGiamGia.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_QLLTV_phanTramGiamGia_KeyPress);
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -527,6 +522,14 @@
             this.label3.TabIndex = 2;
             this.label3.Text = "Mã loại thành viên:";
             // 
+            // num_phantramgg
+            // 
+            this.num_phantramgg.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.num_phantramgg.Location = new System.Drawing.Point(234, 204);
+            this.num_phantramgg.Name = "num_phantramgg";
+            this.num_phantramgg.Size = new System.Drawing.Size(120, 27);
+            this.num_phantramgg.TabIndex = 44;
+            // 
             // Frm_QLThanhVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -548,6 +551,7 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_loaiTV)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.num_phantramgg)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -583,7 +587,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txt_QLLTV_tenLoaiThanhVien;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txt_QLLTV_phanTramGiamGia;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView dgv_loaiTV;
         private System.Windows.Forms.TextBox txt_QLLTV_maLoaiThanhVien;
@@ -593,5 +596,6 @@
         private System.Windows.Forms.Button btn_QLLTV_xoa;
         private System.Windows.Forms.Button btn_QLLTV_them;
         private System.Windows.Forms.ComboBox cbo_TTTV_loaiThanhVien;
+        private System.Windows.Forms.NumericUpDown num_phantramgg;
     }
 }

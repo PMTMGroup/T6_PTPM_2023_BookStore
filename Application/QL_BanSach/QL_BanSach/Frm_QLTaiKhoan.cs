@@ -52,7 +52,7 @@ namespace Frm_DangNhap
                 txt_QLTK_hoTen.Text = selectedRow.Cells[3].Value.ToString().Trim();
                 txt_QLTK_sdt.Text = selectedRow.Cells[4].Value.ToString().Trim();
                 cbo_QLTK_quyen.Text = bllTaiKhoan.getQuyenfromMaQuyen(selectedRow.Cells[5].Value.ToString().Trim()).TenQuyen;
-                cbo_QLTK_trangThai.Text = (selectedRow.Cells[6].Value.ToString() == "False")?"Hoạt động":"Bị khóa";
+                cbo_QLTK_trangThai.Text = (selectedRow.Cells[6].Value.ToString() == "0")?"Hoạt động":"Bị khóa";
             }
         }
 
@@ -70,21 +70,26 @@ namespace Frm_DangNhap
                     MessageBox.Show("Mã tài khoản đã tồn tại!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 else
                 {
-                    DialogResult dialog = MessageBox.Show("Xác nhận thêm thông tin Tài khoản?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2);
-                    if (dialog == DialogResult.Yes)
+                    if (bllTaiKhoan.checkExistTenDangNhap(txt_QLTK_tenDangNhap.Text.Trim()))
+                        MessageBox.Show("Tên đăng nhập đã tồn tại!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    else
                     {
-                        string maQuyen = (cbo_QLTK_quyen.SelectedItem.ToString() == "Quyền User") ? "user":"admin";
-                        int biKhoa = (cbo_QLTK_trangThai.SelectedItem.ToString() == "Hoạt động") ? 0: 1;
-
-                        DTO_TaiKhoan taiKhoan = new DTO_TaiKhoan(maTK, txt_QLTK_tenDangNhap.Text.Trim(), txt_QLTK_matKhau.Text.Trim(), txt_QLTK_hoTen.Text.Trim(), txt_QLTK_sdt.Text.Trim(), maQuyen, biKhoa);
-                        if (bllTaiKhoan.insertTaiKhoan(taiKhoan))
+                        DialogResult dialog = MessageBox.Show("Xác nhận thêm thông tin Tài khoản?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2);
+                        if (dialog == DialogResult.Yes)
                         {
-                            MessageBox.Show("Thêm Tài khoản mới thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            loadDGVDSTaiKhoan();
-                            refreshFieldInput();
+                            string maQuyen = (cbo_QLTK_quyen.SelectedItem.ToString() == "Quyền User") ? "user" : "admin";
+                            int biKhoa = (cbo_QLTK_trangThai.SelectedItem.ToString() == "Hoạt động") ? 0 : 1;
+
+                            DTO_TaiKhoan taiKhoan = new DTO_TaiKhoan(maTK, txt_QLTK_tenDangNhap.Text.Trim(), txt_QLTK_matKhau.Text.Trim(), txt_QLTK_hoTen.Text.Trim(), txt_QLTK_sdt.Text.Trim(), maQuyen, biKhoa);
+                            if (bllTaiKhoan.insertTaiKhoan(taiKhoan))
+                            {
+                                MessageBox.Show("Thêm Tài khoản mới thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                loadDGVDSTaiKhoan();
+                                refreshFieldInput();
+                            }
+                            else
+                                MessageBox.Show("Đã xảy ra lỗi, vui lòng thử lại sau!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         }
-                        else
-                            MessageBox.Show("Đã xảy ra lỗi, vui lòng thử lại sau!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                 }
             }
@@ -101,24 +106,54 @@ namespace Frm_DangNhap
                 else
                 {
                     DataGridViewRow selectedRow = gv_QLTK.SelectedRows[0];
+                    string tenDNOld = selectedRow.Cells[1].Value.ToString().Trim();
+                    string tenDNNew = txt_QLTK_tenDangNhap.Text.Trim();
 
-                    DialogResult dialog = MessageBox.Show("Xác nhận sửa thông tin Tài khoản?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2);
-                    if (dialog == DialogResult.Yes)
+                    if(tenDNNew != tenDNOld)
                     {
-                        string maQuyen = (cbo_QLTK_quyen.SelectedItem.ToString() == "Quyền User") ? "user" : "admin";
-                        int biKhoa = (cbo_QLTK_trangThai.SelectedItem.ToString() == "Hoạt động") ? 0 : 1;
-
-                        DTO_TaiKhoan taiKhoan = new DTO_TaiKhoan(selectedRow.Cells[0].Value.ToString().Trim(), txt_QLTK_tenDangNhap.Text.Trim(), txt_QLTK_matKhau.Text.Trim(), txt_QLTK_hoTen.Text.Trim(), txt_QLTK_sdt.Text.Trim(), maQuyen, biKhoa);
-
-                        if (bllTaiKhoan.updateTaiKhoan(taiKhoan))
-                        {
-                            MessageBox.Show("Sửa thông tin Tài khoản thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            loadDGVDSTaiKhoan();
-                            refreshFieldInput();
-                        }
+                        if (bllTaiKhoan.checkExistTenDangNhap(tenDNNew))
+                            MessageBox.Show("Tên đăng nhập đã tồn tại!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         else
-                            MessageBox.Show("Đã xảy ra lỗi, vui lòng thử lại sau!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        {
+                            DialogResult dialog = MessageBox.Show("Xác nhận sửa thông tin Tài khoản?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2);
+                            if (dialog == DialogResult.Yes)
+                            {
+                                string maQuyen = (cbo_QLTK_quyen.SelectedItem.ToString() == "Quyền User") ? "user" : "admin";
+                                int biKhoa = (cbo_QLTK_trangThai.SelectedItem.ToString() == "Hoạt động") ? 0 : 1;
+
+                                DTO_TaiKhoan taiKhoan = new DTO_TaiKhoan(selectedRow.Cells[0].Value.ToString().Trim(), tenDNNew, txt_QLTK_matKhau.Text.Trim(), txt_QLTK_hoTen.Text.Trim(), txt_QLTK_sdt.Text.Trim(), maQuyen, biKhoa);
+
+                                if (bllTaiKhoan.updateTaiKhoan(taiKhoan))
+                                {
+                                    MessageBox.Show("Sửa thông tin Tài khoản thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                    loadDGVDSTaiKhoan();
+                                    refreshFieldInput();
+                                }
+                                else
+                                    MessageBox.Show("Đã xảy ra lỗi, vui lòng thử lại sau!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            }
+                        }
                     }
+                    else
+                    {
+                        DialogResult dialog = MessageBox.Show("Xác nhận sửa thông tin Tài khoản?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2);
+                        if (dialog == DialogResult.Yes)
+                        {
+                            string maQuyen = (cbo_QLTK_quyen.SelectedItem.ToString() == "Quyền User") ? "user" : "admin";
+                            int biKhoa = (cbo_QLTK_trangThai.SelectedItem.ToString() == "Hoạt động") ? 0 : 1;
+
+                            DTO_TaiKhoan taiKhoan = new DTO_TaiKhoan(selectedRow.Cells[0].Value.ToString().Trim(), tenDNOld, txt_QLTK_matKhau.Text.Trim(), txt_QLTK_hoTen.Text.Trim(), txt_QLTK_sdt.Text.Trim(), maQuyen, biKhoa);
+
+                            if (bllTaiKhoan.updateTaiKhoan(taiKhoan))
+                            {
+                                MessageBox.Show("Sửa thông tin Tài khoản thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                loadDGVDSTaiKhoan();
+                                refreshFieldInput();
+                            }
+                            else
+                                MessageBox.Show("Đã xảy ra lỗi, vui lòng thử lại sau!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        }
+                    }                    
                 }
             }
             else
@@ -166,6 +201,14 @@ namespace Frm_DangNhap
         private void groupBox1_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        private void txt_QLTK_sdt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

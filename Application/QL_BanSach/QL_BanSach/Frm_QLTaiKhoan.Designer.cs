@@ -428,8 +428,8 @@
             this.cbo_QLTK_trangThai.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbo_QLTK_trangThai.FormattingEnabled = true;
             this.cbo_QLTK_trangThai.Items.AddRange(new object[] {
-            "Bị khóa",
-            "Hoạt động"});
+            "Hoạt động",
+            "Bị khóa"});
             this.cbo_QLTK_trangThai.Location = new System.Drawing.Point(210, 352);
             this.cbo_QLTK_trangThai.Name = "cbo_QLTK_trangThai";
             this.cbo_QLTK_trangThai.Size = new System.Drawing.Size(155, 28);
@@ -483,6 +483,7 @@
             this.txt_QLTK_sdt.Name = "txt_QLTK_sdt";
             this.txt_QLTK_sdt.Size = new System.Drawing.Size(374, 27);
             this.txt_QLTK_sdt.TabIndex = 29;
+            this.txt_QLTK_sdt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_QLTK_sdt_KeyPress);
             // 
             // txt_QLTK_hoTen
             // 

@@ -25,6 +25,8 @@ namespace Frm_DangNhap
         {
             txt_maGiamGia.Text = "";
             txt_tenUuDai.Text = "";
+            num_phanTramGiam.Value = 0;
+            dtp_ngayBatDau.Value = dtp_ngayKetThuc.Value = DateTime.Today;
         }
 
         private void gv_thongTinUuDai_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -40,6 +42,8 @@ namespace Frm_DangNhap
         {
             txt_maGiamGia.Text = "";
             txt_tenUuDai.Text = "";
+            num_phanTramGiam.Value = 0;
+            dtp_ngayBatDau.Value = dtp_ngayKetThuc.Value = DateTime.Today;
         }
         private void groupBox3_Enter(object sender, EventArgs e)
         {
@@ -135,15 +139,15 @@ namespace Frm_DangNhap
                 DataGridViewRow selectedRow = gv_thongTinUuDai.SelectedRows[0];
 
                 // Lấy mã giảm giá từ dòng được chọn
-                string maGiamGia = selectedRow.Cells["MaGiamGia"].Value.ToString();
+                string maGiamGia = selectedRow.Cells["MaGiamGia"].Value.ToString().Trim();
 
-                if (txt_maGiamGia.Text.Trim() == string.Empty || txt_tenUuDai.Text.Trim() == string.Empty)
+                if (txt_tenUuDai.Text.Trim() == string.Empty)
                 {
                     MessageBox.Show("Vui lòng điền đầy đủ thông tin Phiếu Giảm Giá!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 else
                 {
-                    string tenGiamGia = txt_maGiamGia.Text.Trim();
+                    string tenGiamGia = txt_tenUuDai.Text.Trim();
                     int phanTramGiamGia = (int)num_phanTramGiam.Value;
                     DateTime ngayBD = dtp_ngayBatDau.Value;
                     DateTime ngayKT = dtp_ngayKetThuc.Value;
@@ -185,6 +189,9 @@ namespace Frm_DangNhap
 
                 txt_maGiamGia.Text = selectedRow.Cells[0].Value.ToString().Trim();
                 txt_tenUuDai.Text = selectedRow.Cells[1].Value.ToString().Trim();
+                num_phanTramGiam.Value = int.Parse(selectedRow.Cells[2].Value.ToString().Trim());
+                dtp_ngayBatDau.Value = DateTime.Parse(selectedRow.Cells[3].Value.ToString().Trim());
+                dtp_ngayKetThuc.Value = DateTime.Parse(selectedRow.Cells[4].Value.ToString().Trim());
             }
         }
 

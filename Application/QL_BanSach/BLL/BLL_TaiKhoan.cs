@@ -45,5 +45,10 @@ namespace BLL
         {
             return dalTaiKhoan.checkForeignKey(maTaiKhoan);
         }
+
+        public bool checkExistTenDangNhap(string tenDN)
+        {
+            return dalTaiKhoan.checkExistTenDangNhap(tenDN);
+        }
     }
 }

@@ -94,8 +94,6 @@ namespace DAL
                         thanhVienUpdate.TenThanhVien = thanhVien.TenThanhVien;
                         thanhVienUpdate.SDT = thanhVien.SDT;
                         thanhVienUpdate.MatKhau = thanhVien.MatKhau;
-                        thanhVienUpdate.TienDaMua = thanhVien.TienDaMua;
-                        thanhVienUpdate.MaLoaiTV = thanhVien.MaLoaiTV;
                         context.SubmitChanges();
                     }
                 }
@@ -115,13 +113,22 @@ namespace DAL
             }
         }
 
+        public bool CheckExistPhoneNumber(string sdt)
+        {
+            using (var context = new QLCuaHangSachDataContext(db.connectionString))
+            {
+                return context.ThanhViens.Any(s => s.SDT == sdt);
+            }
+        }
+
         public bool CheckForeignKey(int maTV)
         {
             using (var context = new QLCuaHangSachDataContext(db.connectionString))
             {
                 bool fkHDB = context.HoaDonBans.Any(s => s.MaTV == maTV);
                 bool fkDDH = context.DonDatHangs.Any(s => s.MaTV == maTV);
-                if (!fkHDB && !fkDDH)
+                bool fkGioHang = context.GioHangs.Any(s => s.MaND == maTV);
+                if (!fkHDB && !fkDDH && !fkGioHang)
                     return false;
                 return true;
             }
@@ -144,5 +151,22 @@ namespace DAL
             }
         }
 
+        public DTO_LoaiThanhVien GetLoaiThanhVienFromTenLoaiTV(string tenLoaiTV)
+        {
+            using (var context = new QLCuaHangSachDataContext(db.connectionString))
+            {
+                LoaiThanhVien _tv = context.LoaiThanhViens.FirstOrDefault(tv => tv.TenLoaiTV == tenLoaiTV);
+                if (_tv != null)
+                {
+                    return new DTO_LoaiThanhVien(_tv.MaLoaiTV, _tv.TenLoaiTV, (int)_tv.TienCanDat, (int)_tv.PhanTramGiamGia);
+
+                }
+                else
+                {
+                    return null; // Trả về null nếu không tìm thấy Thành viên với SDT tương ứng
+                }
+
+            }
+        }
     }
 }

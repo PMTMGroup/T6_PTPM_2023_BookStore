@@ -37,15 +37,14 @@ using DTO;
                 return thanhVienDAL.DeleteThanhVien(maTV);
             }
 
-            public bool UpdateThanhVien(string tenThanhVien, string sDT, string matKhau, int tienDaMua, string maLoaiTV)
+            public bool UpdateThanhVien(int maTV,string tenThanhVien, string sDT, string matKhau)
             {
                 var updatedThanhVien = new DTO_ThanhVien
                 {
+                    MaTV = maTV,
                     TenThanhVien = tenThanhVien,
                     SDT = sDT,
-                    MatKhau = matKhau,
-                    TienDaMua = tienDaMua,
-                    MaLoaiTV = maLoaiTV
+                    MatKhau = matKhau
                 };
 
                 return thanhVienDAL.UpdateThanhVien(updatedThanhVien);
@@ -61,9 +60,19 @@ using DTO;
                 return thanhVienDAL.CheckForeignKey(maTV);
             }
             public DTO_ThanhVien GetThanhVienFromSDT(string sDT)
-        {
-            return thanhVienDAL.GetThanhVienFromSDT(sDT);
-        }
+            {
+                return thanhVienDAL.GetThanhVienFromSDT(sDT);
+            }
+
+            public DTO_LoaiThanhVien GetLoaiThanhVienFromTenLoaiTV(string tenLoaiTV)
+            {
+                return thanhVienDAL.GetLoaiThanhVienFromTenLoaiTV(tenLoaiTV);
+            }
+
+            public bool CheckExistPhoneNumber(string sdt)
+            {
+                return thanhVienDAL.CheckExistPhoneNumber(sdt);
+            }
         }
     }
 

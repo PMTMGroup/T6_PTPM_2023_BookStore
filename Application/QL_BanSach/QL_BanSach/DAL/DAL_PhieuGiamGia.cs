@@ -110,8 +110,8 @@ namespace DAL
             using (var context = new QLCuaHangSachDataContext(db.connectionString))
             {
                 bool fkHDB = context.HoaDonBans.Any(s => s.MaGiamGia == maGiamGia);
-               
-                if (!fkHDB)
+                bool fkDDH = context.DonDatHangs.Any(s => s.MaGiamGia == maGiamGia);
+                if (!fkHDB && !fkDDH)
                     return false;
                 return true;
             }

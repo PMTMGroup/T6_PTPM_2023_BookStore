@@ -121,6 +121,14 @@ namespace DAL
             }
         }
 
+        public bool checkExistTenDangNhap(string tenDN)
+        {
+            using (var context = new QLCuaHangSachDataContext(db.connectionString))
+            {
+                return context.TaiKhoans.Any(s => s.TenDangNhap == tenDN);
+            }
+        }
+
         public bool checkForeignKey(string maTaiKhoan)
         {
             using (var context = new QLCuaHangSachDataContext(db.connectionString))
