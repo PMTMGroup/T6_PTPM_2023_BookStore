@@ -45,13 +45,13 @@
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
     <Reference Include="Syncfusion.Compression.Base">
-      <HintPath>..\..\..\..\..\..\Users\phamc\Desktop\Report\Thuvien\Syncfusion.Compression.Base.dll</HintPath>
+      <HintPath>..\..\Library_Report\Syncfusion.Compression.Base.dll</HintPath>
     </Reference>
     <Reference Include="Syncfusion.DocIO.Base">
-      <HintPath>..\..\..\..\..\..\Users\phamc\Desktop\Report\Thuvien\Syncfusion.DocIO.Base.dll</HintPath>
+      <HintPath>..\..\Library_Report\Syncfusion.DocIO.Base.dll</HintPath>
     </Reference>
     <Reference Include="Syncfusion.OfficeChart.Base">
-      <HintPath>..\..\..\..\..\..\Users\phamc\Desktop\Report\Thuvien\Syncfusion.OfficeChart.Base.dll</HintPath>
+      <HintPath>..\..\Library_Report\Syncfusion.OfficeChart.Base.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />

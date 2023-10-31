@@ -175,5 +175,16 @@ namespace Frm_DangNhap
             _frm.Dock = DockStyle.Fill;
             _frm.Show();
         }
+
+        private void btn_dangxuat_Click(object sender, EventArgs e)
+        {
+            DialogResult dialog = MessageBox.Show("Bạn có muốn đăng xuất?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2);
+            if (dialog == DialogResult.Yes)
+            {
+                this.Visible = false;
+                Frm_DangNhap frmOBJ = new Frm_DangNhap();
+                frmOBJ.Show();
+            }
+        }
     }
 }

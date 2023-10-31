@@ -76,5 +76,10 @@ namespace Frm_DangNhap
         {
 
         }
+
+        private void btn_TTDS_them_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -238,6 +238,7 @@
             this.btn_TTDS_them.TabIndex = 16;
             this.btn_TTDS_them.Text = "    Thêm";
             this.btn_TTDS_them.UseVisualStyleBackColor = true;
+            this.btn_TTDS_them.Click += new System.EventHandler(this.btn_TTDS_them_Click);
             // 
             // label10
             // 
