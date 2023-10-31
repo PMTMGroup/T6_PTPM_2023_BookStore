@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DTO;
 using BLL;
+using DemoBuoi7;
 
 namespace Frm_DangNhap
 {
@@ -54,6 +55,15 @@ namespace Frm_DangNhap
 
             double tongSachBan = double.Parse(bllThongKe.tongSLSachBanTaiCuaHang().ToString()) + double.Parse(bllThongKe.tongSLSachBanTrucTuyen().ToString());
             lb_soLuongBanSach.Text = string.Format("{0:#,##0}", tongSachBan);
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            WordExport export = new WordExport();
+            string dayNow = DateTime.Today.Day.ToString();
+            string monthNow = DateTime.Today.Month.ToString();
+            string yearNow = DateTime.Today.Year.ToString();
+            export.QuyetDinhKhenThuong(dayNow, monthNow, yearNow, "Pham Minh Chau", lb_tongTienBanSach.Text, lb_tongTienXuatKho.Text, lb_tongTienNhapSach.Text, lb_tongLoiNhuan.Text, lb_tongDauSach.Text, lb_tongSachTon.Text, lb_soLuongBanSach.Text, lb_tongDonDatHang.Text, lb_soDonHangThanhCong.Text, lb_soDonHangThatBai.Text, lb_soLuongNhanVien.Text, lb_soLuongThanhVien.Text);
         }
     }
 }
