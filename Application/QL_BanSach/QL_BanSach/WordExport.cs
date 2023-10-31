@@ -194,7 +194,7 @@ namespace DemoBuoi7
 
         #endregion
 
-        public void QuyetDinhKhenThuong(string ngayTK, string thangTK, string namTK, string hoTen, string tienBanSach, string tienXuatKho, string tienNhapSach
+        public void XuatBaoCaoThongKe(string ngayTK, string thangTK, string namTK, string hoTen, string tienBanSach, string tienXuatKho, string tienNhapSach
             ,string tongLoiNhuan, string tongDauSach, string slSachTon, string slSachBan, string slDonHang, string slDHThanhCong, string slDHThatBai
             ,string slNhanVien, string slThanhVien )
         {
