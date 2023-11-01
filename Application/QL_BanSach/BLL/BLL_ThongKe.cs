@@ -127,5 +127,15 @@ namespace BLL
             }
             return 0;
         }
+
+        public string getMaQuyenfromMaTaiKhoan(string maTK)
+        {
+            return dalThongKe.getMaQuyenfromMaTaiKhoan(maTK).Trim();
+        }
+
+        public DTO_TaiKhoan getTaiKhoanfromMaTaiKhoan(string maTK)
+        {
+            return dalThongKe.getTaiKhoanfromMaTaiKhoan(maTK);
+        }
     }
 }

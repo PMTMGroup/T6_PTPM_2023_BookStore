@@ -29,9 +29,10 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_QLSanPham));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lb_nameFileUpload = new System.Windows.Forms.Label();
             this.btn_TTDS_choAnh = new System.Windows.Forms.Button();
             this.cbo_TTDS_keDatSach = new System.Windows.Forms.ComboBox();
             this.cbo_TTDS_tangDatSach = new System.Windows.Forms.ComboBox();
@@ -68,6 +69,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.lb_nameFileUpload);
             this.groupBox1.Controls.Add(this.btn_TTDS_choAnh);
             this.groupBox1.Controls.Add(this.cbo_TTDS_keDatSach);
             this.groupBox1.Controls.Add(this.cbo_TTDS_tangDatSach);
@@ -99,6 +101,15 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin đầu sách:";
             // 
+            // lb_nameFileUpload
+            // 
+            this.lb_nameFileUpload.AutoSize = true;
+            this.lb_nameFileUpload.Location = new System.Drawing.Point(24, 338);
+            this.lb_nameFileUpload.Name = "lb_nameFileUpload";
+            this.lb_nameFileUpload.Size = new System.Drawing.Size(0, 17);
+            this.lb_nameFileUpload.TabIndex = 29;
+            this.lb_nameFileUpload.Visible = false;
+            // 
             // btn_TTDS_choAnh
             // 
             this.btn_TTDS_choAnh.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -108,6 +119,7 @@
             this.btn_TTDS_choAnh.TabIndex = 6;
             this.btn_TTDS_choAnh.Text = "Chọn ảnh";
             this.btn_TTDS_choAnh.UseVisualStyleBackColor = true;
+            this.btn_TTDS_choAnh.Click += new System.EventHandler(this.btn_TTDS_choAnh_Click);
             // 
             // cbo_TTDS_keDatSach
             // 
@@ -136,6 +148,7 @@
             this.txt_TTDS_giaBan.Name = "txt_TTDS_giaBan";
             this.txt_TTDS_giaBan.Size = new System.Drawing.Size(403, 27);
             this.txt_TTDS_giaBan.TabIndex = 26;
+            this.txt_TTDS_giaBan.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_TTDS_giaBan_KeyPress);
             // 
             // txt_TTDS_soTrang
             // 
@@ -144,6 +157,7 @@
             this.txt_TTDS_soTrang.Name = "txt_TTDS_soTrang";
             this.txt_TTDS_soTrang.Size = new System.Drawing.Size(403, 27);
             this.txt_TTDS_soTrang.TabIndex = 25;
+            this.txt_TTDS_soTrang.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_TTDS_soTrang_KeyPress);
             // 
             // txt_TTDS_tacGia
             // 
@@ -201,6 +215,7 @@
             this.btn_TTDS_luu.TabIndex = 19;
             this.btn_TTDS_luu.Text = "    Lưu";
             this.btn_TTDS_luu.UseVisualStyleBackColor = true;
+            this.btn_TTDS_luu.Click += new System.EventHandler(this.btn_TTDS_luu_Click);
             // 
             // btn_TTDS_lamMoi
             // 
@@ -226,6 +241,7 @@
             this.btn_TTDS_xoa.TabIndex = 17;
             this.btn_TTDS_xoa.Text = "   Xóa";
             this.btn_TTDS_xoa.UseVisualStyleBackColor = true;
+            this.btn_TTDS_xoa.Click += new System.EventHandler(this.btn_TTDS_xoa_Click);
             // 
             // btn_TTDS_them
             // 
@@ -364,24 +380,24 @@
             // gv_dsDauSach
             // 
             this.gv_dsDauSach.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.gv_dsDauSach.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.gv_dsDauSach.DefaultCellStyle = dataGridViewCellStyle3;
             this.gv_dsDauSach.Location = new System.Drawing.Point(27, 40);
             this.gv_dsDauSach.Name = "gv_dsDauSach";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gv_dsDauSach.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gv_dsDauSach.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.gv_dsDauSach.RowHeadersWidth = 100;
             this.gv_dsDauSach.RowTemplate.Height = 24;
             this.gv_dsDauSach.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -445,5 +461,6 @@
         private System.Windows.Forms.ComboBox cbo_TTDS_tangDatSach;
         private System.Windows.Forms.Button btn_TTDS_choAnh;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.Label lb_nameFileUpload;
     }
 }

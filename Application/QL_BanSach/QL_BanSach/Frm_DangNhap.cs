@@ -39,7 +39,7 @@ namespace Frm_DangNhap
                     else
                     {
                         this.Visible = false;
-                        Frm_Main frmOBJ = new Frm_Main();
+                        Frm_Main frmOBJ = new Frm_Main(account.MaTaiKhoan);
                         frmOBJ.Show();
                     }
                 }

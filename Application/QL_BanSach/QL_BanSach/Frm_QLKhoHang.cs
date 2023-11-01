@@ -15,11 +15,18 @@ namespace Frm_DangNhap
     public partial class Frm_QLKhoHang : Form
     {
         BLL_KhoHang bllKhoHang = new BLL_KhoHang();
+        private string maTKDN;
+        public Frm_QLKhoHang(string maTKDN)
+        {
+            InitializeComponent();
+            this.maTKDN = maTKDN;
+            loadData();
+            loadDataDefault();
+        }
+
         public Frm_QLKhoHang()
         {
             InitializeComponent();
-            loadData();
-            loadDataDefault();
         }
 
         private void btn_TTHDK_lamMoi_Click(object sender, EventArgs e)
@@ -140,7 +147,7 @@ namespace Frm_DangNhap
                                     tinhTongTienHoaDonKho(listKho),
                                     today,
                                     (txt_ghiChu.Text.Trim() == string.Empty) ? "Không" : txt_ghiChu.Text.Trim(),
-                                    "TK02",
+                                    this.maTKDN,
                                     (cbo_TTHDK_loaiHoaDon.SelectedItem.ToString() == "Nhập kho") ? "HDNhapKho" : "HDXuatKho"
                                 ));
 
@@ -169,7 +176,7 @@ namespace Frm_DangNhap
                                 tinhTongTienHoaDonKho(listKho),
                                 today,
                                 (txt_ghiChu.Text.Trim() == string.Empty) ? "Không" : txt_ghiChu.Text.Trim(),
-                                "TK02",
+                                this.maTKDN,
                                 (cbo_TTHDK_loaiHoaDon.SelectedItem.ToString() == "Nhập kho") ? "HDNhapKho" : "HDXuatKho"
                             ));
 

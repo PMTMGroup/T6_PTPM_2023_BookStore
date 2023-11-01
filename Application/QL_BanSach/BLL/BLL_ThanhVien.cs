@@ -73,6 +73,11 @@ using DTO;
             {
                 return thanhVienDAL.CheckExistPhoneNumber(sdt);
             }
+
+            public string getMaQuyenfromMaTaiKhoan(string maTK)
+            {
+                return thanhVienDAL.getMaQuyenfromMaTaiKhoan(maTK);
+            }
         }
     }
 

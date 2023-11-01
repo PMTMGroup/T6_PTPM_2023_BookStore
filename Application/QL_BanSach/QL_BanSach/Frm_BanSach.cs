@@ -15,6 +15,12 @@ namespace Frm_DangNhap
     public partial class Frm_BanSach : Form
     {
         BLL_BanSach bllBanSach = new BLL_BanSach();
+        private string maTKDN;
+        public Frm_BanSach(string maTKDN)
+        {
+            InitializeComponent();
+            this.maTKDN = maTKDN;
+        }
         public Frm_BanSach()
         {
             InitializeComponent();
@@ -33,7 +39,7 @@ namespace Frm_DangNhap
         private void btn_lamMoi_Click(object sender, EventArgs e)
         {
             refreshFieldInput();
-            pb_hinhAnh.Image = Image.FromFile("../Products/loadingPic.png");
+            pb_hinhAnh.Image = Image.FromFile("../Debug/Products/loadingPic.png");
         }
 
         private void refreshFieldInput()
@@ -71,7 +77,7 @@ namespace Frm_DangNhap
                         txt_nxb.Text = bllBanSach.getNXBfromMaNXB(_sach.MaNXB.Trim()).TenNXB;
                         txt_theLoai.Text = bllBanSach.getTheLoaifromMaTheLoai(_sach.MaTheLoai.Trim()).TenTheLoai;
                         txt_giaBan.Text = _sach.GiaBan.ToString();
-                        pb_hinhAnh.Image = Image.FromFile("../Products/" + _sach.HinhAnh);
+                        pb_hinhAnh.Image = Image.FromFile("../Debug/Products/" + _sach.HinhAnh);
                     }
                 }
                 else
@@ -87,7 +93,7 @@ namespace Frm_DangNhap
                         txt_nxb.Text = bllBanSach.getNXBfromMaNXB(_sach.MaNXB.Trim()).TenNXB;
                         txt_theLoai.Text = bllBanSach.getTheLoaifromMaTheLoai(_sach.MaTheLoai.Trim()).TenTheLoai;
                         txt_giaBan.Text = _sach.GiaBan.ToString();
-                        pb_hinhAnh.Image = Image.FromFile("../Products/" + _sach.HinhAnh);
+                        pb_hinhAnh.Image = Image.FromFile("../Debug/Products/" + _sach.HinhAnh);
                     }
                 }
             }
@@ -155,7 +161,7 @@ namespace Frm_DangNhap
                 txt_nxb.Text = bllBanSach.getNXBfromMaNXB(_sach.MaNXB.Trim()).TenNXB;
                 txt_theLoai.Text = bllBanSach.getTheLoaifromMaTheLoai(_sach.MaTheLoai.Trim()).TenTheLoai;
                 txt_giaBan.Text = _sach.GiaBan.ToString();
-                pb_hinhAnh.Image = Image.FromFile("../Products/" + _sach.HinhAnh);
+                pb_hinhAnh.Image = Image.FromFile("../Debug/Products/" + _sach.HinhAnh);
                 num_soLuongMua.Value = Convert.ToInt32(selectedRow.Cells[2].Value.ToString());
             }
         }
@@ -165,7 +171,7 @@ namespace Frm_DangNhap
             _dsMua = new List<DTO_ChiTietHoaDonBan>();
             table_qlbanhang.DataSource = null;
             refreshFieldInput();
-            pb_hinhAnh.Image = Image.FromFile("../Products/loadingPic.png");
+            pb_hinhAnh.Image = Image.FromFile("../Debug/Products/loadingPic.png");
 
         }
 
@@ -261,7 +267,7 @@ namespace Frm_DangNhap
             _dsMua = new List<DTO_ChiTietHoaDonBan>();
             table_qlbanhang.DataSource = null;
             refreshFieldInput();
-            pb_hinhAnh.Image = Image.FromFile("../Products/loadingPic.png");
+            pb_hinhAnh.Image = Image.FromFile("../Debug/Products/loadingPic.png");
             lbl_maGG.Text = "None";
             lbl_maTV.Text = "1";
             lb_phieuGiamGia.Text = "Loading...";
@@ -282,6 +288,7 @@ namespace Frm_DangNhap
                     if (dialog == DialogResult.Yes)
                     {
                         DateTime today = DateTime.Today;
+
                         bool storeHDB = bllBanSach.storeHDBanSach(new DTO_HoaDonBan(
                                 0,
                                 today,
@@ -290,8 +297,7 @@ namespace Frm_DangNhap
                                 int.Parse(lbl_thanhtien.Text),
                                 int.Parse(lbl_maTV.Text),
                                 lbl_maGG.Text,
-                            //dynamic value
-                                "TK02"
+                                this.maTKDN
                         ));
 
                         int soHDnewStore = bllBanSach.getSoHDnewStore();

@@ -15,10 +15,34 @@ namespace Frm_DangNhap
     public partial class Frm_QLTaiKhoan : Form
     {
         BLL_TaiKhoan bllTaiKhoan = new BLL_TaiKhoan();
+
+        private string maTKDN;
+        public Frm_QLTaiKhoan(string maTKDN)
+        {
+            InitializeComponent();
+
+            this.maTKDN = maTKDN;
+            loadThongTinTaiKhoan(maTKDN);
+            if(bllTaiKhoan.getTaiKhoanfromMaTaiKhoan(maTKDN).MaQuyen.Trim() == "user")
+            {
+                grp_TaiKhoan.Enabled = false;
+            }
+            else
+                loadDGVDSTaiKhoan();
+        }
+
+        private void loadThongTinTaiKhoan(string maTKDN)
+        {
+            DTO_TaiKhoan tk = bllTaiKhoan.getTaiKhoanfromMaTaiKhoan(maTKDN);
+            lb_TTTK_hoTen.Text = tk.HoTen.Trim();
+            lb_TTTK_maTaiKhoan.Text = tk.MaTaiKhoan.Trim();
+            lb_TTTK_quyen.Text = tk.MaQuyen.Trim();
+            lb_TTTK_sdt.Text = tk.SDT.Trim();
+            lb_TTTK_tenDangNhap.Text = tk.TenDangNhap.Trim();
+        }
         public Frm_QLTaiKhoan()
         {
             InitializeComponent();
-            loadDGVDSTaiKhoan();
         }
 
         private void btn_QLTK_lamMoi_Click(object sender, EventArgs e)
@@ -208,6 +232,47 @@ namespace Frm_DangNhap
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
                 e.Handled = true;
+            }
+        }
+
+        private void btn_TTTK_doiMatKhau_Click(object sender, EventArgs e)
+        {
+            grp_DoiMK.Visible = true;
+        }
+
+        private void btn_DMK_huy_Click(object sender, EventArgs e)
+        {
+            grp_DoiMK.Visible = false;
+        }
+
+        private void btn_DMK_luu_Click(object sender, EventArgs e)
+        {
+            if(txt_DMK_matKhauCu.Text.Trim() == string.Empty || txt_DMK_matKhauMoi.Text.Trim() == string.Empty || txt_DMK_xacNhan.Text.Trim() == string.Empty)
+                MessageBox.Show("Vui lòng điền đầy đủ thông tin!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            else
+            {
+                if(txt_DMK_xacNhan.Text.Trim() != txt_DMK_matKhauMoi.Text.Trim())
+                    MessageBox.Show("Mật khẩu xác nhận không trùng khớp!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                else
+                {
+                    if(bllTaiKhoan.getTaiKhoanfromMaTaiKhoan(maTKDN).MatKhau.Trim() != txt_DMK_matKhauCu.Text.Trim())
+                        MessageBox.Show("Mật khẩu cũ không chính xác!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    else
+                    {
+                        DialogResult dialog = MessageBox.Show("Xác nhận đổi mật khẩu Tài khoản?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2);
+                        if (dialog == DialogResult.Yes)
+                        {
+                            string mkMoi = txt_DMK_matKhauMoi.Text.Trim();
+                            if (bllTaiKhoan.doiMatKhau(maTKDN, mkMoi))
+                            {
+                                MessageBox.Show("Đổi thông tin Mật khẩu thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                grp_DoiMK.Visible = false;
+                            }
+                            else
+                                MessageBox.Show("Đã xảy ra lỗi, vui lòng thử lại sau!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        }
+                    }
+                }
             }
         }
     }

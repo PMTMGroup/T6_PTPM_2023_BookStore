@@ -15,12 +15,23 @@ namespace Frm_DangNhap
     {
         private BLL_ThanhVien thanhvienBLL = new BLL_ThanhVien();
         private BLL_LoaiThanhVien loaithanhvienBLL = new BLL_LoaiThanhVien();
+        private string maTKDN;
+        public Frm_QLThanhVien(string maTKDN)
+        {
+            InitializeComponent();
+            this.maTKDN = maTKDN;
+
+            if(thanhvienBLL.getMaQuyenfromMaTaiKhoan(this.maTKDN).Trim() == "user")
+                grp_loaiTV.Enabled = false;
+            else
+                loadDGVLoaiThanhVien();
+            loadDGVThanhVien();
+            loadCombobox();
+        }
+
         public Frm_QLThanhVien()
         {
             InitializeComponent();
-            loadDGVLoaiThanhVien();
-            loadDGVThanhVien();
-            loadCombobox();
         }
         public void loadDGVLoaiThanhVien()
         {

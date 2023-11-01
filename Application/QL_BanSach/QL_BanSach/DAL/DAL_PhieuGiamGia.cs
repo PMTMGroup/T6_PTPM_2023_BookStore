@@ -116,5 +116,16 @@ namespace DAL
                 return true;
             }
         }
+
+        public string getMaQuyenfromMaTaiKhoan(string maTK)
+        {
+            using (var context = new QLCuaHangSachDataContext(db.connectionString))
+            {
+                var account = context.TaiKhoans.Where(s => s.MaTaiKhoan == maTK).FirstOrDefault();
+                if (account != null)
+                    return account.MaQuyen;
+                return null;
+            }
+        }
     }
 }

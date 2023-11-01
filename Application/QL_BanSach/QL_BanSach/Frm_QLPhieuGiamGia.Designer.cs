@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_QLPhieuGiamGia));
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.grp_uudai = new System.Windows.Forms.GroupBox();
             this.dtp_ngayKetThuc = new System.Windows.Forms.DateTimePicker();
             this.dtp_ngayBatDau = new System.Windows.Forms.DateTimePicker();
             this.txt_maGiamGia = new System.Windows.Forms.TextBox();
@@ -45,35 +45,35 @@
             this.label25 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
-            this.groupBox3.SuspendLayout();
+            this.grp_uudai.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.num_phanTramGiam)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gv_thongTinUuDai)).BeginInit();
             this.SuspendLayout();
             // 
-            // groupBox3
+            // grp_uudai
             // 
-            this.groupBox3.Controls.Add(this.dtp_ngayKetThuc);
-            this.groupBox3.Controls.Add(this.dtp_ngayBatDau);
-            this.groupBox3.Controls.Add(this.txt_maGiamGia);
-            this.groupBox3.Controls.Add(this.num_phanTramGiam);
-            this.groupBox3.Controls.Add(this.gv_thongTinUuDai);
-            this.groupBox3.Controls.Add(this.btn_luu);
-            this.groupBox3.Controls.Add(this.btn_lamMoi);
-            this.groupBox3.Controls.Add(this.btn_xoa);
-            this.groupBox3.Controls.Add(this.btn_them);
-            this.groupBox3.Controls.Add(this.txt_tenUuDai);
-            this.groupBox3.Controls.Add(this.label20);
-            this.groupBox3.Controls.Add(this.label21);
-            this.groupBox3.Controls.Add(this.label25);
-            this.groupBox3.Controls.Add(this.label26);
-            this.groupBox3.Controls.Add(this.label27);
-            this.groupBox3.Location = new System.Drawing.Point(52, 35);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(1644, 393);
-            this.groupBox3.TabIndex = 22;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Quản lý thông tin ưu đãi:";
-            this.groupBox3.Enter += new System.EventHandler(this.groupBox3_Enter);
+            this.grp_uudai.Controls.Add(this.dtp_ngayKetThuc);
+            this.grp_uudai.Controls.Add(this.dtp_ngayBatDau);
+            this.grp_uudai.Controls.Add(this.txt_maGiamGia);
+            this.grp_uudai.Controls.Add(this.num_phanTramGiam);
+            this.grp_uudai.Controls.Add(this.gv_thongTinUuDai);
+            this.grp_uudai.Controls.Add(this.btn_luu);
+            this.grp_uudai.Controls.Add(this.btn_lamMoi);
+            this.grp_uudai.Controls.Add(this.btn_xoa);
+            this.grp_uudai.Controls.Add(this.btn_them);
+            this.grp_uudai.Controls.Add(this.txt_tenUuDai);
+            this.grp_uudai.Controls.Add(this.label20);
+            this.grp_uudai.Controls.Add(this.label21);
+            this.grp_uudai.Controls.Add(this.label25);
+            this.grp_uudai.Controls.Add(this.label26);
+            this.grp_uudai.Controls.Add(this.label27);
+            this.grp_uudai.Location = new System.Drawing.Point(52, 35);
+            this.grp_uudai.Name = "grp_uudai";
+            this.grp_uudai.Size = new System.Drawing.Size(1644, 393);
+            this.grp_uudai.TabIndex = 22;
+            this.grp_uudai.TabStop = false;
+            this.grp_uudai.Text = "Quản lý thông tin ưu đãi:";
+            this.grp_uudai.Enter += new System.EventHandler(this.groupBox3_Enter);
             // 
             // dtp_ngayKetThuc
             // 
@@ -236,13 +236,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1721, 882);
-            this.Controls.Add(this.groupBox3);
+            this.Controls.Add(this.grp_uudai);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Frm_QLPhieuGiamGia";
             this.Text = "Frm_QLPhieuGiamGia";
             this.Load += new System.EventHandler(this.Frm_QLPhieuGiamGia_Load);
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
+            this.grp_uudai.ResumeLayout(false);
+            this.grp_uudai.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.num_phanTramGiam)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gv_thongTinUuDai)).EndInit();
             this.ResumeLayout(false);
@@ -251,7 +251,7 @@
 
         #endregion
 
-        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.GroupBox grp_uudai;
         private System.Windows.Forms.DataGridView gv_thongTinUuDai;
         private System.Windows.Forms.Button btn_luu;
         private System.Windows.Forms.Button btn_lamMoi;

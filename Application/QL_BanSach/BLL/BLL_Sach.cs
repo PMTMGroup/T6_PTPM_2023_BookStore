@@ -37,5 +37,49 @@ namespace BLL
             return sachDAL.getKetDatfromMaKe(maKe);
         }
 
+        public bool checkPrimaryKey(string maSach)
+        {
+            return sachDAL.checkPrimaryKey(maSach);
+        }
+
+        public bool checkForeignKey(string maSach)
+        {
+            return sachDAL.checkForeignKey(maSach);
+        }
+
+        public DTO_NhaXuatBan getNXBfromTenNXB(string tenNXB)
+        {
+            return sachDAL.getNXBfromTenNXB(tenNXB);
+        }
+
+        public DTO_TheLoaiSach getTheLoaifromTenTheLoai(string tenTheLoai)
+        {
+            return sachDAL.getTheLoaifromTenTheLoai(tenTheLoai);
+        }
+
+        public DTO_Tang getTangfromTenTang(string tenTang)
+        {
+            return sachDAL.getTangfromTenTang(tenTang);
+        }
+
+        public DTO_KeDat getKetDatfromTenKe(string tenKeDat)
+        {
+            return sachDAL.getKetDatfromTenKe(tenKeDat);
+        }
+
+        public bool insertSach(DTO_Sach s)
+        {
+            return sachDAL.insertSach(s);
+        }
+
+        public bool updateSach(DTO_Sach s)
+        {
+            return sachDAL.updateSach(s);
+        }
+
+        public bool deleteSach(string maSach)
+        {
+            return sachDAL.deleteSach(maSach);
+        }
     }
 }

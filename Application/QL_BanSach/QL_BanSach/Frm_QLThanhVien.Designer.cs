@@ -54,7 +54,8 @@
             this.btn_TCTTTV_traCuu = new System.Windows.Forms.Button();
             this.txt_TCTTTV_sdt = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.grp_loaiTV = new System.Windows.Forms.GroupBox();
+            this.num_phantramgg = new System.Windows.Forms.NumericUpDown();
             this.btn_QLLTV_luu = new System.Windows.Forms.Button();
             this.txt_QLLTV_soTienCanDat = new System.Windows.Forms.TextBox();
             this.btn_QLLTV_lamMoi = new System.Windows.Forms.Button();
@@ -67,14 +68,13 @@
             this.dgv_loaiTV = new System.Windows.Forms.DataGridView();
             this.txt_QLLTV_maLoaiThanhVien = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.num_phantramgg = new System.Windows.Forms.NumericUpDown();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_thanhvien)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gv_TCTTTV_ketQuaTraCuu)).BeginInit();
-            this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_loaiTV)).BeginInit();
+            this.grp_loaiTV.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.num_phantramgg)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_loaiTV)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox3
@@ -369,28 +369,36 @@
             this.label4.TabIndex = 2;
             this.label4.Text = "Số điện thoại:";
             // 
-            // groupBox2
+            // grp_loaiTV
             // 
-            this.groupBox2.Controls.Add(this.num_phantramgg);
-            this.groupBox2.Controls.Add(this.btn_QLLTV_luu);
-            this.groupBox2.Controls.Add(this.txt_QLLTV_soTienCanDat);
-            this.groupBox2.Controls.Add(this.btn_QLLTV_lamMoi);
-            this.groupBox2.Controls.Add(this.label6);
-            this.groupBox2.Controls.Add(this.btn_QLLTV_xoa);
-            this.groupBox2.Controls.Add(this.btn_QLLTV_them);
-            this.groupBox2.Controls.Add(this.txt_QLLTV_tenLoaiThanhVien);
-            this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Controls.Add(this.dgv_loaiTV);
-            this.groupBox2.Controls.Add(this.txt_QLLTV_maLoaiThanhVien);
-            this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Location = new System.Drawing.Point(883, 396);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(790, 559);
-            this.groupBox2.TabIndex = 41;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Quản lý loại thành viên:";
-            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
+            this.grp_loaiTV.Controls.Add(this.num_phantramgg);
+            this.grp_loaiTV.Controls.Add(this.btn_QLLTV_luu);
+            this.grp_loaiTV.Controls.Add(this.txt_QLLTV_soTienCanDat);
+            this.grp_loaiTV.Controls.Add(this.btn_QLLTV_lamMoi);
+            this.grp_loaiTV.Controls.Add(this.label6);
+            this.grp_loaiTV.Controls.Add(this.btn_QLLTV_xoa);
+            this.grp_loaiTV.Controls.Add(this.btn_QLLTV_them);
+            this.grp_loaiTV.Controls.Add(this.txt_QLLTV_tenLoaiThanhVien);
+            this.grp_loaiTV.Controls.Add(this.label5);
+            this.grp_loaiTV.Controls.Add(this.label2);
+            this.grp_loaiTV.Controls.Add(this.dgv_loaiTV);
+            this.grp_loaiTV.Controls.Add(this.txt_QLLTV_maLoaiThanhVien);
+            this.grp_loaiTV.Controls.Add(this.label3);
+            this.grp_loaiTV.Location = new System.Drawing.Point(883, 396);
+            this.grp_loaiTV.Name = "grp_loaiTV";
+            this.grp_loaiTV.Size = new System.Drawing.Size(790, 559);
+            this.grp_loaiTV.TabIndex = 41;
+            this.grp_loaiTV.TabStop = false;
+            this.grp_loaiTV.Text = "Quản lý loại thành viên:";
+            this.grp_loaiTV.Enter += new System.EventHandler(this.groupBox2_Enter);
+            // 
+            // num_phantramgg
+            // 
+            this.num_phantramgg.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.num_phantramgg.Location = new System.Drawing.Point(234, 204);
+            this.num_phantramgg.Name = "num_phantramgg";
+            this.num_phantramgg.Size = new System.Drawing.Size(120, 27);
+            this.num_phantramgg.TabIndex = 44;
             // 
             // btn_QLLTV_luu
             // 
@@ -522,21 +530,13 @@
             this.label3.TabIndex = 2;
             this.label3.Text = "Mã loại thành viên:";
             // 
-            // num_phantramgg
-            // 
-            this.num_phantramgg.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.num_phantramgg.Location = new System.Drawing.Point(234, 204);
-            this.num_phantramgg.Name = "num_phantramgg";
-            this.num_phantramgg.Size = new System.Drawing.Size(120, 27);
-            this.num_phantramgg.TabIndex = 44;
-            // 
             // Frm_QLThanhVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1721, 885);
-            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.grp_loaiTV);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox3);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -548,10 +548,10 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gv_TCTTTV_ketQuaTraCuu)).EndInit();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_loaiTV)).EndInit();
+            this.grp_loaiTV.ResumeLayout(false);
+            this.grp_loaiTV.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.num_phantramgg)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_loaiTV)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -582,7 +582,7 @@
         private System.Windows.Forms.TextBox txt_TCTTTV_sdt;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox grp_loaiTV;
         private System.Windows.Forms.TextBox txt_QLLTV_soTienCanDat;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txt_QLLTV_tenLoaiThanhVien;

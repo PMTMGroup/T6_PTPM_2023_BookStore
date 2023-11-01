@@ -65,7 +65,7 @@
             this.panel12 = new System.Windows.Forms.Panel();
             this.lb_tongDonDatHang = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.button6 = new System.Windows.Forms.Button();
+            this.btn_XuatBaoCao = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -440,18 +440,18 @@
             this.label3.TabIndex = 2;
             this.label3.Text = "Tổng đơn đặt hàng:";
             // 
-            // button6
+            // btn_XuatBaoCao
             // 
-            this.button6.Image = ((System.Drawing.Image)(resources.GetObject("button6.Image")));
-            this.button6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button6.Location = new System.Drawing.Point(1438, 603);
-            this.button6.Name = "button6";
-            this.button6.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
-            this.button6.Size = new System.Drawing.Size(247, 54);
-            this.button6.TabIndex = 12;
-            this.button6.Text = "      Xuất Báo Cáo";
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
+            this.btn_XuatBaoCao.Image = ((System.Drawing.Image)(resources.GetObject("btn_XuatBaoCao.Image")));
+            this.btn_XuatBaoCao.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_XuatBaoCao.Location = new System.Drawing.Point(1438, 603);
+            this.btn_XuatBaoCao.Name = "btn_XuatBaoCao";
+            this.btn_XuatBaoCao.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
+            this.btn_XuatBaoCao.Size = new System.Drawing.Size(247, 54);
+            this.btn_XuatBaoCao.TabIndex = 12;
+            this.btn_XuatBaoCao.Text = "      Xuất Báo Cáo";
+            this.btn_XuatBaoCao.UseVisualStyleBackColor = true;
+            this.btn_XuatBaoCao.Click += new System.EventHandler(this.button6_Click);
             // 
             // Frm_ThongKe
             // 
@@ -459,7 +459,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1721, 885);
-            this.Controls.Add(this.button6);
+            this.Controls.Add(this.btn_XuatBaoCao);
             this.Controls.Add(this.panel9);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel10);
@@ -541,6 +541,6 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label lb_tongDonDatHang;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button btn_XuatBaoCao;
     }
 }

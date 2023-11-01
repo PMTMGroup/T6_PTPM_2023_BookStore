@@ -50,5 +50,15 @@ namespace BLL
         {
             return dalTaiKhoan.checkExistTenDangNhap(tenDN);
         }
+
+        public DTO_TaiKhoan getTaiKhoanfromMaTaiKhoan(string maTK)
+        {
+            return dalTaiKhoan.getTaiKhoanfromMaTaiKhoan(maTK);
+        }
+
+        public bool doiMatKhau(string maTaiKhoan, string mkMoi)
+        {
+            return dalTaiKhoan.doiMatKhau(maTaiKhoan,mkMoi);
+        }
     }
 }

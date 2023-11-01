@@ -15,10 +15,19 @@ namespace Frm_DangNhap
     public partial class Frm_QLPhieuGiamGia : Form
     {
         private BLL_PhieuGiamGia phieugiamgiaBLL = new BLL_PhieuGiamGia();
+        public Frm_QLPhieuGiamGia(string maTKDN)
+        {
+            InitializeComponent();
+
+            if (phieugiamgiaBLL.getMaQuyenfromMaTaiKhoan(maTKDN).Trim() == "user")
+                grp_uudai.Enabled = false;
+            else
+                loadDGVPhieuGiamGia();
+        }
+
         public Frm_QLPhieuGiamGia()
         {
             InitializeComponent();
-            loadDGVPhieuGiamGia();
         }
 
         private void btn_lamMoi_Click(object sender, EventArgs e)

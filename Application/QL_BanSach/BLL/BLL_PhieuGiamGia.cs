@@ -58,5 +58,10 @@ namespace BLL
         {
             return phieuGiamGiaDAL.CheckForeignKey(maGiamGia);
         }
+
+        public string getMaQuyenfromMaTaiKhoan(string maTK)
+        {
+            return phieuGiamGiaDAL.getMaQuyenfromMaTaiKhoan(maTK);
+        }
     }
 }

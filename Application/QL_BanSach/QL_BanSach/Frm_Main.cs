@@ -12,13 +12,18 @@ namespace Frm_DangNhap
 {
     public partial class Frm_Main : Form
     {
+        private string maTKDN;
         public Frm_Main()
         {
             InitializeComponent();
-            positionFixedUIDefault();
         }
 
-        
+        public Frm_Main(string maTKDN)
+        {
+            InitializeComponent();
+            positionFixedUIDefault();
+            this.maTKDN = maTKDN;
+        }
 
         private void positionFixedUIDefault()
         {
@@ -95,7 +100,7 @@ namespace Frm_DangNhap
         private void btn_bansach_Click(object sender, EventArgs e)
         {
             onClickChange(btn_bansach);
-            Frm_BanSach _frm = new Frm_BanSach();
+            Frm_BanSach _frm = new Frm_BanSach(maTKDN);
             _frm.TopLevel = false;
             panel_master.Controls.Clear();
             panel_master.Controls.Add(_frm);
@@ -107,7 +112,7 @@ namespace Frm_DangNhap
         private void btn_qlthanhvien_Click(object sender, EventArgs e)
         {
             onClickChange(btn_qlthanhvien);
-            Frm_QLThanhVien _frm = new Frm_QLThanhVien();
+            Frm_QLThanhVien _frm = new Frm_QLThanhVien(maTKDN);
             _frm.TopLevel = false;
             panel_master.Controls.Clear();
             panel_master.Controls.Add(_frm);
@@ -119,7 +124,7 @@ namespace Frm_DangNhap
         private void btn_qluudai_Click(object sender, EventArgs e)
         {
             onClickChange(btn_qluudai);
-            Frm_QLPhieuGiamGia _frm = new Frm_QLPhieuGiamGia();
+            Frm_QLPhieuGiamGia _frm = new Frm_QLPhieuGiamGia(maTKDN);
             _frm.TopLevel = false;
             panel_master.Controls.Clear();
             panel_master.Controls.Add(_frm);
@@ -131,7 +136,7 @@ namespace Frm_DangNhap
         private void btn_qlkho_Click(object sender, EventArgs e)
         {
             onClickChange(btn_qlkho);
-            Frm_QLKhoHang _frm = new Frm_QLKhoHang();
+            Frm_QLKhoHang _frm = new Frm_QLKhoHang(maTKDN);
             _frm.TopLevel = false;
             panel_master.Controls.Clear();
             panel_master.Controls.Add(_frm);
@@ -143,7 +148,7 @@ namespace Frm_DangNhap
         private void btn_qltaikhoan_Click(object sender, EventArgs e)
         {
             onClickChange(btn_qltaikhoan);
-            Frm_QLTaiKhoan _frm = new Frm_QLTaiKhoan();
+            Frm_QLTaiKhoan _frm = new Frm_QLTaiKhoan(maTKDN);
             _frm.TopLevel = false;
             panel_master.Controls.Clear();
             panel_master.Controls.Add(_frm);
@@ -155,7 +160,7 @@ namespace Frm_DangNhap
         private void btn_thongke_Click(object sender, EventArgs e)
         {
             onClickChange(btn_thongke);
-            Frm_ThongKe _frm = new Frm_ThongKe();
+            Frm_ThongKe _frm = new Frm_ThongKe(maTKDN);
             _frm.TopLevel = false;
             panel_master.Controls.Clear();
             panel_master.Controls.Add(_frm);

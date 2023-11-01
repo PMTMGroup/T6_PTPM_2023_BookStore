@@ -43,7 +43,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.grp_DoiMK = new System.Windows.Forms.GroupBox();
             this.btn_DMK_huy = new System.Windows.Forms.Button();
             this.btn_DMK_luu = new System.Windows.Forms.Button();
             this.txt_DMK_xacNhan = new System.Windows.Forms.TextBox();
@@ -52,7 +52,7 @@
             this.label13 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.grp_TaiKhoan = new System.Windows.Forms.GroupBox();
             this.gv_QLTK = new System.Windows.Forms.DataGridView();
             this.btn_QLTK_luu = new System.Windows.Forms.Button();
             this.btn_QLTK_lamMoi = new System.Windows.Forms.Button();
@@ -73,8 +73,8 @@
             this.label26 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            this.groupBox3.SuspendLayout();
+            this.grp_DoiMK.SuspendLayout();
+            this.grp_TaiKhoan.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gv_QLTK)).BeginInit();
             this.SuspendLayout();
             // 
@@ -112,6 +112,7 @@
             this.btn_TTTK_doiMatKhau.TabIndex = 19;
             this.btn_TTTK_doiMatKhau.Text = "      Đổi mật khẩu:";
             this.btn_TTTK_doiMatKhau.UseVisualStyleBackColor = true;
+            this.btn_TTTK_doiMatKhau.Click += new System.EventHandler(this.btn_TTTK_doiMatKhau_Click);
             // 
             // lb_TTTK_hoTen
             // 
@@ -233,22 +234,23 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Mã tài khoản:";
             // 
-            // groupBox2
+            // grp_DoiMK
             // 
-            this.groupBox2.Controls.Add(this.btn_DMK_huy);
-            this.groupBox2.Controls.Add(this.btn_DMK_luu);
-            this.groupBox2.Controls.Add(this.txt_DMK_xacNhan);
-            this.groupBox2.Controls.Add(this.txt_DMK_matKhauMoi);
-            this.groupBox2.Controls.Add(this.txt_DMK_matKhauCu);
-            this.groupBox2.Controls.Add(this.label13);
-            this.groupBox2.Controls.Add(this.label23);
-            this.groupBox2.Controls.Add(this.label24);
-            this.groupBox2.Location = new System.Drawing.Point(42, 463);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(431, 282);
-            this.groupBox2.TabIndex = 20;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Đổi mật khẩu:";
+            this.grp_DoiMK.Controls.Add(this.btn_DMK_huy);
+            this.grp_DoiMK.Controls.Add(this.btn_DMK_luu);
+            this.grp_DoiMK.Controls.Add(this.txt_DMK_xacNhan);
+            this.grp_DoiMK.Controls.Add(this.txt_DMK_matKhauMoi);
+            this.grp_DoiMK.Controls.Add(this.txt_DMK_matKhauCu);
+            this.grp_DoiMK.Controls.Add(this.label13);
+            this.grp_DoiMK.Controls.Add(this.label23);
+            this.grp_DoiMK.Controls.Add(this.label24);
+            this.grp_DoiMK.Location = new System.Drawing.Point(42, 463);
+            this.grp_DoiMK.Name = "grp_DoiMK";
+            this.grp_DoiMK.Size = new System.Drawing.Size(431, 282);
+            this.grp_DoiMK.TabIndex = 20;
+            this.grp_DoiMK.TabStop = false;
+            this.grp_DoiMK.Text = "Đổi mật khẩu:";
+            this.grp_DoiMK.Visible = false;
             // 
             // btn_DMK_huy
             // 
@@ -261,6 +263,7 @@
             this.btn_DMK_huy.TabIndex = 26;
             this.btn_DMK_huy.Text = "     Hủy";
             this.btn_DMK_huy.UseVisualStyleBackColor = true;
+            this.btn_DMK_huy.Click += new System.EventHandler(this.btn_DMK_huy_Click);
             // 
             // btn_DMK_luu
             // 
@@ -273,6 +276,7 @@
             this.btn_DMK_luu.TabIndex = 25;
             this.btn_DMK_luu.Text = "    Lưu";
             this.btn_DMK_luu.UseVisualStyleBackColor = true;
+            this.btn_DMK_luu.Click += new System.EventHandler(this.btn_DMK_luu_Click);
             // 
             // txt_DMK_xacNhan
             // 
@@ -331,33 +335,33 @@
             this.label24.TabIndex = 0;
             this.label24.Text = "Mật khẩu cũ:";
             // 
-            // groupBox3
+            // grp_TaiKhoan
             // 
-            this.groupBox3.Controls.Add(this.gv_QLTK);
-            this.groupBox3.Controls.Add(this.btn_QLTK_luu);
-            this.groupBox3.Controls.Add(this.btn_QLTK_lamMoi);
-            this.groupBox3.Controls.Add(this.btn_QLTK_xoa);
-            this.groupBox3.Controls.Add(this.btn_QLTK_them);
-            this.groupBox3.Controls.Add(this.cbo_QLTK_trangThai);
-            this.groupBox3.Controls.Add(this.label14);
-            this.groupBox3.Controls.Add(this.txt_QLTK_matKhau);
-            this.groupBox3.Controls.Add(this.txt_QLTK_tenDangNhap);
-            this.groupBox3.Controls.Add(this.cbo_QLTK_quyen);
-            this.groupBox3.Controls.Add(this.txt_QLTK_sdt);
-            this.groupBox3.Controls.Add(this.txt_QLTK_hoTen);
-            this.groupBox3.Controls.Add(this.txt_QLTK_maTaiKhoan);
-            this.groupBox3.Controls.Add(this.label20);
-            this.groupBox3.Controls.Add(this.label21);
-            this.groupBox3.Controls.Add(this.label22);
-            this.groupBox3.Controls.Add(this.label25);
-            this.groupBox3.Controls.Add(this.label26);
-            this.groupBox3.Controls.Add(this.label27);
-            this.groupBox3.Location = new System.Drawing.Point(497, 27);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(1209, 926);
-            this.groupBox3.TabIndex = 20;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Quản lý tài khoản (Chỉ admin)";
+            this.grp_TaiKhoan.Controls.Add(this.gv_QLTK);
+            this.grp_TaiKhoan.Controls.Add(this.btn_QLTK_luu);
+            this.grp_TaiKhoan.Controls.Add(this.btn_QLTK_lamMoi);
+            this.grp_TaiKhoan.Controls.Add(this.btn_QLTK_xoa);
+            this.grp_TaiKhoan.Controls.Add(this.btn_QLTK_them);
+            this.grp_TaiKhoan.Controls.Add(this.cbo_QLTK_trangThai);
+            this.grp_TaiKhoan.Controls.Add(this.label14);
+            this.grp_TaiKhoan.Controls.Add(this.txt_QLTK_matKhau);
+            this.grp_TaiKhoan.Controls.Add(this.txt_QLTK_tenDangNhap);
+            this.grp_TaiKhoan.Controls.Add(this.cbo_QLTK_quyen);
+            this.grp_TaiKhoan.Controls.Add(this.txt_QLTK_sdt);
+            this.grp_TaiKhoan.Controls.Add(this.txt_QLTK_hoTen);
+            this.grp_TaiKhoan.Controls.Add(this.txt_QLTK_maTaiKhoan);
+            this.grp_TaiKhoan.Controls.Add(this.label20);
+            this.grp_TaiKhoan.Controls.Add(this.label21);
+            this.grp_TaiKhoan.Controls.Add(this.label22);
+            this.grp_TaiKhoan.Controls.Add(this.label25);
+            this.grp_TaiKhoan.Controls.Add(this.label26);
+            this.grp_TaiKhoan.Controls.Add(this.label27);
+            this.grp_TaiKhoan.Location = new System.Drawing.Point(497, 27);
+            this.grp_TaiKhoan.Name = "grp_TaiKhoan";
+            this.grp_TaiKhoan.Size = new System.Drawing.Size(1209, 926);
+            this.grp_TaiKhoan.TabIndex = 20;
+            this.grp_TaiKhoan.TabStop = false;
+            this.grp_TaiKhoan.Text = "Quản lý tài khoản (Chỉ admin)";
             // 
             // gv_QLTK
             // 
@@ -567,18 +571,18 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1721, 882);
-            this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.grp_TaiKhoan);
+            this.Controls.Add(this.grp_DoiMK);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Frm_QLTaiKhoan";
             this.Text = "Frm_QLTaiKhoan";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
+            this.grp_DoiMK.ResumeLayout(false);
+            this.grp_DoiMK.PerformLayout();
+            this.grp_TaiKhoan.ResumeLayout(false);
+            this.grp_TaiKhoan.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gv_QLTK)).EndInit();
             this.ResumeLayout(false);
 
@@ -600,7 +604,7 @@
         private System.Windows.Forms.Label lb_TTTK_tenDangNhap;
         private System.Windows.Forms.Label lb_TTTK_matKhau;
         private System.Windows.Forms.Button btn_TTTK_doiMatKhau;
-        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox grp_DoiMK;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.TextBox txt_DMK_xacNhan;
@@ -609,7 +613,7 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Button btn_DMK_luu;
         private System.Windows.Forms.Button btn_DMK_huy;
-        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.GroupBox grp_TaiKhoan;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label22;

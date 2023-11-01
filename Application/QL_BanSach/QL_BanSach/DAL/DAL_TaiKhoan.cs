@@ -140,5 +140,47 @@ namespace DAL
                 return true;
             }
         }
+
+        public DTO_TaiKhoan getTaiKhoanfromMaTaiKhoan(string maTK)
+        {
+            using (var context = new QLCuaHangSachDataContext(db.connectionString))
+            {
+                var account = context.TaiKhoans.Where(s => s.MaTaiKhoan == maTK).FirstOrDefault();
+                if (account != null)
+                    return new DTO_TaiKhoan
+                    {
+                        MaTaiKhoan = account.MaTaiKhoan,
+                        TenDangNhap = account.TenDangNhap,
+                        MatKhau = account.MatKhau,
+                        HoTen = account.HoTen,
+                        SDT = account.SDT,
+                        MaQuyen = account.MaQuyen,
+                        BiKhoa = account.BiKhoa == true ? 1 : 0
+                    };
+                return null;
+            }
+        }
+
+        public bool doiMatKhau(string maTaiKhoan, string mkMoi)
+        {
+            try
+            {
+                using (var context = new QLCuaHangSachDataContext(db.connectionString))
+                {
+                    var tkUpdate = context.TaiKhoans.SingleOrDefault(s => s.MaTaiKhoan == maTaiKhoan);
+
+                    if (tkUpdate != null)
+                    {
+                        tkUpdate.MatKhau = mkMoi;
+                        context.SubmitChanges();
+                    }
+                }
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
     }
 }
