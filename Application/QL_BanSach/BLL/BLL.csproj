@@ -61,6 +61,7 @@
     <Compile Include="BLL_TheLoai.cs" />
     <Compile Include="BLL_ThongKe.cs" />
     <Compile Include="BLL_TimKiemSanPham.cs" />
+    <Compile Include="BLL_XuatHoaDon.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -226,5 +226,17 @@ namespace Frm_DangNhap
             txt_soHoaDon.Enabled = true;
             rdo_soHD.Checked = true;
         }
+
+        private void btn_XuatBaoCao_Click(object sender, EventArgs e)
+        {
+            if(gv_dsHoaDonBanHang.SelectedRows.Count > 0)
+            {
+                DataGridViewRow r = gv_dsHoaDonBanHang.SelectedRows[0];
+                int soHDB = Int32.Parse( r.Cells[0].Value.ToString().Trim());
+
+                Frm_CrystalReportHoaDon frmRP = new Frm_CrystalReportHoaDon(soHDB);
+                frmRP.Show();
+            }
+        }
     }
 }

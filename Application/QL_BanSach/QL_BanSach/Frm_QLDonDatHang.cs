@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Net.Http;
 using DTO;
 using BLL;
 
@@ -72,8 +73,38 @@ namespace Frm_DangNhap
                     bool ketQuaCapNhat = bllDonDatHang.updateTrangThaiDonDatHang(int.Parse(txt_soDonHang.Text.Trim()), cbo_trangThaiDonHang.SelectedItem.ToString());
                     if (ketQuaCapNhat)
                     {
-                        MessageBox.Show("Cập nhật trạng thái đơn đặt hàng thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-                        loadDGVDSDonDatHang();
+                        const string CsrfToken = "elcrNeYB73hWdlM9Tti5ykqlSyfux3jE26E1Fhuy";
+
+                        string email = txt_email.Text.Trim();
+                        string hoten = txt_hoTenNguoiNhan.Text.Trim();
+                        string sohd = txt_soDonHang.Text.Trim();
+                        string ngaydh = txt_ngayLap.Text.Trim();
+                        string trangthai = cbo_trangThaiDonHang.SelectedItem.ToString();
+
+                        string apiUrlWithQueryString = "http://127.0.0.1:8000/send-mail-notification?email="+ email +"&hoten="+hoten+"&sohoadon="+sohd+"&ngaydathang="+ngaydh+"&trangthai="+trangthai;
+
+                        using (HttpClient httpClient = new HttpClient())
+                        {
+                            try
+                            {
+                                var task = httpClient.GetAsync(apiUrlWithQueryString);
+                                HttpResponseMessage response = task.Result;
+
+                                if (response.IsSuccessStatusCode)
+                                {
+                                    MessageBox.Show("Cập nhật trạng thái đơn đặt hàng thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                                    loadDGVDSDonDatHang();
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Gửi email thông báo thất bại. Mã lỗi: " + response.StatusCode);
+                                }
+                            }
+                            catch (HttpRequestException ex)
+                            {
+                                MessageBox.Show("Lỗi trong quá trình gửi yêu cầu: " + ex.Message);
+                            }
+                        }
                     }
                     else
                         MessageBox.Show("Cập nhật trạng thái đơn đặt hàng thất bại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);

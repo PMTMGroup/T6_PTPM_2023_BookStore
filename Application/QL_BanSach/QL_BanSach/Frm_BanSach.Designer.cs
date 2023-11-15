@@ -51,7 +51,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.btn_TTDS_lamMoi = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
+            this.btn_xuathoadon = new System.Windows.Forms.Button();
             this.btn_HoanTatThanhToan = new System.Windows.Forms.Button();
             this.lbl_thanhtien = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
@@ -88,7 +88,7 @@
             // table_qlbanhang
             // 
             this.table_qlbanhang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.table_qlbanhang.Location = new System.Drawing.Point(68, 546);
+            this.table_qlbanhang.Location = new System.Drawing.Point(42, 536);
             this.table_qlbanhang.Name = "table_qlbanhang";
             this.table_qlbanhang.RowHeadersWidth = 62;
             this.table_qlbanhang.RowTemplate.Height = 24;
@@ -119,7 +119,7 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(68, 51);
+            this.groupBox1.Location = new System.Drawing.Point(42, 41);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(763, 475);
             this.groupBox1.TabIndex = 1;
@@ -308,7 +308,7 @@
             // 
             this.groupBox3.BackColor = System.Drawing.Color.White;
             this.groupBox3.Controls.Add(this.btn_TTDS_lamMoi);
-            this.groupBox3.Controls.Add(this.button6);
+            this.groupBox3.Controls.Add(this.btn_xuathoadon);
             this.groupBox3.Controls.Add(this.btn_HoanTatThanhToan);
             this.groupBox3.Controls.Add(this.lbl_thanhtien);
             this.groupBox3.Controls.Add(this.label18);
@@ -320,7 +320,7 @@
             this.groupBox3.Controls.Add(this.label10);
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.groupBox3.ForeColor = System.Drawing.Color.Red;
-            this.groupBox3.Location = new System.Drawing.Point(1287, 546);
+            this.groupBox3.Location = new System.Drawing.Point(1260, 536);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(399, 404);
             this.groupBox3.TabIndex = 4;
@@ -340,17 +340,18 @@
             this.btn_TTDS_lamMoi.UseVisualStyleBackColor = true;
             this.btn_TTDS_lamMoi.Click += new System.EventHandler(this.btn_TTDS_lamMoi_Click);
             // 
-            // button6
+            // btn_xuathoadon
             // 
-            this.button6.Image = ((System.Drawing.Image)(resources.GetObject("button6.Image")));
-            this.button6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button6.Location = new System.Drawing.Point(30, 340);
-            this.button6.Name = "button6";
-            this.button6.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.button6.Size = new System.Drawing.Size(185, 45);
-            this.button6.TabIndex = 11;
-            this.button6.Text = "      Xuất hóa đơn";
-            this.button6.UseVisualStyleBackColor = true;
+            this.btn_xuathoadon.Image = ((System.Drawing.Image)(resources.GetObject("btn_xuathoadon.Image")));
+            this.btn_xuathoadon.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_xuathoadon.Location = new System.Drawing.Point(30, 340);
+            this.btn_xuathoadon.Name = "btn_xuathoadon";
+            this.btn_xuathoadon.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.btn_xuathoadon.Size = new System.Drawing.Size(185, 45);
+            this.btn_xuathoadon.TabIndex = 11;
+            this.btn_xuathoadon.Text = "      Xuất hóa đơn";
+            this.btn_xuathoadon.UseVisualStyleBackColor = true;
+            this.btn_xuathoadon.Click += new System.EventHandler(this.btn_xuathoadon_Click);
             // 
             // btn_HoanTatThanhToan
             // 
@@ -458,7 +459,7 @@
             // 
             this.pb_hinhAnh.BackColor = System.Drawing.Color.White;
             this.pb_hinhAnh.Image = ((System.Drawing.Image)(resources.GetObject("pb_hinhAnh.Image")));
-            this.pb_hinhAnh.Location = new System.Drawing.Point(1287, 51);
+            this.pb_hinhAnh.Location = new System.Drawing.Point(1260, 41);
             this.pb_hinhAnh.Name = "pb_hinhAnh";
             this.pb_hinhAnh.Size = new System.Drawing.Size(399, 475);
             this.pb_hinhAnh.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -477,7 +478,7 @@
             this.groupBox4.Controls.Add(this.label20);
             this.groupBox4.Controls.Add(this.label21);
             this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.groupBox4.Location = new System.Drawing.Point(856, 51);
+            this.groupBox4.Location = new System.Drawing.Point(830, 41);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(405, 313);
             this.groupBox4.TabIndex = 2;
@@ -580,7 +581,7 @@
             this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Controls.Add(this.label9);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.groupBox2.Location = new System.Drawing.Point(856, 384);
+            this.groupBox2.Location = new System.Drawing.Point(830, 374);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(405, 142);
             this.groupBox2.TabIndex = 8;
@@ -679,7 +680,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button btn_xuathoadon;
         private System.Windows.Forms.Button btn_HoanTatThanhToan;
         private System.Windows.Forms.Label lbl_thanhtien;
         private System.Windows.Forms.Label label18;

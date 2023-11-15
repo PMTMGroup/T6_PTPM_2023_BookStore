@@ -186,6 +186,24 @@ TongTien int,
 constraint PK_ChiTietDonDatHang primary key(SoHD, MaSach)
 )
 
+create table XuatHoaDon
+(
+SoHD int,
+NgayLap date,
+TongTien int,
+TongGiam int,
+ThanhTien int,
+MaTV int,
+MaGiamGia char(20),
+MaTaiKhoan char(20),
+MaSach char(20),
+TenSach nvarchar(255),
+DonGia int,
+SoLuong int,
+TienTamTinh int,
+primary key (SoHD, MaSach)
+)
+
 alter table Sach
 add constraint FK_Sach_TheLoaiSach foreign key(MaTheLoai) references TheLoaiSach(MaTheLoai)
 

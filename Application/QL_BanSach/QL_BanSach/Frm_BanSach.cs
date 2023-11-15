@@ -15,6 +15,7 @@ namespace Frm_DangNhap
     public partial class Frm_BanSach : Form
     {
         BLL_BanSach bllBanSach = new BLL_BanSach();
+        BLL_XuatHoaDon bllXHD = new BLL_XuatHoaDon();
         private string maTKDN;
         public Frm_BanSach(string maTKDN)
         {
@@ -318,6 +319,13 @@ namespace Frm_DangNhap
                     }
                 }
             }
+        }
+
+        private void btn_xuathoadon_Click(object sender, EventArgs e)
+        {
+            int soHDRP = bllXHD.getSoHDXuatHoaDon();
+            Frm_CrystalReportHoaDon frmRP = new Frm_CrystalReportHoaDon(soHDRP);
+            frmRP.Show();
         }
     }
 }

@@ -51,7 +51,10 @@ class CheckoutController extends Controller
             $total = $total[0]->total;
 
             $voucherInput = $request->maVoucher;
-            $checkExistVoucher = DB::table('PhieuGiamGia')->where('MaGiamGia', $voucherInput)->first();
+            $checkExistVoucher = DB::table('PhieuGiamGia')->where('MaGiamGia', $voucherInput)
+            ->where('NgayBD', '<=', date('Y-m-d'))
+            ->where('NgayKT', '>=', date('Y-m-d'))
+            ->first();
             if($checkExistVoucher)
             {
                 return view('checkout')->with('cart', $cart)->with('totalOrder', $total)

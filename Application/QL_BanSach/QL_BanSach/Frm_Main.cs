@@ -44,9 +44,9 @@ namespace Frm_DangNhap
             };
             foreach (Button button in arr_button)
             {
-                button.BackColor = Color.White;
+                button.BackColor = Color.SteelBlue;
             }
-            btnClicked.BackColor = Color.LightGray;
+            btnClicked.BackColor = Color.LightSkyBlue;
         }
 
         private void btn_qlhoadon_Click(object sender, EventArgs e)

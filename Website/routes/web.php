@@ -4,6 +4,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\MailController;
 use App\Http\Controllers\OpenAIController;
 use Illuminate\Support\Facades\Route;
 
@@ -31,3 +32,4 @@ Route::post('/register', [AuthController::class, 'registerSubmit'])->name('regis
 Route::post('/login', [AuthController::class, 'loginSubmit'])->name('login.post.index');
 Route::post('/logout', [AuthController::class, 'logoutSubmit'])->name('logout.post.index');
 Route::post('/ai-question', [OpenAIController::class, 'OpenAIChatBot'])->name('sender');
+Route::get('/send-mail-notification', [MailController::class, 'sendNotification'])->name('mail.index');

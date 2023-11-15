@@ -78,7 +78,7 @@
                     </div>
                     @if(isset($flagPGG))
                         @if(!$flagPGG)
-                            <p style="color:red;">Voucher không hợp lệ!</p>
+                            <p style="color:red;">Voucher không hợp lệ hoặc không trong thời gian áp dụng!</p>
                         @else
                             <p style="color:green;">Voucher "{{$phieuGiamGia->TenGiamGia}}" áp dụng thành công!</p>
                         @endif

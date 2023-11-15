@@ -49,9 +49,9 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Location = new System.Drawing.Point(0, -26);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(523, 353);
+            this.pictureBox1.Size = new System.Drawing.Size(523, 379);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 10;
             this.pictureBox1.TabStop = false;
@@ -61,9 +61,9 @@
             this.btn_dangNhap.BackColor = System.Drawing.Color.SteelBlue;
             this.btn_dangNhap.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_dangNhap.ForeColor = System.Drawing.Color.White;
-            this.btn_dangNhap.Location = new System.Drawing.Point(564, 256);
+            this.btn_dangNhap.Location = new System.Drawing.Point(566, 242);
             this.btn_dangNhap.Name = "btn_dangNhap";
-            this.btn_dangNhap.Size = new System.Drawing.Size(433, 50);
+            this.btn_dangNhap.Size = new System.Drawing.Size(368, 50);
             this.btn_dangNhap.TabIndex = 19;
             this.btn_dangNhap.Text = "Đăng Nhập";
             this.btn_dangNhap.UseVisualStyleBackColor = false;
@@ -93,9 +93,9 @@
             // 
             this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(743, 23);
+            this.pictureBox2.Location = new System.Drawing.Point(727, 21);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(80, 71);
+            this.pictureBox2.Size = new System.Drawing.Size(76, 63);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 11;
             this.pictureBox2.TabStop = false;
@@ -104,7 +104,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(561, 134);
+            this.label1.Location = new System.Drawing.Point(563, 122);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(124, 20);
             this.label1.TabIndex = 20;
@@ -114,7 +114,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(560, 195);
+            this.label2.Location = new System.Drawing.Point(562, 183);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(82, 20);
             this.label2.TabIndex = 21;
@@ -124,38 +124,38 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.SteelBlue;
             this.panel1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.panel1.Location = new System.Drawing.Point(564, 69);
+            this.panel1.Location = new System.Drawing.Point(566, 74);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(152, 10);
+            this.panel1.Size = new System.Drawing.Size(122, 10);
             this.panel1.TabIndex = 22;
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.SteelBlue;
             this.panel2.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.panel2.Location = new System.Drawing.Point(845, 69);
+            this.panel2.Location = new System.Drawing.Point(812, 74);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(152, 10);
+            this.panel2.Size = new System.Drawing.Size(122, 10);
             this.panel2.TabIndex = 23;
             // 
             // txt_taiKhoan
             // 
             this.txt_taiKhoan.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_taiKhoan.Location = new System.Drawing.Point(714, 124);
+            this.txt_taiKhoan.Location = new System.Drawing.Point(716, 112);
             this.txt_taiKhoan.Multiline = true;
             this.txt_taiKhoan.Name = "txt_taiKhoan";
-            this.txt_taiKhoan.Size = new System.Drawing.Size(283, 37);
+            this.txt_taiKhoan.Size = new System.Drawing.Size(218, 37);
             this.txt_taiKhoan.TabIndex = 14;
             this.txt_taiKhoan.Text = "admin";
             // 
             // txt_matKhau
             // 
             this.txt_matKhau.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_matKhau.Location = new System.Drawing.Point(714, 188);
+            this.txt_matKhau.Location = new System.Drawing.Point(716, 176);
             this.txt_matKhau.Multiline = true;
             this.txt_matKhau.Name = "txt_matKhau";
             this.txt_matKhau.PasswordChar = '*';
-            this.txt_matKhau.Size = new System.Drawing.Size(283, 37);
+            this.txt_matKhau.Size = new System.Drawing.Size(218, 37);
             this.txt_matKhau.TabIndex = 15;
             this.txt_matKhau.Text = "123";
             // 
@@ -164,7 +164,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1033, 336);
+            this.ClientSize = new System.Drawing.Size(975, 323);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label2);

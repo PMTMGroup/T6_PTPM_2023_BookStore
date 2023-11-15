@@ -50,9 +50,9 @@
         <div class="main" style="padding:20px;">
             <center style="font-weight:800; font-size:22px;margin-bottom:15px; color: #212f3f;">THÔNG BÁO TRẠNG THÁI ĐƠN HÀNG</center>
             <p style="color: #212f3f">Xin chào! <span style="color: black;">{{$data['hoTen']}}</span></p>
-            <P style="color: #212f3f">Đơn hàng <span style="color: black;">#{{$data['soHD']}}</span> của quý khách đã ở trạng thái <span style="color: black;">{{$data['trangThai']}}</span>
+            <P style="color: #212f3f">Đơn hàng <span style="color: black;">#{{$data['soHD']}}</span> đặt ngày <span style="color: black;">{{$data['ngayDatHang']}}</span> của quý khách đã ở trạng thái <span style="color: black;">{{$data['trangThai']}}</span>
                  
-                 . Để tìm hiểu thêm thông tin chi tiết về đơn hàng hoặc cần giải đáp thắc mắc liên hệ ngay hotline <span style="color: black;">19006035</span>.</P>
+                . Để tìm hiểu thêm thông tin chi tiết về đơn hàng hoặc cần giải đáp thắc mắc liên hệ ngay hotline <span style="color: black;">19006035</span>.</P>
             <p  style="color: #212f3f">Phục vụ cho quý khách là niềm vinh hạnh của chúng tôi.</p>
             <p  style="color: #212f3f" style="font-weight:600">Trân Trọng</p>
             <p  style="color: #212f3f">Nhà Sách 711</p>

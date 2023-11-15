@@ -32,6 +32,8 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.gv_dsHoaDonBanHang = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btn_XuatBaoCao = new System.Windows.Forms.Button();
+            this.date_NgayLap = new System.Windows.Forms.DateTimePicker();
             this.btn_lamMoi = new System.Windows.Forms.Button();
             this.btn_timKiem = new System.Windows.Forms.Button();
             this.rdo_nguoiLap = new System.Windows.Forms.RadioButton();
@@ -47,7 +49,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.gv_chiTietHoaDonBanHang = new System.Windows.Forms.DataGridView();
-            this.date_NgayLap = new System.Windows.Forms.DateTimePicker();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gv_dsHoaDonBanHang)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -80,6 +81,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.btn_XuatBaoCao);
             this.groupBox2.Controls.Add(this.date_NgayLap);
             this.groupBox2.Controls.Add(this.btn_lamMoi);
             this.groupBox2.Controls.Add(this.btn_timKiem);
@@ -100,6 +102,28 @@
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Tìm kiếm hóa đơn bán hàng:";
+            // 
+            // btn_XuatBaoCao
+            // 
+            this.btn_XuatBaoCao.Image = ((System.Drawing.Image)(resources.GetObject("btn_XuatBaoCao.Image")));
+            this.btn_XuatBaoCao.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_XuatBaoCao.Location = new System.Drawing.Point(1036, 138);
+            this.btn_XuatBaoCao.Name = "btn_XuatBaoCao";
+            this.btn_XuatBaoCao.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
+            this.btn_XuatBaoCao.Size = new System.Drawing.Size(206, 50);
+            this.btn_XuatBaoCao.TabIndex = 38;
+            this.btn_XuatBaoCao.Text = "      Xuất Hóa Đơn";
+            this.btn_XuatBaoCao.UseVisualStyleBackColor = true;
+            this.btn_XuatBaoCao.Click += new System.EventHandler(this.btn_XuatBaoCao_Click);
+            // 
+            // date_NgayLap
+            // 
+            this.date_NgayLap.Enabled = false;
+            this.date_NgayLap.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.date_NgayLap.Location = new System.Drawing.Point(542, 48);
+            this.date_NgayLap.Name = "date_NgayLap";
+            this.date_NgayLap.Size = new System.Drawing.Size(246, 27);
+            this.date_NgayLap.TabIndex = 37;
             // 
             // btn_lamMoi
             // 
@@ -259,15 +283,6 @@
             this.gv_chiTietHoaDonBanHang.Size = new System.Drawing.Size(567, 655);
             this.gv_chiTietHoaDonBanHang.TabIndex = 1;
             // 
-            // date_NgayLap
-            // 
-            this.date_NgayLap.Enabled = false;
-            this.date_NgayLap.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.date_NgayLap.Location = new System.Drawing.Point(542, 48);
-            this.date_NgayLap.Name = "date_NgayLap";
-            this.date_NgayLap.Size = new System.Drawing.Size(246, 27);
-            this.date_NgayLap.TabIndex = 37;
-            // 
             // Frm_QLHoaDonBan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -311,5 +326,6 @@
         private System.Windows.Forms.Button btn_lamMoi;
         private System.Windows.Forms.Button btn_timKiem;
         private System.Windows.Forms.DateTimePicker date_NgayLap;
+        private System.Windows.Forms.Button btn_XuatBaoCao;
     }
 }

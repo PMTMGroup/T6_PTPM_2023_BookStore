@@ -58,6 +58,7 @@
     <Compile Include="DAL_TaiKhoan.cs" />
     <Compile Include="DAL_ThongKe.cs" />
     <Compile Include="DAL_TimKiemSanPham.cs" />
+    <Compile Include="DAL_XuatHoaDon.cs" />
     <Compile Include="DBConnection.cs" />
     <Compile Include="DAL_Tang.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
