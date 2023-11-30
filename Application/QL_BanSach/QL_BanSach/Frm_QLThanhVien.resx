@@ -117,6 +117,15 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <metadata name="cbo_TTTV_loaiThanhVien.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="txt_TTTV_soTienDaMua.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="txt_TTTV_maThanhVien.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="btn_TTTV_luu.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -277,39 +286,6 @@
         6PA7bnbGa1ZJ88Nzhe4IgKm0pFg2Wz33IgK09XItyqnwcX565DdsLv8FwdSmcbvGBrf3GijtAnM3Bcm3
         ztMdaRXS7nHbx+1fUVGRrDHdFYBC3GjKHxJzA8qNqH9VnTSm3KCG1F7BmrxDmOnjT0lYd8SzHKag+TIZ
         USfUJQAKNV24gJ1hIdKKc0vOrbl5H1M8Sa26w4QX4fWuR8fOrhLwD/sRIOCC6ydPAAAAAElFTkSuQmCC
-</value>
-  </data>
-  <data name="btn_TCTTTV_traCuu.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        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
-        RU5ErkJggg==
 </value>
   </data>
   <data name="btn_QLLTV_luu.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">

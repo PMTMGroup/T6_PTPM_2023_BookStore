@@ -70,5 +70,10 @@ namespace BLL
         {
             return dalBanSach.checkSLTonKho(_ds);
         }
+
+        public bool checkSLTonKhoDapUng(string _masach, int soluongmua)
+        {
+            return dalBanSach.checkSLTonKhoDapUng(_masach, soluongmua);
+        }
     }
 }

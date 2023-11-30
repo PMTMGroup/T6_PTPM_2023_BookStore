@@ -186,5 +186,14 @@ namespace DAL
             }
         }
 
+        public bool checkSLTonKhoDapUng(string  _masach, int soluongmua)
+        {
+            using (var context = new QLCuaHangSachDataContext(db.connectionString))
+            {
+                Sach _sach = context.Saches.Where(s => s.MaSach == _masach).FirstOrDefault();
+
+                return _sach.SoLuongTon >= soluongmua ? true : false;
+            }
+        }
     }
 }

@@ -321,6 +321,7 @@
             this.gv_TCTTTV_ketQuaTraCuu.Name = "gv_TCTTTV_ketQuaTraCuu";
             this.gv_TCTTTV_ketQuaTraCuu.RowHeadersWidth = 62;
             this.gv_TCTTTV_ketQuaTraCuu.RowTemplate.Height = 24;
+            this.gv_TCTTTV_ketQuaTraCuu.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gv_TCTTTV_ketQuaTraCuu.Size = new System.Drawing.Size(729, 119);
             this.gv_TCTTTV_ketQuaTraCuu.TabIndex = 39;
             // 
@@ -339,7 +340,7 @@
             // 
             // btn_TCTTTV_traCuu
             // 
-            this.btn_TCTTTV_traCuu.Image = ((System.Drawing.Image)(resources.GetObject("btn_TCTTTV_traCuu.Image")));
+            this.btn_TCTTTV_traCuu.Image = global::Frm_DangNhap.Properties.Resources.find;
             this.btn_TCTTTV_traCuu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_TCTTTV_traCuu.Location = new System.Drawing.Point(494, 95);
             this.btn_TCTTTV_traCuu.Name = "btn_TCTTTV_traCuu";

@@ -115,6 +115,11 @@ namespace Frm_DangNhap
                     bool checkExist = isExistInList(_dsMua, _sach.MaSach);
                     if(!checkExist)
                     {
+                        if (!bllBanSach.checkSLTonKhoDapUng(_sach.MaSach, Convert.ToInt32(num_soLuongMua.Value)))
+                        {
+                            MessageBox.Show("Số lượng sách tồn không đủ đáp ứng!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            return;
+                        }
                         _dsMua.Add(new DTO_ChiTietHoaDonBan(0, _sach.MaSach, Convert.ToInt32(num_soLuongMua.Value), _sach.GiaBan * Convert.ToInt32(num_soLuongMua.Value)));
                     }
                     else
@@ -123,6 +128,11 @@ namespace Frm_DangNhap
                         {
                             if (hd.MaSach == _sach.MaSach)
                             {
+                                if (!bllBanSach.checkSLTonKhoDapUng(_sach.MaSach, hd.SoLuong + Convert.ToInt32(num_soLuongMua.Value)))
+                                {
+                                    MessageBox.Show("Số lượng sách tồn không đủ đáp ứng!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                    return;
+                                }
                                 hd.SoLuong = hd.SoLuong + Convert.ToInt32(num_soLuongMua.Value);
                                 hd.TongTien = _sach.GiaBan * hd.SoLuong;
                             }
