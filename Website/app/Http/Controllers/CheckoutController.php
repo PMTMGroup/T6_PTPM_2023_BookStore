@@ -130,8 +130,10 @@ class CheckoutController extends Controller
                         'email'     => $emailNN,
                         'hoTen'     => $hotenNN,
                         'soHD'      => $soHD,
-                        'trangThai' => $donDatHang->TrangThaiDonHang
+                        'trangThai' => $donDatHang->TrangThaiDonHang,
+                        'ngayDatHang' => date('d-m-Y')
                     ]));
+                    
                 }
 
 
