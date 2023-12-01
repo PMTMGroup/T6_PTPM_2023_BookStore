@@ -75,5 +75,10 @@ namespace BLL
         {
             return dalBanSach.checkSLTonKhoDapUng(_masach, soluongmua);
         }
+
+        public void updateTienDaMuaCuaThanhVien(int _maTV, int tienMua)
+        {
+            dalBanSach.updateTienDaMuaCuaThanhVien(_maTV, tienMua);
+        }
     }
 }

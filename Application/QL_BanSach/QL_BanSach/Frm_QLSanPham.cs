@@ -104,15 +104,15 @@ namespace Frm_DangNhap
                 MessageBox.Show("Vui lòng điền đầy đủ thông tin Sách thêm mới!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             else
             {
-                if (sachBLL.checkPrimaryKey(txt_TTDS_maSach.Text.Trim()))
-                    MessageBox.Show("Mã sách thêm mới đã tồn tại!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                else
-                {
+                //if (sachBLL.checkPrimaryKey(txt_TTDS_maSach.Text.Trim()))
+                //    MessageBox.Show("Mã sách thêm mới đã tồn tại!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                //else
+                //{
                     if (lb_nameFileUpload.Text.Trim() == string.Empty)
                         MessageBox.Show("Vui lòng chọn ảnh Sách thêm mới!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     else
                     {
-                        string maSach = txt_TTDS_maSach.Text.Trim();
+                        string maSach = "S"+ sachBLL.soPhatSinhMaSachCuoiCung();
                         string tenSach = txt_TTDS_tenSach.Text.Trim();
                         string tacGia = txt_TTDS_tacGia.Text.Trim();
                         int soTrang =Int32.Parse( txt_TTDS_soTrang.Text.Trim());
@@ -137,7 +137,7 @@ namespace Frm_DangNhap
                                 MessageBox.Show("Đã xảy ra lỗi, vui lòng thử lại sau!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         }
                     }
-                }
+                //}
             }
         }
 
@@ -150,7 +150,7 @@ namespace Frm_DangNhap
                     return false;
             }
 
-            TextBox[] listTB = new TextBox[] { txt_TTDS_giaBan, txt_TTDS_maSach,txt_TTDS_soTrang,txt_TTDS_tacGia,txt_TTDS_tenSach };
+            TextBox[] listTB = new TextBox[] { txt_TTDS_giaBan,txt_TTDS_soTrang,txt_TTDS_tacGia,txt_TTDS_tenSach };
             foreach (TextBox i in listTB)
             {
                 if (i.Text == string.Empty)

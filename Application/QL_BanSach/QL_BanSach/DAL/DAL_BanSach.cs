@@ -195,5 +195,15 @@ namespace DAL
                 return _sach.SoLuongTon >= soluongmua ? true : false;
             }
         }
+
+        public void updateTienDaMuaCuaThanhVien(int _maTV, int tienMua)
+        {
+            using (var context = new QLCuaHangSachDataContext(db.connectionString))
+            {
+                ThanhVien thanhVien = context.ThanhViens.Where(tv => tv.MaTV == _maTV).FirstOrDefault();
+                thanhVien.TienDaMua += tienMua;
+                context.SubmitChanges();
+            }
+        }
     }
 }

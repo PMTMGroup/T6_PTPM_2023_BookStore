@@ -101,5 +101,51 @@ namespace DAL
                 return false;
             }
         }
+
+        public DTO_Sach getSachfromMaSach(string maSach)
+        {
+            using (var context = new QLCuaHangSachDataContext(db.connectionString))
+            {
+                Sach _sach = context.Saches.FirstOrDefault(s => s.MaSach == maSach);
+                if (_sach != null)
+                    return new DTO_Sach(_sach.MaSach, _sach.TenSach, _sach.TacGia, (int)_sach.SoTrang, (int)_sach.GiaBan
+                    , (int)_sach.SoLuongTon, _sach.MaTheLoai, _sach.MaNXB, _sach.MaTang, _sach.MaKe, _sach.HinhAnh);
+                return null;
+            }
+        }
+
+        public bool updateSoLuongTon(List<DTO_ChiTietDonDatHang> _ds)
+        {
+            try
+            {
+                using (var context = new QLCuaHangSachDataContext(db.connectionString))
+                {
+                    foreach (DTO_ChiTietDonDatHang hd in _ds)
+                    {
+                        var _sach = context.Saches.SingleOrDefault(s => s.MaSach == hd.MaSach);
+                        if (_sach != null)
+                        {
+                            _sach.SoLuongTon -= hd.SoLuong;
+                            context.SubmitChanges();
+                        }
+                    }
+                }
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public void updateTienDaMuaCuaThanhVien(int _maTV, int tienMua)
+        {
+            using (var context = new QLCuaHangSachDataContext(db.connectionString))
+            {
+                ThanhVien thanhVien = context.ThanhViens.Where(tv => tv.MaTV == _maTV).FirstOrDefault();
+                thanhVien.TienDaMua += tienMua;
+                context.SubmitChanges();
+            }
+        }
     }
 }

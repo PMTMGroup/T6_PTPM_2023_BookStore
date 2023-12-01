@@ -311,13 +311,18 @@ namespace Frm_DangNhap
                                 this.maTKDN
                         ));
 
+                        if(lbl_maTV.Text.Trim() != "1")
+                        {
+                            bllBanSach.updateTienDaMuaCuaThanhVien(int.Parse(lbl_maTV.Text), int.Parse(lbl_tongtien.Text));
+                        }
+
                         int soHDnewStore = bllBanSach.getSoHDnewStore();
 
                         foreach (DTO_ChiTietHoaDonBan hd in _dsMua)
                             hd.SoHD = soHDnewStore;
 
                         bool storeCTHDB = bllBanSach.storeCTHDBanSach(_dsMua);
-                        bool updateSLT = bllBanSach.updateSoLuongTon(_dsMua);
+                        bool updateSLT = bllBanSach.updateSoLuongTon(_dsMua);                        
 
                         if (storeCTHDB && storeHDB && updateSLT)
                         {

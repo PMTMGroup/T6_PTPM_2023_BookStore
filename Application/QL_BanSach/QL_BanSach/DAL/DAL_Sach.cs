@@ -204,5 +204,21 @@ namespace DAL
                 return false;
             }
         }
+
+        public int soPhatSinhMaSachCuoiCung()
+        {
+            try
+            {
+                using (var context = new QLCuaHangSachDataContext(db.connectionString))
+                {
+                    string _maSach = context.Saches.OrderByDescending(s => s.MaSach).Select(s => s.MaSach).FirstOrDefault();
+                    return Int32.Parse(_maSach.Substring(1)) + 1;
+                }
+            }
+            catch
+            {
+                return 1;
+            }
+        }
     }
 }

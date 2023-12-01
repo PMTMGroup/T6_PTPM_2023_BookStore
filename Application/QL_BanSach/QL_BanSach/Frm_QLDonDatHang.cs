@@ -67,10 +67,47 @@ namespace Frm_DangNhap
                 MessageBox.Show("Vui lòng chọn trạng thái để cập nhật!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             else
             {
+                DataGridViewRow rowSeleted = dgv_dondathang.SelectedRows[0];
+                int maTV = Int32.Parse( rowSeleted.Cells[3].Value.ToString());
+                int tongTienDonHang = Int32.Parse(rowSeleted.Cells[6].Value.ToString());
+
+                string oldStatusOrder = rowSeleted.Cells[14].Value.ToString();
+                string newStatusOrder = cbo_trangThaiDonHang.SelectedItem.ToString();
+                if(checkReverseStatusOrder(oldStatusOrder, newStatusOrder))
+                {
+                    MessageBox.Show("Trạng thái đơn đặt hàng phải một chiều!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                List<DTO_ChiTietDonDatHang> listCTDDH = bllDonDatHang.GetDSChiTietDDHfromMaDDH(int.Parse(rowSeleted.Cells[0].Value.ToString()));
+
+                if (newStatusOrder == "Đang giao hàng")
+                {
+                    foreach (DTO_ChiTietDonDatHang ctddh in listCTDDH)
+                    {
+                        if (ctddh.SoLuong > bllDonDatHang.getSachfromMaSach(ctddh.MaSach.Trim()).SoLuongTon)
+                        {
+                            MessageBox.Show("Sách #" + ctddh.MaSach.Trim() + " có tên #" + bllDonDatHang.getSachfromMaSach(ctddh.MaSach.Trim()).TenSach + " không đủ đáp ứng, vui lòng nhập sách thêm!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            return;
+                        }
+                    }
+                }
+
                 DialogResult resualt = MessageBox.Show("Xác nhận cập nhật trạng thái của đơn đặt hàng", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Asterisk,MessageBoxDefaultButton.Button1);
                 if(resualt == DialogResult.Yes)
                 {
+                    if (newStatusOrder == "Đang giao hàng")
+                    {
+                        bllDonDatHang.updateSoLuongTon(listCTDDH);
+
+                        if(maTV != 1)
+                        {
+                            bllDonDatHang.updateTienDaMuaCuaThanhVien(maTV, tongTienDonHang);
+                        }
+                    }
+
                     bool ketQuaCapNhat = bllDonDatHang.updateTrangThaiDonDatHang(int.Parse(txt_soDonHang.Text.Trim()), cbo_trangThaiDonHang.SelectedItem.ToString());
+
                     if (ketQuaCapNhat)
                     {
                         const string CsrfToken = "elcrNeYB73hWdlM9Tti5ykqlSyfux3jE26E1Fhuy";
@@ -110,6 +147,28 @@ namespace Frm_DangNhap
                         MessageBox.Show("Cập nhật trạng thái đơn đặt hàng thất bại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                 }
             }
+        }
+
+        private bool checkReverseStatusOrder(string oldStatus, string newStatus)
+        {
+            int valueOldStatus=0, valueNewStatus=0;
+            switch(oldStatus)
+            {
+                case "Đang xử lý": valueOldStatus = 1; break;
+                case "Đang giao hàng": valueOldStatus = 2; break;
+                case "Đã giao hàng": valueOldStatus = 3; break;
+                case "Đã từ chối": valueOldStatus = 4; break;
+            }
+
+            switch (newStatus)
+            {
+                case "Đang xử lý": valueNewStatus = 1; break;
+                case "Đang giao hàng": valueNewStatus = 2; break;
+                case "Đã giao hàng": valueNewStatus = 3; break;
+                case "Đã từ chối": valueNewStatus = 4; break;
+            }
+
+            return valueNewStatus <= valueOldStatus ? true : false;
         }
     }
 }

@@ -41,6 +41,55 @@ class CartController extends Controller
                 [$maTV, $idSach, 1]);
             }
         }
+        else
+        {
+            $ipaddress = '';
+            if (isset($_SERVER['HTTP_CLIENT_IP']))
+                $ipaddress = $_SERVER['HTTP_CLIENT_IP'];
+            else if(isset($_SERVER['HTTP_X_FORWARDED_FOR']))
+                $ipaddress = $_SERVER['HTTP_X_FORWARDED_FOR'];
+            else if(isset($_SERVER['HTTP_X_FORWARDED']))
+                $ipaddress = $_SERVER['HTTP_X_FORWARDED'];
+            else if(isset($_SERVER['HTTP_FORWARDED_FOR']))
+                $ipaddress = $_SERVER['HTTP_FORWARDED_FOR'];
+            else if(isset($_SERVER['HTTP_FORWARDED']))
+                $ipaddress = $_SERVER['HTTP_FORWARDED'];
+            else if(isset($_SERVER['REMOTE_ADDR']))
+                $ipaddress = $_SERVER['REMOTE_ADDR'];
+            else
+                $ipaddress = 'UNKNOWN';
+
+            $arrayIP = explode('.', $ipaddress);
+            $ipaddress = "";
+            foreach($arrayIP as $value)
+            {
+                $ipaddress .= $value;
+            }
+
+            $idSach = $request->id;
+
+            DB::insert('insert into ThanhVien (TenThanhVien, SDT, MatKhau, TienDaMua, MaLoaiTV) 
+            values (?, ?, ?, ?, ?)',
+             [$ipaddress, $ipaddress,$ipaddress, 0, 'Bronze']);
+             
+             $account = DB::table('ThanhVien')->where('SDT', $ipaddress)->where('MatKhau', $ipaddress)->first();
+            
+             \Session::put('hasLogin', $account->MaTV);
+
+            $maTV = session()->get('hasLogin');
+
+            $checkExist = DB::table('GioHang')->where('MaND', $maTV)->where('MaSach', $idSach)->first();
+            if($checkExist)
+            {
+                $quantityInCart = $checkExist->SoLuong +1;
+                DB::update("update GioHang set SoLuong = ".$quantityInCart." where MaSach='".$idSach."' and MaND =".$maTV);
+            }
+            else{
+                DB::insert('insert into GioHang values (?, ?, ?)',
+                [$maTV, $idSach, 1]);
+            }
+        }
+                
         return redirect()->route('home.index');
     }
 

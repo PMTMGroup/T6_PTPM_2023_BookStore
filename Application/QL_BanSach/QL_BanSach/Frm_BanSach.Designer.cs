@@ -236,6 +236,11 @@
             // num_soLuongMua
             // 
             this.num_soLuongMua.Location = new System.Drawing.Point(639, 340);
+            this.num_soLuongMua.Maximum = new decimal(new int[] {
+            999999999,
+            0,
+            0,
+            0});
             this.num_soLuongMua.Minimum = new decimal(new int[] {
             1,
             0,

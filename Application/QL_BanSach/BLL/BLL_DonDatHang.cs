@@ -33,5 +33,20 @@ namespace BLL
         {
             return dalDonDatHang.updateTrangThaiDonDatHang(SoDDH, trangThaiCapNhat);
         }
+
+        public DTO_Sach getSachfromMaSach(string maSach)
+        {
+            return dalDonDatHang.getSachfromMaSach(maSach);
+        }
+
+        public bool updateSoLuongTon(List<DTO_ChiTietDonDatHang> _ds)
+        {
+            return dalDonDatHang.updateSoLuongTon(_ds);
+        }
+        public void updateTienDaMuaCuaThanhVien(int _maTV, int tienMua)
+        {
+            dalDonDatHang.updateTienDaMuaCuaThanhVien(_maTV, tienMua);
+        }
+
     }
 }

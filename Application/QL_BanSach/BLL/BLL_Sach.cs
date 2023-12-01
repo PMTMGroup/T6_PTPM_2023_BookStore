@@ -81,5 +81,10 @@ namespace BLL
         {
             return sachDAL.deleteSach(maSach);
         }
+
+        public int soPhatSinhMaSachCuoiCung()
+        {
+            return sachDAL.soPhatSinhMaSachCuoiCung();
+        }
     }
 }
