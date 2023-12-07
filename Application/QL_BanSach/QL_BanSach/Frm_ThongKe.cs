@@ -25,10 +25,10 @@ namespace Frm_DangNhap
 
             if (bllThongKe.getMaQuyenfromMaTaiKhoan(this.maTKDN) == "user")
             {
-                Label[] list = new Label[]{
+                TextBox[] list = new TextBox[]{
                     lb_tongTienBanSach,lb_tongTienXuatKho,lb_tongTienNhapSach,lb_tongLoiNhuan,lb_tongDauSach,lb_tongSachTon,lb_soLuongNhanVien,lb_tongDonDatHang, lb_soDonHangThanhCong,lb_soDonHangThatBai,lb_soLuongThanhVien,lb_soLuongBanSach
                 };
-                foreach (Label l in list)
+                foreach (TextBox l in list)
                     l.Text = string.Empty;
                 btn_XuatBaoCao.Enabled = false;
             }
@@ -88,6 +88,16 @@ namespace Frm_DangNhap
                 lb_tongTienXuatKho.Text, lb_tongTienNhapSach.Text, lb_tongLoiNhuan.Text, lb_tongDauSach.Text,
                 lb_tongSachTon.Text, lb_soLuongBanSach.Text, lb_tongDonDatHang.Text, lb_soDonHangThanhCong.Text,
                 lb_soDonHangThatBai.Text, lb_soLuongNhanVien.Text, lb_soLuongThanhVien.Text);
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lb_tongDauSach_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
