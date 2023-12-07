@@ -68,14 +68,21 @@ class CartController extends Controller
 
             $idSach = $request->id;
 
-            DB::insert('insert into ThanhVien (TenThanhVien, SDT, MatKhau, TienDaMua, MaLoaiTV) 
-            values (?, ?, ?, ?, ?)',
-             [$ipaddress, $ipaddress,$ipaddress, 0, 'Bronze']);
-             
-             $account = DB::table('ThanhVien')->where('SDT', $ipaddress)->where('MatKhau', $ipaddress)->first();
+            $checkExistMember = DB::table('ThanhVien')->where('SDT', $ipaddress)->first();
+            if(!$checkExistMember)
+            {
+                DB::insert('insert into ThanhVien (TenThanhVien, SDT, MatKhau, TienDaMua, MaLoaiTV) 
+                values (?, ?, ?, ?, ?)',
+                 [$ipaddress, $ipaddress,$ipaddress, 0, 'Bronze']);
+                 
+                 $account = DB::table('ThanhVien')->where('SDT', $ipaddress)->where('MatKhau', $ipaddress)->first();
+                
+                 \Session::put('hasLogin', $account->MaTV);
+            }
+            else{
+                \Session::put('hasLogin', $checkExistMember->MaTV);
+            }
             
-             \Session::put('hasLogin', $account->MaTV);
-
             $maTV = session()->get('hasLogin');
 
             $checkExist = DB::table('GioHang')->where('MaND', $maTV)->where('MaSach', $idSach)->first();
